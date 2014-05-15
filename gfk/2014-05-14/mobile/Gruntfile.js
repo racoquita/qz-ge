@@ -66,10 +66,10 @@ module.exports = function(grunt) {
       deploy: {
         options: {
           base: 'http://ads.quartz.cc/sponsors',
-          client: 'example_client',
-          campaign: 'example_campaign',
-          date: '2014-04-15',
-          unit: 'desktop',
+          client: 'ge',
+          campaign: 'gfk',
+          date: '2014-05-14',
+          unit: 'mobile',
           version: '1',
           internal_scripts: [
             
