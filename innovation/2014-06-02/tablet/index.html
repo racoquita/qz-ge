@@ -1,3 +1,25 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Plus Ad Template</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="qzad"></div>
+
+	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			window.app = new App();
+			window.app.on();
+		});
+	</script>
+</body>
+</html> -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,234 +34,61 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="wrapper">
 		<ul class="carousel">
-			<li class="items main-pos" id="1"><img src="./assets/imgs/slide-1-background.jpg"/><img class="text" src="./assets/imgs/slide-1-text.png"/><div class="overlay"><div></li>
-			<li class="items right-pos" id="2"><img src="./assets/imgs/slide-2-background.jpg"/><img class="text" src="./assets/imgs/slide-2-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="3"><img src="./assets/imgs/slide-3-background.jpg"/><img class="text" src="./assets/imgs/slide-3-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="4"><img src="./assets/imgs/slide-4-background.jpg"/><img class="text" src="./assets/imgs/slide-4-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="5"><img src="./assets/imgs/slide-5-background.jpg"/><img class="text" src="./assets/imgs/slide-5-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="6"><img src="./assets/imgs/slide-6-background.jpg"/><img class="text" src="./assets/imgs/slide-6-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="7"><img src="./assets/imgs/slide-7-background.jpg"/><img class="text" src="./assets/imgs/slide-7-text.png"/><div class="overlay"><div></li>
-			<li class="items back-pos" id="8"><img src="./assets/imgs/slide-8-background.jpg"/><img class="text" src="./assets/imgs/slide-8-text.png"/><a href="http://www.ge.com/in/" target="_blank"><img class="learn-more" src="./assets/imgs/learn-more.png"/></a><div class="overlay"><div></li>
+			<li class="items main-pos" id="1">
+				<img src="images/slide-1-background.jpg"/>
+				<img class="text" src="images/slide-1-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items right-pos" id="2">
+				<img src="images/slide-2-background.jpg"/>
+				<img class="text" src="images/slide-2-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="3">
+				<img src="images/slide-3-background.jpg"/>
+				<img class="text" src="images/slide-3-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="4">
+				<img src="images/slide-4-background.jpg"/>
+				<img class="text" src="images/slide-4-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="5">
+				<img src="images/slide-5-background.jpg"/>
+				<img class="text" src="images/slide-5-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="6">
+				<img src="images/slide-6-background.jpg"/>
+				<img class="text" src="images/slide-6-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="7">
+				<img src="images/slide-7-background.jpg"/>
+				<img class="text" src="images/slide-7-text.png"/>
+				<div class="overlay"><div>
+			</li>
+			<li class="items back-pos" id="8">
+				<img src="images/slide-8-background.jpg"/>
+				<img class="text" src="images/slide-8-text.png"/>
+				<a href="http://www.ge.com/in/" target="_blank">
+					<img class="learn-more" src="images/learn-more.png"/>
+				</a><div class="overlay"><div>
+			</li>
 		</ul>
 
-		<a href="http://www.ge.com/in/" target="_blank"><img class="logo" src="./assets/imgs/ge-logo.png"></a>
-		<img id="prev" class="arrow-left hide" src="./assets/imgs/arrow-left.png">
-		<img id="next" class="arrow-right" src="./assets/imgs/arrow-right.png">
+		<a href="http://www.ge.com/in/" target="_blank">
+			<img class="logo" src="images/ge-logo.png"></a>
+		<img id="prev" class="arrow-left hide" src="images/arrow-left.png">
+		<img id="next" class="arrow-right" src="images/arrow-right.png">
 	</div>
-	<script src="./assets/js/jquery.min.js"></script>
-	<script type="text/javascript">
-		// Slideshow style interval
-		//var autoSwap = setInterval(swap,3500);
-
-		// Pause slideshow and reinstantiate on mouseout
-		// $('ul, span').hover(function () {
-		// 	clearInterval(autoSwap);
-		// }, function () {
-		// 	autoSwap = setInterval(swap,3500);
-		// });
-
-		// Global variables
-		var items = [];
-		var startItem = 1;
-		var position = 0;
-		var itemCount = $('.carousel li.items').length;
-		var leftpos = itemCount;
-		var resetCount = itemCount;
-		var autoAdvance;
-
-		function layout() {
-			var wrapperWidth = $('.wrapper').width();
-			var carouselOffset = Math.round((wrapperWidth/2) - 360);
-			$('.carousel').css('padding-left', carouselOffset);
-		}
-
-		$(window).on('resize', function(){
-			layout();
-		});
-
-		layout();
-		autoAdvance = setTimeout(swap, 2500);
-
-		// Swap images function
-		function swap(action) {
-			$('.main-pos').unbind('swipeLeft').unbind('swipeRight');
-			var direction = action;
-
-			// Moving carousel backwards
-			if(direction == 'counter-clockwise') {
-				var leftitem = $('.left-pos').attr('id') - 1;
-				// Allows slides to wrap around
-				// if(leftitem == 0) {
-				//    leftitem = itemCount;
-				// }
-
-				if(leftitem >= 0) {
-					$('.right-pos').removeClass('right-pos').addClass('back-pos');
-					$('.main-pos').removeClass('main-pos').addClass('right-pos');
-					$('.left-pos').removeClass('left-pos').addClass('main-pos');
-					$('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
-
-					startItem--;
-					if(startItem < 1) {
-						startItem = itemCount;
-					}
-				}
-				console.log(startItem);
-				if(startItem == 1){
-					$('#prev').addClass('hide');
-				}
-				if(startItem < itemCount) {
-					$('#next').removeClass('hide');
-				}
-			}
-
-			// Moving carousel forward
-			if(direction == 'clockwise' || direction == '' || direction == null ) {
-				clearTimeout(autoAdvance);
-				function pos(positionvalue) {
-					if(positionvalue != 'leftposition') {
-						// Increment image list id
-						position++;
-
-						// If final result is greater than image count, reset position.
-						// if((startItem+position) > resetCount) {
-						// 	position = 1-startItem;
-						// }
-					}
-
-					// Setting the left positioned item
-					if(positionvalue == 'leftposition') {
-						// Left positioned image should always be one left than main positioned image.
-						position = startItem - 1;
-
-						// Reset last image in list to left position if first image is in main position
-						if(position < 1) {
-							position = itemCount;
-						}
-					}
-
-					return position;
-				}
-
-				if (startItem < itemCount){
-					$('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
-					$('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
-					$('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
-					$('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
-					//$('.main-pos .overlay').fadeOut(100);
-					//$('.left-pos .overlay, .right-pos .overlay').fadeIn(100);
-
-					startItem++;
-					position=0;
-
-					// Wraps slides back to start
-					// if(startItem > itemCount) {
-					// 	startItem = 1;
-					// }
-				}
-
-				if(startItem > 1){
-					$('#prev').removeClass('hide');
-				}
-				if(startItem >= itemCount) {
-					$('#next').addClass('hide');
-				}
-			}
-			bindSwipes();
-		}
-
-		// Next button click function
-		$('#next').click(function() {
-			swap('clockwise');
-		});
-
-		// Prev button click function
-		$('#prev').click(function() {
-			swap('counter-clockwise');
-		});
-
-		// If any visible items are clicked
-		$('li').click(function() {
-			if($(this).attr('class') == 'items left-pos') {
-				swap('counter-clockwise');
-			} else {
-				swap('clockwise');
-			}
-		});
-
-		// Swipe events
-		$(function(){
-			bindSwipes();
-		});
-
-		function bindSwipes() {
-			$('.main-pos')
-				.swipeEvents()
-				.bind("swipeLeft",  function(){ swap('clockwise'); })
-				.bind("swipeRight", function(){ swap('counter-clockwise'); });
-		}
-
-		// Capture swipe events
-		(function($) {
-			$.fn.swipeEvents = function() {
-				return this.each(function() {
-
-					var startX,
-						startY,
-						$this = $(this);
-
-					$this.bind('touchstart', touchstart);
-
-					function touchstart(event) {
-						var touches = event.originalEvent.touches;
-						if (touches && touches.length) {
-							startX = touches[0].pageX;
-							startY = touches[0].pageY;
-							$this.bind('touchmove', touchmove);
-							$this.bind('touchend', touchend);
-						}
-						//event.preventDefault();
-					}
-
-					function touchmove(event) {
-						var touches = event.originalEvent.touches;
-						if (touches && touches.length) {
-							var deltaX = startX - touches[0].pageX;
-							var deltaY = startY - touches[0].pageY;
-
-							if (deltaX >= 50) {
-								$this.trigger("swipeLeft");
-							}
-							if (deltaX <= -50) {
-								$this.trigger("swipeRight");
-							}
-							if (deltaY >= 50) {
-								$this.trigger("swipeUp");
-							}
-							if (deltaY <= -50) {
-								$this.trigger("swipeDown");
-							}
-							if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
-								$this.unbind('touchmove', touchmove);
-								$this.unbind('touchend', touchend);
-							}
-						}
-						//event.preventDefault();
-					}
-
-					function touchend(event) {
-						$this.unbind('touchmove', touchmove);
-						//event.preventDefault();
-					}
-				});
-			};
-		})(jQuery);
-
-	</script>
+	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

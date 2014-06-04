@@ -48,7 +48,7 @@ img {
   min-width: 700px;
   width: 100%;
   height: 480px;
-  background: url(../imgs/background.gif) no-repeat left center;
+  background: url(../images/background.gif) no-repeat left center;
 }
 .logo {
   position: absolute;
@@ -144,10 +144,8 @@ ul.carousel li .text {
   .carousel {
     padding-top: 100px !important;
     -ms-transform: scale(0.8);
-    /* IE 9 */
   
     -webkit-transform: scale(0.8);
-    /* Chrome, Safari, Opera */
   
     transform: scale(0.8);
   }
@@ -156,10 +154,8 @@ ul.carousel li .text {
   .carousel {
     padding-top: 150px !important;
     -ms-transform: scale(0.6);
-    /* IE 9 */
   
     -webkit-transform: scale(0.6);
-    /* Chrome, Safari, Opera */
   
     transform: scale(0.6);
   }
