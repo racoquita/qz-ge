@@ -13,8 +13,7 @@
   display: none;
 }
 .bg {
-  background-size: 100% 100%;
-  background-image: url('../images/bg.jpg');
+  background-color: rgb(0,99,157);
   position: absolute;
   top: 0;
   left: 0;
@@ -92,6 +91,7 @@
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 3;
     }
   }
   li.left,

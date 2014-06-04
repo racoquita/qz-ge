@@ -29,7 +29,7 @@ $(window).on('resize', function(){
 });
 
 layout();
-autoAdvance = setTimeout(swap, 2500);
+autoAdvance = setTimeout(swap, 3000);
 
 // Swap images function
 function swap(action) {

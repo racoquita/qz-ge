@@ -84,7 +84,7 @@ var App = function() {
     var up = function (e) {
       if (startX - e.clientX > 50) {
         move('left');
-      } else if (startX - e.clientX < 50) {
+      } else if (startX - e.clientX < -50) {
         move('right');
       }
       ul.off('vmouseup', up);
