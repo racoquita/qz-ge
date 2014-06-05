@@ -55,7 +55,6 @@ function swap(action) {
 				startItem = itemCount;
 			}
 		}
-		console.log(startItem);
 		if(startItem == 1){
 			$('#prev').addClass('hide');
 		}
@@ -106,7 +105,6 @@ function swap(action) {
 			// 	startItem = 1;
 			// }
 		}
-		console.log(startItem);
 		if(startItem > 1){
 			$('#prev').removeClass('hide');
 		}

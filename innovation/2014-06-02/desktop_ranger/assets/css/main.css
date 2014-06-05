@@ -48,7 +48,7 @@ img {
   min-width: 700px;
   width: 100%;
   height: 480px;
-  background: url(../images/background.gif) no-repeat left center;
+  background: url(../imgs/background.gif) no-repeat left center;
 }
 .logo {
   position: absolute;
