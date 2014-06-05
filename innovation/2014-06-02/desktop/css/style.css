@@ -22,7 +22,7 @@ img { opacity: inherit; }
 ul.carousel { margin: 0; padding-top: 40px; padding-left: 0; }
 ul.carousel li { -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; height: 390px; display: inline-block; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; overflow: hidden; cursor: pointer; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }
 ul.carousel li .text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-ul.carousel li .overlay { position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); -webkit-transition: opacity 300ms linear; -moz-transition: opacity 300ms linear; -ms-transition: opacity 300ms linear; -o-transition: opacity 300ms linear; transition: opacity 300ms linear; }
+ul.carousel li .overlay { position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); -webkit-transition: opacity 300ms linear; -moz-transition: opacity 300ms linear; -ms-transition: opacity 300ms linear; -o-transition: opacity 300ms linear; transition: opacity 300ms linear; }
 ul.carousel li.back-pos .overlay, ul.carousel li.left-pos .overlay, ul.carousel li.right-pos .overlay { opacity: 1; z-index: 1; }
 
 .items { position: absolute; }
