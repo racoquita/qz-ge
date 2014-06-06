@@ -29,14 +29,37 @@ module.exports = function(grunt) {
         }
       }
     },
+    connect: {
+      build: {
+        options: {
+          hostname: '',
+          port: 8002,
+          base: '',
+          open: true
+        }
+      }
+    },
     watch: {
       scss: {
         files: 'scss/**/*.scss',
-        tasks: ['compass:build']
+        tasks: ['compass:build'],
+        options: {
+          livereload: true
+        }
       },
       js: {
         files: 'js/**/*.js',
-        tasks: []
+        tasks: [],
+        options: {
+          livereload: true
+        }
+      },
+      once: {
+        files: 'index.html',
+        tasks: [],
+        options: {
+          livereload: true
+        }
       }
     },
     qzready: {
@@ -61,6 +84,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['compass:build', 'watch']);
+  grunt.registerTask('default', ['compass:build', 'connect:build', 'watch']);
   grunt.registerTask('ready', ['qzready']);
 };

@@ -111,6 +111,7 @@ function swap(action) {
 		if(startItem >= itemCount) {
 			$('#next').addClass('hide');
 		}
+
 	}
 	// bindSwipes();
 }
