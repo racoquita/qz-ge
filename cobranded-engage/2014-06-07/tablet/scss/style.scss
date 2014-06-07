@@ -1,0 +1,142 @@
+body {
+	margin: 0;
+}
+img{
+	display: block;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+#qzad {
+	position: relative;
+	width: 480px;
+	height: 550px;
+	overflow: hidden;
+	background-color: black;
+	
+	#top{
+		position: absolute;
+		right: 0;
+		top:0;
+		left:0;
+		bottom:275px;
+		overflow: hidden;
+		
+	}
+	.intro{
+		position: relative;
+		width: 354px;
+		margin: 104px auto 0;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+	.image-holder{
+		position: absolute;
+		top:0;
+		img{
+			display: block;	
+			position: absolute;
+			top:0;
+			width: 480px;
+			-webkit-transition: all 3s ease;
+			-moz-transition: all 3s ease;
+			-ms-transition: all 3s ease;
+			-o-transition: all 3s ease;
+			transition: all 3s ease;
+			opacity: 1;
+			&.fadeOut {
+			  -webkit-animation-name: fadeOut;
+			  	animation-name: fadeOut;
+			   -webkit-animation-duration: 3s;
+				animation-duration: 3s;
+				
+				-webkit-animation-timing-function: ease;
+				-moz-animation-timing-function: ease;
+				animation-timing-function: ease;
+				  opacity: 0;
+				  
+			}
+		}
+		
+		
+		
+	}
+	#bottom{
+		position: absolute;
+		bottom:0;
+		top:275px;
+		left:0;
+		right: 0;
+		height: 275px;
+		background: black url(../images/bg-circles.jpg) top right no-repeat;
+		background-size: 224px;
+		
+		.cta{
+			display: block;
+			position: absolute;
+			left:25px;
+			top:145px;
+			width: 296px;
+			
+			img{
+
+				width: 100%;
+			}
+		}
+		div{
+			position: absolute;
+			top:0;
+			left:25px;
+
+			&.head{
+				width:379px;
+				top:22px;
+			}
+			img{
+				display: block;
+				width: 100%;
+			}
+			&.partner{
+				top:220px;
+				left: 296px;
+				width: 160px;
+				
+			}
+			&.contact{
+				top:228px;
+				width:78px;
+				a{
+					display: inline-block;
+					&.twitter{
+						width:31.914893617%;
+						margin-right: 21%;
+					}
+					&.email{
+						width:29px;
+					}
+					img{
+						display: block;
+					}
+				}	
+			}
+		}
+	}
+}

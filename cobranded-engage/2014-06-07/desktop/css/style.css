@@ -1,0 +1,37 @@
+body { margin: 0; }
+
+img { display: block; }
+
+@-webkit-keyframes fadeOut { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@keyframes fadeOut { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes fadeIn { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+
+@keyframes fadeIn { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+#qzad { position: relative; width: 100%; height: 480px; min-width: 720px; max-width: 1100px; overflow: hidden; background-color: black; background: black url(../images/bg-circles.jpg) top right no-repeat; }
+#qzad #left { position: absolute; width: 50%; top: 0; left: 0; bottom: 0; overflow: hidden; }
+#qzad .intro { position: relative; width: 83.4545454545%; margin: 202px auto 0; }
+#qzad .intro img { display: block; width: 100%; }
+#qzad .image-holder { position: absolute; top: 0; width: 100%; height: 100%; }
+#qzad .image-holder img { display: block; position: absolute; top: 0; height: 100%; -webkit-transition: all 3s ease; -moz-transition: all 3s ease; -ms-transition: all 3s ease; -o-transition: all 3s ease; transition: all 3s ease; opacity: 1; }
+#qzad .image-holder img.fadeOut { -webkit-animation-name: fadeOut; -moz-animation-name: fadeOut; animation-name: fadeOut; -webkit-animation-duration: 3s; -moz-animation-duration: 3s; animation-duration: 3s; -webkit-animation-timing-function: ease; -moz-animation-timing-function: ease; animation-timing-function: ease; opacity: 0; }
+#qzad .image-holder img.fadeIn { -webkit-animation-name: fadeIn; -moz-animation-name: fadeIn; animation-name: fadeIn; -webkit-animation-duration: 3s; -moz-animation-duration: 3s; animation-duration: 3s; opacity: 1; }
+#qzad #right { position: absolute; top: 0; bottom: 0; right: 0; width: 50%; left: 50%; min-width: 406px; }
+#qzad #right .cta { display: block; position: absolute; left: 9.27272727273%; top: 240px; width: 60.9090909091%; }
+#qzad #right .cta img { width: 100%; }
+#qzad #right div { position: absolute; top: 0; }
+#qzad #right div.head { width: 82.3636363636%; top: 66px; left: 9.27272727273%; }
+#qzad #right div img { display: block; width: 100%; }
+#qzad #right div.partner { top: 384px; right: 4.27272727273%; width: 41.6363636364%; }
+#qzad #right div.partner img { width: 100%; }
+#qzad #right div.contact { top: 406px; left: 9.27272727273%; width: 17.0909090909%; }
+#qzad #right div.contact a { display: inline-block; }
+#qzad #right div.contact a.twitter { width: 31.914893617%; margin-right: 21%; }
+#qzad #right div.contact a.email { width: 40.42553%; }
+#qzad #right div.contact a img { display: block; }
