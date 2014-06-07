@@ -13,12 +13,12 @@
 .right-arrow { background-image: url("../images/right-arrow.png"); right: 6.5px; }
 
 .carousel { display: block; margin-left: -114px; position: absolute; top: 10px; left: 50%; width: 228px; height: 130px; z-index: 2; }
-.carousel li.back { -webkit-transform: scale(0.3); -moz-transform: scale(0.3); transform: scale(0.3); z-index: 0; }
-.carousel li { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; cursor: pointer; overflow: hidden; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; position: absolute; top: 0; left: 0; width: 228px; height: 130px; z-index: 2; }
+.carousel li.back { -webkit-transform: scale(0.3); transform: scale(0.3); z-index: 0; }
+.carousel li { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); -webkit-border-radius: 5px; border-radius: 5px; cursor: pointer; overflow: hidden; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; position: absolute; top: 0; left: 0; width: 228px; height: 130px; z-index: 2; }
 .carousel li .blur { background-color: black; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
 .carousel li img { pointer-events: none; position: absolute; width: 100%; height: 100%; }
 .carousel li a { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; }
-.carousel li.left, .carousel li.right { -webkit-transform: scale(0.8); -moz-transform: scale(0.8); transform: scale(0.8); z-index: 1; }
+.carousel li.left, .carousel li.right { -webkit-transform: scale(0.8); transform: scale(0.8); z-index: 1; }
 .carousel li.left .blur, .carousel li.right .blur { opacity: 0.5; }
-.carousel li.left { left: -73px; right: auto; }
-.carousel li.right { left: auto; right: -73px; }
+.carousel li.left { left: -73px; right: inherit; }
+.carousel li.right { left: inherit; right: -73px; }
