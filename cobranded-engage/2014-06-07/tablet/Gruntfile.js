@@ -66,9 +66,9 @@ module.exports = function(grunt) {
       deploy: {
         options: {
           base: 'http://ads.quartz.cc/sponsors',
-          client: 'house',
-          campaign: 'india',
-          date: '2014-05-22',
+          client: 'ge',
+          campaign: 'cobranded-engage',
+          date: '2014-06-07',
           unit: 'tablet',
           version: '1',
           internal_scripts: [

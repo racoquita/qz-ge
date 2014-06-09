@@ -2,6 +2,8 @@
 
 #qzad { position: absolute; width: 320px; height: 150px; overflow: hidden; background-color: white; }
 
+.noflicker { -webkit-perspective: 1000; -webkit-transform-style: preserve-3d; }
+
 .hide { display: none; }
 
 .bg { background-color: #00639d; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -13,7 +15,7 @@
 .right-arrow { background-image: url("../images/right-arrow.png"); right: 6.5px; }
 
 .carousel { display: block; margin-left: -114px; position: absolute; top: 10px; left: 50%; width: 228px; height: 130px; z-index: 2; }
-.carousel li.back { -webkit-transform: scale(0.3); transform: scale(0.3); z-index: 0; }
+.carousel li.back { -webkit-transform: scale(0.3); transform: scale(0.3); z-index: 0; -webkit-backface-visibility: hidden; }
 .carousel li { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); -webkit-border-radius: 5px; border-radius: 5px; cursor: pointer; overflow: hidden; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; position: absolute; top: 0; left: 0; width: 228px; height: 130px; z-index: 2; }
 .carousel li .blur { background-color: black; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
 .carousel li img { pointer-events: none; position: absolute; width: 100%; height: 100%; }

@@ -4,22 +4,30 @@ body {
 img{
 	display: block;
 }
+a {
+	display: block;
+}
 @-webkit-keyframes fadeOut {
   0% {
     opacity: 1;
   }
-
-  100% {
+  50% {
     opacity: 0;
   }
+  100% {
+  	opacity: 1;
+  }
 }
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
   }
-
-  100% {
+  50% {
     opacity: 0;
+  }
+  100% {
+  	opacity: 1;
   }
 }
 #qzad {
@@ -55,21 +63,20 @@ img{
 			position: absolute;
 			top:0;
 			width: 320px;
-			-webkit-transition: all 3s ease;
-			-moz-transition: all 3s ease;
-			-ms-transition: all 3s ease;
-			-o-transition: all 3s ease;
-			transition: all 3s ease;
 			opacity: 1;
-			&.fadeOut {
+
+			&.cycle {
 			  	-webkit-animation-name: fadeOut;
-			  	animation-name: fadeOut;
-			   	-webkit-animation-duration: 3s;
-				animation-duration: 3s;
+				animation-name: fadeOut;
+				-webkit-animation-duration: 9s;
+				animation-duration: 9s;
+				-webkit-animation-direction: alternate;
+				animation-direction: alternate;
+				-webkit-animation-iteration-count: infinite;
+				animation-iteration-count: infinite;
 				-webkit-animation-timing-function: ease;
 				-moz-animation-timing-function: ease;
-				animation-timing-function: ease;
-				opacity: 0;
+				animation-timing-function: ease;	
 			}
 		}
 	}
@@ -107,11 +114,15 @@ img{
 				display: block;
 				width: 100%;
 			}
-			&.partner{
-				top:61px;
-				left: 228px;
-				width: 80px;
-				
+		}
+		a.partner{
+			position: absolute;
+			left:228px;
+			top:61px;
+			width: 80px;
+
+			img {
+				width: 100%;
 			}
 			
 		}

@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         options: {
           base: 'http://ads.quartz.cc/sponsors',
           client: 'ge',
-          campaign: 'india',
+          campaign: 'cobranded-engage',
           date: '2014-06-07',
           unit: 'desktop',
           version: '1',

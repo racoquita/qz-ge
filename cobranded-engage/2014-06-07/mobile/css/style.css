@@ -2,23 +2,28 @@ body { margin: 0; }
 
 img { display: block; }
 
+a { display: block; }
+
 @-webkit-keyframes fadeOut { 0% { opacity: 1; }
-  100% { opacity: 0; } }
+  50% { opacity: 0; }
+  100% { opacity: 1; } }
 
 @keyframes fadeOut { 0% { opacity: 1; }
-  100% { opacity: 0; } }
+  50% { opacity: 0; }
+  100% { opacity: 1; } }
 
 #qzad { position: absolute; width: 320px; height: 150px; overflow: hidden; background-color: black; }
 #qzad #top { position: absolute; right: 0; top: 0; left: 0; bottom: 75px; overflow: hidden; }
 #qzad .intro { position: relative; width: 200px; margin: 15px auto 0; }
 #qzad .intro img { display: block; width: 100%; }
 #qzad .image-holder { position: absolute; top: 0; }
-#qzad .image-holder img { display: block; position: absolute; top: 0; width: 320px; -webkit-transition: all 3s ease; -moz-transition: all 3s ease; -ms-transition: all 3s ease; -o-transition: all 3s ease; transition: all 3s ease; opacity: 1; }
-#qzad .image-holder img.fadeOut { -webkit-animation-name: fadeOut; animation-name: fadeOut; -webkit-animation-duration: 3s; animation-duration: 3s; -webkit-animation-timing-function: ease; -moz-animation-timing-function: ease; animation-timing-function: ease; opacity: 0; }
+#qzad .image-holder img { display: block; position: absolute; top: 0; width: 320px; opacity: 1; }
+#qzad .image-holder img.cycle { -webkit-animation-name: fadeOut; animation-name: fadeOut; -webkit-animation-duration: 9s; animation-duration: 9s; -webkit-animation-direction: alternate; animation-direction: alternate; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-timing-function: ease; -moz-animation-timing-function: ease; animation-timing-function: ease; }
 #qzad #bottom { position: absolute; bottom: 0; top: 57px; left: 0; right: 0; height: 75px; background: black url(../images/bg-circles.jpg) top right no-repeat; background-size: 101px; }
 #qzad #bottom .cta { display: block; position: absolute; left: 12px; top: 64px; width: 188px; }
 #qzad #bottom .cta img { width: 100%; }
 #qzad #bottom div { position: absolute; top: 0; left: 12px; }
 #qzad #bottom div.head { width: 187px; top: 10px; }
 #qzad #bottom div img { display: block; width: 100%; }
-#qzad #bottom div.partner { top: 61px; left: 228px; width: 80px; }
+#qzad #bottom a.partner { position: absolute; left: 228px; top: 61px; width: 80px; }
+#qzad #bottom a.partner img { width: 100%; }
