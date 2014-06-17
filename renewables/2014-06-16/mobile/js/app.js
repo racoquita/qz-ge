@@ -1,5 +1,6 @@
 var App = function() {
 	var that = this;
+	var swap;
 
 	this.on = function() {
 
@@ -11,7 +12,7 @@ var App = function() {
 		var deleteTypewriterTimer, typewriterTimer;
 
 		// Swap images function
-		function swap(action) {
+		swap = function swap(action) {
 			// Moving slide backwards
 			if(action == 'prev' && currentSlide != 1) {
 				$('.next-pos').removeClass('next-pos').addClass('off-pos');
@@ -132,6 +133,7 @@ var App = function() {
 
 	}
 	this.off = function() {
-
+		var currentSlide = 1;
+		swap('prev');
 	}
 };

@@ -152,7 +152,7 @@ img {
   min-height: 100%;
   width: auto;
   height: auto;
-  background: url(../../GE_WindmillLoop.jpg) no-repeat;
+  background: url(../images/GE_WindmillLoop.jpg) no-repeat;
   background-size: cover;
   z-index: 1;
 }
