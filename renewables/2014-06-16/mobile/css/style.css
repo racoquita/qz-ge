@@ -171,6 +171,7 @@ img {
   bottom: 7px;
   z-index: 10;
   cursor: pointer;
+  width: 28px;
 }
 .logo:hover {
   -ms-transform: scale(0.9);
@@ -242,6 +243,9 @@ ul.slides li.slide.prev-pos {
   text-align: center;
   z-index: 10;
 }
+.dot {
+  width: 6px;
+}
 .dots .dot {
   margin: 0 3px 0 3px;
   opacity: 0.5;
@@ -281,6 +285,9 @@ ul.slides li.slide.prev-pos {
   background-color: #0079C1;
   cursor: pointer;
 }
+.slide-1 .bulletin img {
+  width: 105px;
+}
 .slide-1 .bulletin:hover {
   background-color: #006ba8;
 }
@@ -295,6 +302,7 @@ ul.slides li.slide.prev-pos {
   top: 39px;
   left: 50%;
   margin-left: -114px;
+  width: 227px;
 }
 .slide-2 .click-here:hover {
   opacity: 0.7;
