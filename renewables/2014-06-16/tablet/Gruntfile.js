@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     connect: {
       build: {
         options: {
-          hostname: 'localhost',
+          hostname: '',
           port: 8002,
           base: '',
           open: true
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     qzready: {
       deploy: {
         options: {
-          base: 'http://ads.quartz.cc/sponsors',
+          base: 'http://ads.qz.com/sponsors',
           client: 'ge',
           campaign: 'renewables',
           date: '2014-06-16',

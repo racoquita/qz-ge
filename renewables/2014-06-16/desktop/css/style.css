@@ -148,13 +148,13 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
   background: url(../images/GE_WindmillLoop.jpg) no-repeat;
   background-size: cover;
   z-index: 1;
+  width: 140%;
+  left: -20%;
+  height: 150%;
+  top: -30%;
 }
 .smoke {
   position: absolute;
