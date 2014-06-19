@@ -3,7 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Simple Ad Template</title>
+	<meta name="viewport" content="width=device-width">
+
+	<title>GE - Renewables - Mobile</title>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -23,18 +26,24 @@
 		<ul class="slides">
 			<li class="slide slide-1 current-pos" id="1">
 				<img class="text" src="./images/slide-1-text.png"/>
-				<a href="http://www.ge.com/" target="_blank" class="bulletin"><img src="./images/bulletin.png"/></a>
+				<a href="http://www.ge.com/" target="_blank" class="bulletin ixtrack" data-ix-category="external" data-ix-label="read bulletin now clicked">
+					<img src="./images/bulletin.png"/>
+				</a>
 			</li>
 			<li class="slide slide-2 next-pos" id="2">
-				<a href="https://qz.typeform.com/to/jLb73e" target="_blank"><img class="click-here" src="./images/slide-2-text.png"/></a>
+				<span target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="frame 2 - click here clicked">
+					<img class="click-here" src="./images/slide-2-text.png"/>
+				</span>
 			</li>
 		</ul>
 
 		<!-- Logo, dots, and arrows -->
-		<a href="http://www.ge.com/" target="_blank"><img class="logo" src="./images/ge-logo.png"></a>
+		<a href="http://www.ge.com/" target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="logo clicked">
+			<img class="logo" src="./images/ge-logo.png">
+		</a>
 
-		<img id="prev" class="arrow-left hide prev-slide" src="./images/arrow-left.png">
-		<img id="next" class="arrow-right next-slide" src="./images/arrow-right.png">
+		<img id="prev" class="arrow-left hide prev-slide" src="./images/arrow-left.png" data-ix-category="internal" data-ix-label="previous clicked">
+		<img id="next" class="arrow-right next-slide" src="./images/arrow-right.png" data-ix-category="internal" data-ix-label="next clicked">
 
 		<div class="dots">
 			<img class="dot slide-1-dot prev-slide active" src="./images/dot.png">
@@ -43,6 +52,7 @@
 
 	</div>
 	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

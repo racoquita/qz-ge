@@ -1,15 +1,13 @@
 var App = function() {
 	var that = this;
 	var swap;
+	var items = [];
+	var currentSlide = 1;
+	var slideCount = $('.slides li.slide').length;
+	var currentMinutes = 482;
+	var deleteTypewriterTimer, typewriterTimer;
 
-	this.on = function() {
-
-		// Global variables
-		var items = [];
-		var currentSlide = 1;
-		var slideCount = $('.slides li.slide').length;
-		var currentMinutes = 482;
-		var deleteTypewriterTimer, typewriterTimer;
+	this.on = function() {	
 
 		// Swap images function
 		swap = function swap(action) {
@@ -64,76 +62,23 @@ var App = function() {
 		});
 
 		// Swipe events
-		$(function(){
-			bindSwipes();
+
+		$('.wrapper').swipe({
+			swipe: function(e, direction, distance, duration, fingerCount) {
+				if(direction == 'left') swap('next');
+				if(direction == 'right') swap('prev');
+			}
 		});
 
-		function bindSwipes() {
-			$('.wrapper')
-				.swipeEvents()
-				.bind("swipeLeft",  function(){ swap('next'); })
-				.bind("swipeRight", function(){ swap('prev'); });
-		}
-
-		// Capture swipe events
-		(function($) {
-			$.fn.swipeEvents = function() {
-				return this.each(function() {
-
-					var startX,
-						startY,
-						$this = $(this);
-
-					$this.bind('touchstart', touchstart);
-
-					function touchstart(event) {
-						var touches = event.originalEvent.touches;
-						if (touches && touches.length) {
-							startX = touches[0].pageX;
-							startY = touches[0].pageY;
-							$this.bind('touchmove', touchmove);
-							$this.bind('touchend', touchend);
-						}
-						//event.preventDefault();
-					}
-
-					function touchmove(event) {
-						var touches = event.originalEvent.touches;
-						if (touches && touches.length) {
-							var deltaX = startX - touches[0].pageX;
-							var deltaY = startY - touches[0].pageY;
-
-							if (deltaX >= 50) {
-								$this.trigger("swipeLeft");
-							}
-							if (deltaX <= -50) {
-								$this.trigger("swipeRight");
-							}
-							if (deltaY >= 50) {
-								$this.trigger("swipeUp");
-							}
-							if (deltaY <= -50) {
-								$this.trigger("swipeDown");
-							}
-							if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
-								$this.unbind('touchmove', touchmove);
-								$this.unbind('touchend', touchend);
-							}
-						}
-						//event.preventDefault();
-					}
-
-					function touchend(event) {
-						$this.unbind('touchmove', touchmove);
-						//event.preventDefault();
-					}
-				});
-			};
-		})(jQuery);
+		$('li.slide-2 span').swipe({
+			tap: function(e, target) {
+				window.open('https://qz.typeform.com/to/jLb73e', '_blank');
+			}
+		});
 
 	}
 	this.off = function() {
-		var currentSlide = 1;
+		currentSlide = 1;
 		swap('prev');
 	}
 };
