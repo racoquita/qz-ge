@@ -58,12 +58,21 @@ var App = function() {
 		});
 	};
 
-	this.bindSwipe = function(){
+	this.bindSwipe = function() {
 		$('li').swipe({
 			swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
 				if(direction == 'left') move('left');
 				if(direction == 'right') move('right');
+
+				QZIX.manualTrigger('internal', 'swipe', 'panel swiped', false);
 			}
+		});
+
+		$('.blur').swipe({
+		 	tap:function(e, target) {
+		 		QZIX.manualTrigger('external', 'click', 'final cta clicked', false);
+		 		window.open($(target).data('href'), "_blank");
+		 	}
 		});
 	}
 
@@ -72,9 +81,13 @@ var App = function() {
 
 		$('.left-arrow').on('click', function (e) {
 			move('right');
+
+			QZIX.manualTrigger('internal', 'click', 'panel clicked', false);
 		});
 		$('.right-arrow').on('click', function (e) {
 			move('left');
+
+			QZIX.manualTrigger('internal', 'click', 'panel clicked', false);
 		});
 		introTimer = setTimeout(function () {
 			move('left')

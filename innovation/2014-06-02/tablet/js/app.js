@@ -62,6 +62,8 @@ var App = function() {
 			swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
 				if(direction == 'left') app.swap('clockwise');
 				if(direction == 'right') app.swap('counter-clockwise');
+
+				QZIX.manualTrigger('internal', 'swipe', 'panel swiped', false);
 			}
 		});
 	}
