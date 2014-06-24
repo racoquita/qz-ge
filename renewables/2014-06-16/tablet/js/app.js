@@ -67,12 +67,16 @@ var App = function() {
 			swipe: function(e, direction, distance, duration, fingerCount) {
 				if(direction == 'left') swap('next');
 				if(direction == 'right') swap('prev');
+
+				QZIX.manualTrigger('internal', 'swipe', 'panel swiped', false);
 			}
 		});
 
 		$('li.slide-2 span').swipe({
 			tap: function(e, target) {
 				window.open('https://qz.typeform.com/to/jLb73e', '_blank');
+
+				QZIX.manualTrigger('external', 'click', 'final cta clicked', false);
 			}
 		});
 
