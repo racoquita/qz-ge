@@ -24,7 +24,6 @@ var App = function() {
 		</div>'];
 
 	this.on = function() {
-
 		$('.next-slide').click(function() {
 			that.change(currentSlide + 1);
 		});
