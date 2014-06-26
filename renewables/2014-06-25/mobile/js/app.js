@@ -33,7 +33,7 @@ var App = function() {
 
 		$('.prev-slide').swipe({
 			tap: function(e, target) {
-				that.change(currentSlide + 1);
+				that.change(currentSlide - 1);
 			}
 		});
 
