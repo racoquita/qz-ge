@@ -1,54 +1,56 @@
 var App = function() {
 	var that = this;
-	var swap;
-
-	this.on = function() {
-
-		var slider = new Slider();
-
-		$('.next-slide').click(function() {
-			slider.change('next');
-		});
-
-		$('.prev-slide').click(function() {
-			slider.change('prev');
-		});
-
-	}
-	this.off = function() {
-		var currentSlide = 1;
-		swap('prev');
-	}
-};
-
-var Slider = function() {
 	var currentSlide = 1;
+	var dir = 'next';
 	var slideCount = $('.slides li.slide').length;
 	var slides = [
 		'<div class="slide inactive"> \
 			<img class="text show" src="images/slide-1-text.png"/> \
-			<a href="http://www.ge.com/" target="_blank" class="bulletin ixtrack" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+			<a href="http://qz.com/224275/this-technology-generates-wind-energy-for-indias-least-windy-places/" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
 				<img src="images/bulletin.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive"> \
 			<img class="text" src="images/slide-2-text.png"/> \
-			<a href="http://www.ge.com/" target="_blank" class="bulletin ixtrack" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+			<a href="http://qz.com/217810/indias-most-promising-energy-source-is-free-and-found-nearly-everywhere/" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
 				<img src="images/bulletin.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive"> \
 			<img class="text down" src="images/slide-3-text.png"/> \
-			<a href="https://qz.typeform.com/to/jLb73e" target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
+			<a href="https://qz.typeform.com/to/jLb73e" target="_blank" class="final" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
 				<img class="click-here" src="images/click-here.png"/> \
 			</a> \
 		</div>'];
 
-	this.change = function(dir) {
-		if(dir == 'next') {
-			if(currentSlide == slides.length) return;
+	this.on = function() {
 
-			$('#slides').append(slides[currentSlide]);
+		$('.next-slide').click(function() {
+			that.change(currentSlide + 1);
+		});
+
+		$('.prev-slide').click(function() {
+			that.change(currentSlide - 1);
+		});
+
+		$('.dot').on('click', function(e) {
+			if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
+			QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
+		});
+
+		$('.slide a').on('click', function(e){
+			QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+		});
+	}
+	this.off = function() {
+		that.change(1);
+	}
+	this.change = function(num) {
+		dir = num > currentSlide ? 'next' : 'prev';
+		currentSlide = num;
+
+		if(dir == 'next') {
+			$('#slides').append(slides[currentSlide - 1]);
 			$('.slide.inactive').removeClass('inactive').addClass('right');
 			$('.slide.active').removeClass('active').addClass('left');
 			
@@ -58,14 +60,8 @@ var Slider = function() {
 			setTimeout(function(){
 				$('.slide.left').remove();
 			}, 500);
-
-			currentSlide++;
 		}
 		if(dir == 'prev') {
-			if(currentSlide == 1) return;
-
-			currentSlide--;
-
 			$('#slides').append(slides[currentSlide - 1]);
 			$('.slide.inactive').removeClass('inactive').addClass('left');
 			$('.slide.active').removeClass('active').addClass('right');
@@ -80,5 +76,9 @@ var Slider = function() {
 
 		$('.dot.active').removeClass('active');
 		$('.dot:eq('+ (currentSlide - 1) +')').addClass('active');
+
+		$('.hide').removeClass('hide');
+		if(currentSlide == 1) $('#prev').addClass('hide');
+		if(currentSlide == slides.length) $('#next').addClass('hide');
 	}
 };

@@ -9,30 +9,20 @@
 <body>
 	<div id="qzad" class="wrapper">
 
-		<!-- Bakground Video File -->
-		<!-- <video class="background" width="100%" height="100%" loop="true" autoplay="autoplay">
-			<source src="../GE_WindmillLoop.webm" type="video/webm" />
-			<source src="../GE_WindmillLoop.m4v" type="video/mp4" />
-		</video> -->
 		<img class="background" src="./images/GE_WindmillLoop_tablet.gif">
 
 		<!-- Smoke -->
 		<div class="smoke"></div>
 
 		<!-- Slideshow -->
-		<ul class="slides">
-			<li class="slide slide-1 current-pos" id="1">
-				<img class="text" src="./images/slide-1-text.png"/>
-				<a href="http://www.ge.com/" target="_blank" class="bulletin ixtrack" data-ix-category="external" data-ix-label="read bulletin now clicked">
-					<img src="./images/bulletin.png"/>
+		<div id="slides">
+			<div class="slide active one">
+				<img class="text show" src="images/slide-1-text.png"/>
+				<a href="http://www.ge.com/" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked">
+					<img src="images/bulletin.png"/>
 				</a>
-			</li>
-			<li class="slide slide-2 next-pos" id="2">
-				<span target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="frame 2 - click here clicked">
-					<img class="click-here" src="./images/slide-2-text.png"/>
-				</span>
-			</li>
-		</ul>
+			</div>
+		</div>
 
 		<!-- Logo, dots, and arrows -->
 		<a href="http://www.ge.com/" target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="logo clicked">
@@ -43,8 +33,9 @@
 		<img id="next" class="arrow-right next-slide ixtrack" src="./images/arrow-right.png" data-ix-category="external" data-ix-label="next clicked">
 
 		<div class="dots">
-			<img class="dot slide-1-dot prev-slide active" src="./images/dot.png">
-			<img class="dot slide-2-dot next-slide" src="./images/dot.png">
+			<img class="dot slide-1-dot active" src="images/dot.png" data-num="1">
+			<img class="dot slide-2-dot" src="images/dot.png" data-num="2">
+			<img class="dot slide-3-dot" src="images/dot.png" data-num="3">
 		</div>
 
 	</div>

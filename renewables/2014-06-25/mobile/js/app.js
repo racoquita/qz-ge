@@ -1,86 +1,105 @@
 var App = function() {
 	var that = this;
-	var swap;
-	var items = [];
 	var currentSlide = 1;
+	var dir = 'next';
 	var slideCount = $('.slides li.slide').length;
-	var currentMinutes = 482;
-	var deleteTypewriterTimer, typewriterTimer;
+	var slides = [
+		'<div class="slide inactive one"> \
+			<img class="text show" src="images/slide-1-text.png"/> \
+			<a href="http://qz.com/224275/this-technology-generates-wind-energy-for-indias-least-windy-places/" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="images/bulletin.png"/> \
+			</a> \
+		</div>',
+		'<div class="slide inactive two"> \
+			<img class="text" src="images/slide-2-text.png"/> \
+			<a href="http://qz.com/217810/indias-most-promising-energy-source-is-free-and-found-nearly-everywhere/" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="images/bulletin.png"/> \
+			</a> \
+		</div>',
+		'<div class="slide inactive three"> \
+			<img class="text down" src="images/slide-3-text.png"/> \
+			<a href="https://qz.typeform.com/to/jLb73e" target="_blank" class="final" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
+				<img class="click-here" src="images/click-here.png"/> \
+			</a> \
+		</div>'];
 
-	this.on = function() {	
+	this.on = function() {
 
-		// Swap images function
-		swap = function swap(action) {
-			// Moving slide backwards
-			if(action == 'prev' && currentSlide != 1) {
-				$('.next-pos').removeClass('next-pos').addClass('off-pos');
-				$('.current-pos').removeClass('current-pos').addClass('next-pos');
-				$('.prev-pos').removeClass('prev-pos').addClass('current-pos');
-				$('#'+(currentSlide-2)+'').removeClass('off-pos').addClass('prev-pos');
-				currentSlide--;
+		$('.next-slide').swipe({
+			tap: function(e, target) {
+				that.change(currentSlide + 1);
 			}
-
-			// Moving slide forward
-			if(action == 'next' && currentSlide != slideCount) {
-				$('.prev-pos').removeClass('prev-pos').addClass('off-pos');
-				$('.current-pos').removeClass('current-pos').addClass('prev-pos');
-				$('.next-pos').removeClass('next-pos').addClass('current-pos');
-				$('#'+(currentSlide+2)+'').removeClass('off-pos').addClass('next-pos');
-				currentSlide++;
-			}
-
-			// Animate icons each time
-			//$('.slide .icon, .slide .icon img').removeClass('delay').removeClass('animated').removeClass('bounceIn');
-			//$('.current-pos .icon, .current-pos .icon img').addClass('delay').addClass('animated').addClass('bounceIn');
-
-			// Fade in elements each time
-			//$('.slide .fade-in').removeClass('fade-in-now');
-			//$('.current-pos .fade-in').addClass('fade-in-now');
-
-			// Adjust navigation arrows
-			if (currentSlide == slideCount) {
-				$('#prev').removeClass('hide');
-				$('#next').addClass('hide');
-			} else {
-				$('#prev').addClass('hide');
-				$('#next').removeClass('hide');
-			}
-
-			// Adjust navigation dots (TEMP)
-			$('.dot').removeClass('active');
-			$('.slide-'+currentSlide+'-dot').addClass('active');
-		}
-
-		// Next button click function
-		$('.next-slide').click(function() {
-			swap('next');
 		});
 
-		// Prev button click function
-		$('.prev-slide').click(function() {
-			swap('prev');
+		$('.prev-slide').swipe({
+			tap: function(e, target) {
+				that.change(currentSlide + 1);
+			}
+		});
+
+		$('.dot').swipe({
+			tap: function(e, target) {
+				if(!$(target).hasClass('active')) that.change($(target).data('num'));
+				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(target).data('num'), false);
+			}
+		});
+
+		$('.slide a').swipe({
+			tap: function(e, target) {
+				QZIX.manualTrigger($(target).data('ix-category'), 'click', $(target).data('ix-label'), false);
+			}
 		});
 
 		$('.wrapper').swipe({
 			swipe: function(e, direction, distance, duration, fingerCount) {
-				if(direction == 'left') swap('next');
-				if(direction == 'right') swap('prev');
-
-				QZIX.manualTrigger('internal', 'swipe', 'panel swiped', false);
+				if(direction == 'left') {
+					that.change(currentSlide + 1);
+					QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
+				}
+				if(direction == 'right') {
+					that.change(currentSlide - 1);
+					QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
+				}
 			}
 		});
-
-		$('li.slide-2 span').swipe({
-			tap: function(e, target) {
-				window.open('https://qz.typeform.com/to/jLb73e', '_blank');
-
-				QZIX.manualTrigger('external', 'click', 'final cta clicked', false);
-			}
-		});
-
 	}
 	this.off = function() {
-		var currentSlide = 1;
-		swap('prev');
+		that.change(1);
+	}
+	this.change = function(num) {
+		dir = num > currentSlide ? 'next' : 'prev';
+		currentSlide = num;
+
+		if(dir == 'next') {
+			$('#slides').append(slides[currentSlide - 1]);
+			$('.slide.inactive').removeClass('inactive').addClass('right');
+			$('.slide.active').removeClass('active').addClass('left');
+			
+			setTimeout(function(){
+				$('.slide.right').removeClass('right').addClass('active');
+			}, 100);
+			setTimeout(function(){
+				$('.slide.left').remove();
+			}, 500);
+		}
+		if(dir == 'prev') {
+			$('#slides').append(slides[currentSlide - 1]);
+			$('.slide.inactive').removeClass('inactive').addClass('left');
+			$('.slide.active').removeClass('active').addClass('right');
+			
+			setTimeout(function(){
+				$('.slide.left').removeClass('left').addClass('active');
+			}, 100);
+			setTimeout(function(){
+				$('.slide.right').remove();
+			}, 500);
+		}
+
+		$('.dot.active').removeClass('active');
+		$('.dot:eq('+ (currentSlide - 1) +')').addClass('active');
+
+		$('.hide').removeClass('hide');
+		if(currentSlide == 1) $('#prev').addClass('hide');
+		if(currentSlide == slides.length) $('#next').addClass('hide');
 	}
 };
