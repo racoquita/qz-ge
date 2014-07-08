@@ -5,22 +5,22 @@ var App = function() {
 	var slideCount = $('.slides li.slide').length;
 	var slides = [
 		'<div class="slide inactive one"> \
-			<img class="text show" src="images/slide-1-text.png"/> \
-			<a href="http://qz.com/224275/this-technology-generates-wind-energy-for-indias-least-windy-places/" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="images/bulletin.png"/> \
-			</a> \
+			<img class="text show" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/slide-1-text.png"/> \
+			<span href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/bulletin.png"/> \
+			</span> \
 		</div>',
 		'<div class="slide inactive two"> \
-			<img class="text" src="images/slide-2-text.png"/> \
-			<a href="http://qz.com/217810/indias-most-promising-energy-source-is-free-and-found-nearly-everywhere/" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="images/bulletin.png"/> \
-			</a> \
+			<img class="text" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/slide-2-text.png"/> \
+			<span href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/bulletin.png"/> \
+			</span> \
 		</div>',
 		'<div class="slide inactive three"> \
-			<img class="text down" src="images/slide-3-text.png"/> \
-			<a href="https://qz.typeform.com/to/jLb73e" target="_blank" class="final" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
-				<img class="click-here" src="images/click-here.png"/> \
-			</a> \
+			<img class="text down" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/slide-3-text.png"/> \
+			<span href="http://bit.ly/1kLxp8t" target="_blank" class="final" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
+				<img class="click-here" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/mobile/images/click-here.png"/> \
+			</span> \
 		</div>'];
 
 	this.on = function() {
@@ -44,9 +44,10 @@ var App = function() {
 			}
 		});
 
-		$('.slide a').swipe({
+		$('.slide span').swipe({
 			tap: function(e, target) {
-				QZIX.manualTrigger($(target).data('ix-category'), 'click', $(target).data('ix-label'), false);
+				QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+				window.open($(e.currentTarget).attr('href'), '_blank');
 			}
 		});
 
@@ -101,5 +102,13 @@ var App = function() {
 		$('.hide').removeClass('hide');
 		if(currentSlide == 1) $('#prev').addClass('hide');
 		if(currentSlide == slides.length) $('#next').addClass('hide');
+
+		$('.slide span').swipe('destroy');
+		$('.slide span').swipe({
+			tap: function(e, target) {
+				QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+				window.open($(e.currentTarget).attr('href'), '_blank');
+			}
+		});
 	}
 };
