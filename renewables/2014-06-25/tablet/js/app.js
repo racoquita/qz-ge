@@ -1,3 +1,59 @@
+var QZADPX = function ( options ) {
+  var that = this;
+
+  // Handle the options:
+  // (1) base
+  if ( !options.base ) {
+    throw new Error( 'You must pass in a base link' );
+  }
+  this.base = options.base;
+
+  // (2) el
+  if ( options.el && document.getElementById( options.el ) ) {
+    this.el = document.getElementById( options.el );
+  } else {
+    if ( document.getElementById( 'qzad' ) ) {
+      this.el = document.getElementById( 'qzad' );
+    } else {
+      this.el = document.getElementsByTagName( "BODY" )[0];
+    }
+  }
+
+  // (3) randomness
+  if ( !options.randomness ) {
+    this.randomness = 10;
+  } else if ( options.randomness > 32 ) {
+    this.randomness = 32;
+  } else {
+    this.randomness = options.randomness;
+  }
+
+  this.append = function () {
+    // Create the url for the 1x1.
+    var cacheBuster = '?' + ( Math.random().toString( 36 ).substr( 2, this.randomness ) ); // create the cache busting string.
+    var src         = this.base + cacheBuster; // create the url, appending the cacheBuster.
+    
+    // Create the 1x1.
+    var img = document.createElement( "IMG" );
+        img.style.position = "absolute";
+        img.style.width = "1px";
+        img.style.height = "1px";
+        img.style.top = 0;
+        img.style.left = 0;
+        img.src = src;
+
+    // Append it.
+    this.el.appendChild( img );
+  };
+
+};
+
+var trackers = [
+	'http://bit.ly/1rhDFxo',
+	'http://bit.ly/1rhDIco',
+	'http://bit.ly/1oYOotb'
+];
+
 var App = function() {
 	var that = this;
 	var currentSlide = 1;
@@ -5,22 +61,22 @@ var App = function() {
 	var slideCount = $('.slides li.slide').length;
 	var slides = [
 		'<div class="slide inactive one"> \
-			<img class="text show" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/slide-1-text.png"/> \
-			<span href="http://bit.ly/1mFyQvY" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/bulletin.png"/> \
-			</span> \
+			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/slide-1-text.png"/> \
+			<a href="http://bit.ly/1tWqxzE" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/bulletin.png"/> \
+			</a> \
 		</div>',
 		'<div class="slide inactive two"> \
-			<img class="text" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/slide-2-text.png"/> \
-			<span href="http://bit.ly/1jx3pgT" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/bulletin.png"/> \
-			</span> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/slide-2-text.png"/> \
+			<a href="http://bit.ly/1mFyQvY" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/bulletin.png"/> \
+			</a> \
 		</div>',
 		'<div class="slide inactive three"> \
-			<img class="text down" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/slide-3-text.png"/> \
-			<span href="bit.ly/1iF18QD" target="_blank" class="final" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
-				<img class="click-here" src="http://ads.quartz.cc/sponsors/ge/renewables/2014-06-25/tablet/images/click-here.png"/> \
-			</span> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/slide-3-text.png"/> \
+			<a href="http://bit.ly/1jx3pgT" target="_blank" class="bulletin b-three" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/tablet/images/bulletin.png"/> \
+			</a> \
 		</div>'];
 
 	this.on = function() {
@@ -65,11 +121,19 @@ var App = function() {
 		});
 	}
 	this.off = function() {
-		that.change(1);
+		that.change(1, true);
 	}
-	this.change = function(num) {
+	this.change = function(num, dontTrack) {
 		dir = num > currentSlide ? 'next' : 'prev';
 		currentSlide = num;
+
+		if (!dontTrack) {
+			var base = trackers[num - 1];
+			if (base) {
+				var px = new QZADPX( { "base": base } );
+				px.append();				
+			}
+		}
 
 		if(dir == 'next') {
 			$('#slides').append(slides[currentSlide - 1]);

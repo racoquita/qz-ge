@@ -56,9 +56,9 @@ img { opacity: inherit; }
 #slides .slide.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
 #slides .slide.left { display: block; left: -100%; }
 #slides .slide.right { display: block; left: 100%; }
-#slides .slide.one .text { display: block; margin: 13px auto 0; width: 237px; }
-#slides .slide.two .text { display: block; margin: 13px auto 0; width: 254px; }
-#slides .slide.three .text { display: block; margin: 38px auto 0; width: 227px; }
+#slides .slide.one .text { display: block; margin: 13px auto 0; width: 211px; }
+#slides .slide.two .text { display: block; margin: 13px auto 0; width: 237px; }
+#slides .slide.three .text { display: block; margin: 13px auto 0; width: 254px; }
 #slides .slide.three .click-here { position: absolute; top: 80px; left: 210px; width: 64px; }
 #slides .slide .bulletin { width: 130px; text-align: center; position: absolute; top: 88px; left: 50%; margin-left: -65px; padding-top: 6px; padding-bottom: 1px; background-color: #0079C1; }
 #slides .slide .bulletin img { width: 105px; }
