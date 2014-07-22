@@ -1,3 +1,64 @@
+var QZADPX = function ( options ) {
+  var that = this;
+
+  // Handle the options:
+  // (1) base
+  if ( !options.base ) {
+    throw new Error( 'You must pass in a base link' );
+  }
+  this.base = options.base;
+
+  // (2) el
+  if ( options.el && document.getElementById( options.el ) ) {
+    this.el = document.getElementById( options.el );
+  } else {
+    if ( document.getElementById( 'qzad' ) ) {
+      this.el = document.getElementById( 'qzad' );
+    } else {
+      this.el = document.getElementsByTagName( "BODY" )[0];
+    }
+  }
+
+  // (3) randomness
+  if ( !options.randomness ) {
+    this.randomness = 10;
+  } else if ( options.randomness > 32 ) {
+    this.randomness = 32;
+  } else {
+    this.randomness = options.randomness;
+  }
+
+  this.append = function () {
+    // Create the url for the 1x1.
+    var cacheBuster = '?' + ( Math.random().toString( 36 ).substr( 2, this.randomness ) ); // create the cache busting string.
+    var src         = this.base + cacheBuster; // create the url, appending the cacheBuster.
+    
+    // Create the 1x1.
+    var img = document.createElement( "IMG" );
+        img.style.position = "absolute";
+        img.style.width = "1px";
+        img.style.height = "1px";
+        img.style.top = 0;
+        img.style.left = 0;
+        img.src = src;
+
+    // Append it.
+    this.el.appendChild( img );
+  };
+
+};
+
+var trackers = [
+	'http://bit.ly/1wRnPYt',
+	'http://bit.ly/Un5PIA',
+	'http://bit.ly/1rwfviT',
+	'http://bit.ly/1pweLpa',
+	'http://bit.ly/1n5tB86',
+	'http://bit.ly/1nuBmFI',
+	'http://bit.ly/1rwfz1X',
+	'http://bit.ly/WrGi2H'
+];
+
 var App = function() {
 	var that = this;
 	var items = [];
@@ -67,7 +128,7 @@ var App = function() {
 			}
 		});
 	}
-	this.swap = function(action) {
+	this.swap = function(action, dontTrack) {
 		$('.main-pos').unbind('swipeLeft').unbind('swipeRight');
 		var direction = action;
 
@@ -119,6 +180,14 @@ var App = function() {
 
 			if(startItem > 1) $('#prev').removeClass('hide');
 			if(startItem >= itemCount) $('#next').addClass('hide');
+		}
+
+		if (!dontTrack) {			
+			var base = trackers[startItem - 1];
+			if (base) {
+				var px = new QZADPX( { "base": base } );
+				px.append();				
+			}
 		}
 
 		that.bindSwipe();
