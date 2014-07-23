@@ -93,11 +93,9 @@ var App = function() {
 			}
 		});
 
-		$('.dot').swipe({
-			tap: function(e, target) {
-				if(!$(target).hasClass('active')) that.change($(target).data('num'));
-				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(target).data('num'), false);
-			}
+		$('.dot').on('click', function(e){
+			if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
+				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
 		});
 
 		$('.slide span').swipe({
@@ -121,7 +119,13 @@ var App = function() {
 		});
 	}
 	this.off = function() {
+		$('.dot').off();
+		$('.next-slide').swipe('destroy');
+		$('.prev-slide').swipe('destroy');
+		$('.slide span').swipe('destroy');
+		$('.wrapper').swipe('destroy');
 		that.change(1, true);
+		dir = 'next';
 	}
 	this.change = function(num, dontTrack) {
 		dir = num > currentSlide ? 'next' : 'prev';

@@ -74,28 +74,30 @@ var App = function() {
 			</a> \
 		</div>',
 		'<div class="slide inactive"> \
-			<img class="text" src="images/slide-2-text.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/desktop/images/slide-2-text.png"/> \
 			<a href="http://bit.ly/1nc8a0N" target="_blank" class="bulletin b-three" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
 				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/desktop/images/bulletin.png"/> \
 			</a> \
 		</div>'];
 
 	this.on = function() {
-		$('.next-slide').click(function() {
+		$('.next-slide').off().on('click', function() {
 			that.change(currentSlide + 1);
 		});
 
-		$('.prev-slide').click(function() {
+		$('.prev-slide').off().on('click', function() {
 			that.change(currentSlide - 1);
 		});
 
-		$('.dot').on('click', function(e) {
+		$('.dot').off().on('click', function(e) {
 			if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
 			QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
 		});
 	}
 	this.off = function() {
+		$('.next-slide, .prev-slide, .dot').off();
 		that.change(1, true);
+		dir = 'next';
 	}
 	this.change = function(num, dontTrack) {
 		if (!dontTrack) {
