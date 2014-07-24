@@ -1,12 +1,490 @@
+@import 'fonts';
+
+$blue: #0860AC;
+
+@mixin breakpoint($point) {
+	@if $point == 1050 {
+		@media (max-width : 1100px) {
+			@content; 
+		}
+	}
+	@else if $point == 1000 {
+		@media (max-width : 1050px) {
+			@content; 
+		}
+	}
+	@else if $point == 950 {
+		@media (max-width : 1000px) {
+			@content; 
+		}
+	}
+	@else if $point == 900 {
+		@media (max-width : 950px) {
+			@content; 
+		}
+	}
+	@else if $point == 850 {
+		@media (max-width : 900px) {
+			@content; 
+		}
+	}
+	@else if $point == 800 {
+		@media (max-width : 850px) {
+			@content; 
+		}
+	}
+	@else if $point == 785 {
+		@media (max-width : 835px) {
+			@content; 
+		}
+	}
+}
+
 body {
 	margin: 0;
+}
+a {
+	display: block;
+	color: $blue;
+	text-decoration: none;
 }
 #qzad {
 	position: absolute;
 	width: 100%;
 	height: 480px;
-	min-width: 720px;
+	min-width: 785px;
 	max-width: 1100px;
 	overflow: hidden;
-	background-color: white;
+	border: 1px solid;
+	font-family: "ge_inspira";
+	font-size: 11px;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	background-image: url(../images/clouds.png);
+	background-repeat: repeat-x;
+	background-position: 0 169px;
+	background-size: 1100px 100px;
+	-webkit-animation: animatedBackground 40s linear infinite;
+	   -moz-animation: animatedBackground 40s linear infinite;
+	     -o-animation: animatedBackground 40s linear infinite;
+	        animation: animatedBackground 40s linear infinite;
+
+	@include breakpoint(1050) {
+		background-size: 1050px 95px;
+		-webkit-animation: animatedBackground1050 40s linear infinite;
+		   -moz-animation: animatedBackground1050 40s linear infinite;
+		     -o-animation: animatedBackground1050 40s linear infinite;
+		        animation: animatedBackground1050 40s linear infinite;
+	}
+	@include breakpoint(1000) {
+		background-size: 1000px 91px;
+		-webkit-animation: animatedBackground1000 40s linear infinite;
+		   -moz-animation: animatedBackground1000 40s linear infinite;
+		     -o-animation: animatedBackground1000 40s linear infinite;
+		        animation: animatedBackground1000 40s linear infinite;
+	}
+	@include breakpoint(950) {
+		background-size: 950px 86px;
+		-webkit-animation: animatedBackground950 40s linear infinite;
+		   -moz-animation: animatedBackground950 40s linear infinite;
+		     -o-animation: animatedBackground950 40s linear infinite;
+		        animation: animatedBackground950 40s linear infinite;
+	}
+	@include breakpoint(900) {
+		background-size: 900px 82px;
+		-webkit-animation: animatedBackground900 40s linear infinite;
+		   -moz-animation: animatedBackground900 40s linear infinite;
+		     -o-animation: animatedBackground900 40s linear infinite;
+		        animation: animatedBackground900 40s linear infinite;
+	}
+	@include breakpoint(850) {
+		background-size: 850px 77px;
+		-webkit-animation: animatedBackground850 40s linear infinite;
+		   -moz-animation: animatedBackground850 40s linear infinite;
+		     -o-animation: animatedBackground850 40s linear infinite;
+		        animation: animatedBackground850 40s linear infinite;
+	}
+	@include breakpoint(800) {
+		background-size: 800px 73px;
+		-webkit-animation: animatedBackground800 40s linear infinite;
+		   -moz-animation: animatedBackground800 40s linear infinite;
+		     -o-animation: animatedBackground800 40s linear infinite;
+		        animation: animatedBackground800 40s linear infinite;
+	}
+	@include breakpoint(785) {
+		background-size: 785px 71px;
+		-webkit-animation: animatedBackground785 40s linear infinite;
+		   -moz-animation: animatedBackground785 40s linear infinite;
+		     -o-animation: animatedBackground785 40s linear infinite;
+		        animation: animatedBackground785 40s linear infinite;
+	}
+
+	.wrapper {
+		position: absolute;
+		right: 0;
+		bottom: 72px;
+		left: 0;
+
+		@include breakpoint(1050) {
+			bottom: 75px;
+		}
+		@include breakpoint(1000) {
+			bottom: 79px;
+		}
+		@include breakpoint(950) {
+			bottom: 83px;
+		}
+		@include breakpoint(900) {
+			bottom: 88px;
+		}
+		@include breakpoint(850) {
+			bottom: 93px;
+		}
+		@include breakpoint(800) {
+			bottom: 99px;
+		}
+		@include breakpoint(785) {
+			bottom: 100px;
+		}
+
+		.container {
+			position: relative;
+			margin: 0 auto;
+			width: 1100px;
+			height: 250px;
+			background: url(../images/bg.png) no-repeat center center;
+			background-size: 100% auto;
+
+			@include breakpoint(1050) {
+				width: 1050px;
+			}
+			@include breakpoint(1000) {
+				width: 1000px;
+			}
+			@include breakpoint(950) {
+				width: 950px;
+			}
+			@include breakpoint(900) {
+				width: 900px;
+			}
+			@include breakpoint(850) {
+				width: 850px;
+			}
+			@include breakpoint(800) {
+				width: 800px;
+			}
+			@include breakpoint(785) {
+				width: 785px;
+			}
+		}
+	}
+	.footer {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 72px;
+
+		.footer-container {
+			width: 750px;
+			height: 100%;
+			margin: 0 auto;
+
+			.left {
+				float: left;
+				width: 310px;
+				height: 40px;
+				margin-top: 17px;
+				border-right: 1px solid rgba(68, 136, 200, .5);
+				box-sizing: border-box;
+
+				img {
+					margin: 0 20px 0 0;
+					float: right;
+				}
+				.tagline {
+					display: block;
+					font-size: 38px;
+					height: 100%;
+					line-height: 40px;
+					float: right;
+					padding-right: 28px;
+				}
+			}
+			.right {
+				float: right;
+				width: 439px;
+				height: 40px;
+				margin-top: 17px;
+				padding-left: 28px;
+				line-height: 40px;
+				font-size: 19px;
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes animatedBackground {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 1100px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1100px 169px; 
+	}
+}
+@-o-keyframes animatedBackground {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1100px 169px; 
+	}
+}
+@keyframes animatedBackground {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1100px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground1050 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 1050px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground1050 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1050px 169px; 
+	}
+}
+@-o-keyframes animatedBackground1050 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1050px 169px; 
+	}
+}
+@keyframes animatedBackground1050 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1050px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground1000 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 1000px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground1000 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1000px 169px; 
+	}
+}
+@-o-keyframes animatedBackground1000 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1000px 169px; 
+	}
+}
+@keyframes animatedBackground1000 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 1000px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground950 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 950px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground950 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 950px 169px; 
+	}
+}
+@-o-keyframes animatedBackground950 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 950px 169px; 
+	}
+}
+@keyframes animatedBackground950 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 950px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground900 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 900px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground900 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 900px 169px; 
+	}
+}
+@-o-keyframes animatedBackground900 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 900px 169px; 
+	}
+}
+@keyframes animatedBackground900 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 900px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground850 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 850px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground850 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 850px 169px; 
+	}
+}
+@-o-keyframes animatedBackground850 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 850px 169px; 
+	}
+}
+@keyframes animatedBackground850 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 850px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground800 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 800px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground800 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 800px 169px; 
+	}
+}
+@-o-keyframes animatedBackground800 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 800px 169px; 
+	}
+}
+@keyframes animatedBackground800 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 800px 169px; 
+	}
+}
+
+@-webkit-keyframes animatedBackground785 {
+	0% { 
+		background-position: 0 169px;
+	}
+	100% { 
+		background-position: 785px 169px; 
+	}
+}
+@-moz-keyframes animatedBackground785 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 785px 169px; 
+	}
+}
+@-o-keyframes animatedBackground785 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 785px 169px; 
+	}
+}
+@keyframes animatedBackground785 {
+	0% { 
+		background-position: 0 169px; 
+	}
+	100% { 
+		background-position: 785px 169px; 
+	}
 }
