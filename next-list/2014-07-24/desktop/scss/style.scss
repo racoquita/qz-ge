@@ -119,6 +119,167 @@ a {
 		        animation: animatedBackground785 40s linear infinite;
 	}
 
+	.instructions {
+		position: absolute;
+		top: 10px;
+		width: 100%;
+		font-size: 12px;
+		text-align: center;
+		color: $blue;
+	}
+	.items-container {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		left: 0;
+		height: 150px;
+
+		@include breakpoint(950) {
+			top: 25px;
+		}
+
+		ul.items {
+			width: 1060px;
+			margin: 0 auto;
+			padding: 0;
+			list-style-type: none;
+
+			@include breakpoint(1050) {
+				width: 1008px;
+			}
+			@include breakpoint(1000) {
+				width: 960px;
+			}
+			@include breakpoint(950) {
+				width: 912px;
+			}
+			@include breakpoint(900) {
+				width: 864px;
+			}
+			@include breakpoint(850) {
+				width: 816px;
+			}
+			@include breakpoint(800) {
+				width: 768px;
+			}
+			@include breakpoint(785) {
+				width: 750px;
+			}
+
+			li.item {
+				float: left;
+				width: 176px;
+				height: 100%;
+
+				@include breakpoint(1050) {
+					width: 168px;
+				}
+				@include breakpoint(1000) {
+					width: 160px;
+				}
+				@include breakpoint(950) {
+					width: 152px;
+				}
+				@include breakpoint(900) {
+					width: 144px;
+				}
+				@include breakpoint(850) {
+					width: 136px;
+				}
+				@include breakpoint(800) {
+					width: 128px;
+				}
+				@include breakpoint(785) {
+					width: 125px;
+				}
+
+				.icon {
+					height: 75px;
+
+					@include breakpoint(950) {
+						height: 60px;
+					}
+
+					&.extreme-machines {
+						background: url(../images/extreme-machines.svg) no-repeat center bottom;
+						background-size: 85px 74px;
+
+						@include breakpoint(950) {
+							background-size: 65px 56px;
+						}
+					}
+					&.super-materials {
+						background: url(../images/super-materials.svg) no-repeat center bottom;
+						background-size: 104px 56px;
+
+						@include breakpoint(950) {
+							background-size: 80px 30px;
+						}
+					}
+					&.industrial-internet {
+						background: url(../images/industrial-internet.svg) no-repeat center bottom;
+						background-size: 141px 52px;
+
+						@include breakpoint(950) {
+							background-size: 108px 40px;
+						}
+					}
+					&.mapped-minds {
+						background: url(../images/mapped-minds.svg) no-repeat center bottom;
+						background-size: 68px 55px;
+
+						@include breakpoint(950) {
+							background-size: 52px 43px;
+						}
+					}
+					&.brilliant-factories {
+						background: url(../images/brilliant-factories.svg) no-repeat center bottom;
+						background-size: 65px 61px;
+
+						@include breakpoint(950) {
+							background-size: 50px 47px;
+						}
+					}
+					&.energy-everywhere {
+						background: url(../images/energy-everywhere.svg) no-repeat center bottom;
+						background-size: 89px 61px;
+
+						@include breakpoint(950) {
+							background-size: 68px 47px;
+						}
+					}
+				}
+				.content {
+					.title {
+						display: block;
+						width: 100%;
+						margin-top: 16px;
+						color: $blue;
+						font-size: 13px;
+						text-align: center;
+						text-transform: uppercase;
+
+						@include breakpoint(950) {
+							font-size: 12px;
+						}
+					}
+					.text {
+						display: block;
+						width: 100%;
+						margin-top: 6px;
+						color: $blue;
+						font-size: 11px;
+						text-align: center;
+
+						@include breakpoint(950) {
+							font-size: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+		
 	.wrapper {
 		position: absolute;
 		right: 0;
