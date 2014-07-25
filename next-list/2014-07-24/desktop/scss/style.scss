@@ -47,6 +47,12 @@ a {
 	display: block;
 	color: $blue;
 	text-decoration: none;
+	outline: none;
+	border: none;
+}
+img {
+	outline: none;
+	border: none;
 }
 #qzad {
 	position: absolute;
@@ -728,11 +734,19 @@ a {
 			}
 			.waves {
 				position: absolute;
+				top: 57.80%;
+				left: 11.82%;
+				
+				-webkit-transform: scale(1);
+				   -moz-transform: scale(1);
+					    transform: scale(1);
 				-webkit-animation:waves 6s linear infinite;
 			       -moz-animation:waves 6s linear infinite;
 			            animation:waves 6s linear infinite;
 
 				@include breakpoint(1050) {
+					top: 57.80%;
+					left: 10.82%;
 					-webkit-transform: scale(.9545);
 					-moz-transform: scale(.9545);
 					transform: scale(.9545);
@@ -742,6 +756,8 @@ a {
 				            animation:waves1050 6s linear infinite;
 				}
 				@include breakpoint(1000) {
+					top: 56.80%;
+					left: 9.82%;
 					-webkit-transform: scale(.9090);
 					-moz-transform: scale(.9090);
 					transform: scale(.9090);
@@ -751,6 +767,8 @@ a {
 				            animation:waves1000 6s linear infinite;
 				}
 				@include breakpoint(950) {
+					top: 56.30%;
+					left: 8.82%;
 					-webkit-transform: scale(.8636);
 					-moz-transform: scale(.8636);
 					transform: scale(.8636);
@@ -760,6 +778,8 @@ a {
 				            animation:waves950 6s linear infinite;
 				}
 				@include breakpoint(900) {
+					top: 55.80%;
+					left: 8.32%;
 					-webkit-transform: scale(.8181);
 					-moz-transform: scale(.8181);
 					transform: scale(.8181);
@@ -769,6 +789,8 @@ a {
 				            animation:waves900 6s linear infinite;
 				}
 				@include breakpoint(850) {
+					top: 54.80%;
+					left: 7.32%;
 					-webkit-transform: scale(.7727);
 					-moz-transform: scale(.7727);
 					transform: scale(.7727);
@@ -778,6 +800,8 @@ a {
 				            animation:waves850 6s linear infinite;
 				}
 				@include breakpoint(800) {
+					top: 53.80%;
+					left: 6.32%;
 					-webkit-transform: scale(.7272);
 					-moz-transform: scale(.7272);
 					transform: scale(.7272);
@@ -787,6 +811,8 @@ a {
 				            animation:waves800 6s linear infinite;
 				}
 				@include breakpoint(785) {
+					top: 53.30%;
+					left: 5.82%;
 					-webkit-transform: scale(.7136);
 					-moz-transform: scale(.7136);
 					transform: scale(.7136);

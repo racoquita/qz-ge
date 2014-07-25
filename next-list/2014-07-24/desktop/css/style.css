@@ -2,7 +2,9 @@
 
 body { margin: 0; }
 
-a { display: block; color: #0860ac; text-decoration: none; }
+a { display: block; color: #0860ac; text-decoration: none; outline: none; border: none; }
+
+img { outline: none; border: none; }
 
 #qzad { position: absolute; width: 100%; height: 480px; min-width: 785px; max-width: 1100px; overflow: hidden; border: 1px solid; font-family: "ge_inspira"; font-size: 11px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 1100px 100px; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 @media (max-width: 1100px) { #qzad { background-size: 1050px 95px; -webkit-animation: animatedBackground1050 40s linear infinite; -moz-animation: animatedBackground1050 40s linear infinite; animation: animatedBackground1050 40s linear infinite; } }
@@ -163,14 +165,14 @@ a { display: block; color: #0860ac; text-decoration: none; }
 @media (max-width: 900px) { #qzad .wrapper .container .wind.wind-3 { top: 98px; left: 697px; } }
 @media (max-width: 850px) { #qzad .wrapper .container .wind.wind-3 { top: 98px; left: 655px; } }
 @media (max-width: 835px) { #qzad .wrapper .container .wind.wind-3 { top: 98px; left: 643px; } }
-#qzad .wrapper .container .waves { position: absolute; -webkit-animation: waves 6s linear infinite; -moz-animation: waves 6s linear infinite; animation: waves 6s linear infinite; }
-@media (max-width: 1100px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.9545); -moz-transform: scale(0.9545); transform: scale(0.9545); -webkit-animation: waves1050 6s linear infinite; -moz-animation: waves1050 6s linear infinite; animation: waves1050 6s linear infinite; } }
-@media (max-width: 1050px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.909); -moz-transform: scale(0.909); transform: scale(0.909); -webkit-animation: waves1000 6s linear infinite; -moz-animation: waves1000 6s linear infinite; animation: waves1000 6s linear infinite; } }
-@media (max-width: 1000px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.8636); -moz-transform: scale(0.8636); transform: scale(0.8636); -webkit-animation: waves950 6s linear infinite; -moz-animation: waves950 6s linear infinite; animation: waves950 6s linear infinite; } }
-@media (max-width: 950px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.8181); -moz-transform: scale(0.8181); transform: scale(0.8181); -webkit-animation: waves900 6s linear infinite; -moz-animation: waves900 6s linear infinite; animation: waves900 6s linear infinite; } }
-@media (max-width: 900px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.7727); -moz-transform: scale(0.7727); transform: scale(0.7727); -webkit-animation: waves850 6s linear infinite; -moz-animation: waves850 6s linear infinite; animation: waves850 6s linear infinite; } }
-@media (max-width: 850px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.7272); -moz-transform: scale(0.7272); transform: scale(0.7272); -webkit-animation: waves800 6s linear infinite; -moz-animation: waves800 6s linear infinite; animation: waves800 6s linear infinite; } }
-@media (max-width: 835px) { #qzad .wrapper .container .waves { -webkit-transform: scale(0.7136); -moz-transform: scale(0.7136); transform: scale(0.7136); -webkit-animation: waves785 6s linear infinite; -moz-animation: waves785 6s linear infinite; animation: waves785 6s linear infinite; } }
+#qzad .wrapper .container .waves { position: absolute; top: 57.80%; left: 11.82%; -webkit-transform: scale(1); -moz-transform: scale(1); transform: scale(1); -webkit-animation: waves 6s linear infinite; -moz-animation: waves 6s linear infinite; animation: waves 6s linear infinite; }
+@media (max-width: 1100px) { #qzad .wrapper .container .waves { top: 57.80%; left: 10.82%; -webkit-transform: scale(0.9545); -moz-transform: scale(0.9545); transform: scale(0.9545); -webkit-animation: waves1050 6s linear infinite; -moz-animation: waves1050 6s linear infinite; animation: waves1050 6s linear infinite; } }
+@media (max-width: 1050px) { #qzad .wrapper .container .waves { top: 56.80%; left: 9.82%; -webkit-transform: scale(0.909); -moz-transform: scale(0.909); transform: scale(0.909); -webkit-animation: waves1000 6s linear infinite; -moz-animation: waves1000 6s linear infinite; animation: waves1000 6s linear infinite; } }
+@media (max-width: 1000px) { #qzad .wrapper .container .waves { top: 56.30%; left: 8.82%; -webkit-transform: scale(0.8636); -moz-transform: scale(0.8636); transform: scale(0.8636); -webkit-animation: waves950 6s linear infinite; -moz-animation: waves950 6s linear infinite; animation: waves950 6s linear infinite; } }
+@media (max-width: 950px) { #qzad .wrapper .container .waves { top: 55.80%; left: 8.32%; -webkit-transform: scale(0.8181); -moz-transform: scale(0.8181); transform: scale(0.8181); -webkit-animation: waves900 6s linear infinite; -moz-animation: waves900 6s linear infinite; animation: waves900 6s linear infinite; } }
+@media (max-width: 900px) { #qzad .wrapper .container .waves { top: 54.80%; left: 7.32%; -webkit-transform: scale(0.7727); -moz-transform: scale(0.7727); transform: scale(0.7727); -webkit-animation: waves850 6s linear infinite; -moz-animation: waves850 6s linear infinite; animation: waves850 6s linear infinite; } }
+@media (max-width: 850px) { #qzad .wrapper .container .waves { top: 53.80%; left: 6.32%; -webkit-transform: scale(0.7272); -moz-transform: scale(0.7272); transform: scale(0.7272); -webkit-animation: waves800 6s linear infinite; -moz-animation: waves800 6s linear infinite; animation: waves800 6s linear infinite; } }
+@media (max-width: 835px) { #qzad .wrapper .container .waves { top: 53.30%; left: 5.82%; -webkit-transform: scale(0.7136); -moz-transform: scale(0.7136); transform: scale(0.7136); -webkit-animation: waves785 6s linear infinite; -moz-animation: waves785 6s linear infinite; animation: waves785 6s linear infinite; } }
 #qzad .footer { position: absolute; right: 0; bottom: 0; left: 0; height: 72px; }
 #qzad .footer .footer-container { width: 750px; height: 100%; margin: 0 auto; }
 #qzad .footer .footer-container .left { float: left; width: 310px; height: 40px; margin-top: 17px; border-right: 1px solid rgba(68, 136, 200, 0.5); box-sizing: border-box; }
