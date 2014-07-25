@@ -9,4 +9,131 @@ body {
 	height: 150px;
 	overflow: hidden;
 	background-color: white;
+
+	.content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 826px;
+		height: 150px;
+		background-image: url(../images/bg.png);
+		background-repeat: no-repeat;
+		background-size: auto 150px;
+		background-position: 115px 0;
+		-webkit-transition: all .5s ease;
+		     -o-transition: all .5s ease;
+		        transition: all .5s ease;
+
+		.frame {
+			opacity: 0;
+			-webkit-transition: all .5s ease;
+		     	 -o-transition: all .5s ease;
+		        	transition: all .5s ease;
+
+			&.show {
+				opacity: 1;
+			}
+		    &.zero {
+				position: absolute;
+				top: 10px;
+				left: 15px;
+				width: 176px;
+
+				img {
+					width: 100%;
+				}
+			}
+			&.one {
+				position: absolute;
+				top: 12px;
+				left: 197px;
+
+				img.extreme-machines {
+					position: absolute;
+					top: 2px;
+					width: 54px;	
+				}
+				img.text {
+					position: absolute;
+					top: 0;
+					left: 70px;
+					width: 145px;
+				}
+			}
+			&.two {
+				position: absolute;
+				top: 12px;
+				left: 300px;
+
+				img.super-materials {
+					position: absolute;
+					top: 6px;
+					width: 73px;	
+				}
+				img.text {
+					position: absolute;
+					top: 0;
+					left: 90px;
+					width: 130px;
+				}
+			}
+			&.three {
+				position: absolute;
+				top: 12px;
+				left: 410px;
+
+				img.industrial-internet {
+					position: absolute;
+					top: 2px;
+					width: 88px;	
+				}
+				img.text {
+					position: absolute;
+					top: 0;
+					left: 100px;
+					width: 188px;
+				}
+			}
+			&.four {
+				position: absolute;
+				top: 12px;
+				left: 532px;
+
+				img.mapped-minds {
+					position: absolute;
+					top: 2px;
+					width: 48px;	
+				}
+				img.text {
+					position: absolute;
+					top: 0;
+					left: 70px;
+					width: 157px;
+				}
+			}
+			&.five {
+				position: absolute;
+				top: 12px;
+				left: 650px;
+
+				img.energy-everywhere {
+					position: absolute;
+					top: 7px;
+					width: 69px;	
+				}
+				img.text {
+					position: absolute;
+					top: 31px;
+					left: 85px;
+					width: 158px;
+				}
+				img.logo {
+					position: absolute;
+					top: 102px;
+					left: 205px;
+					width: 35px;
+				}
+			}
+		}
+	}
 }
