@@ -9,6 +9,6 @@ var App = function() {
 		});
 	}
 	this.off = function() {
-
+		$('li.item').off();
 	}
 };

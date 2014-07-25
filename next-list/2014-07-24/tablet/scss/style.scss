@@ -1,12 +1,103 @@
+@import 'fonts';
+
+$blue: #0860AC;
+
 body {
 	margin: 0;
 }
 #qzad {
 	position: absolute;
-	width: 100%;
-	height: 480px;
-	min-width: 720px;
-	max-width: 1100px;
+	width: 480px;
+	height: 550px;
 	overflow: hidden;
-	background-color: white;
+	font-family: "ge_inspira";
+	font-size: 11px;
+	box-sizing: border-box;
+    padding: 27px;
+	background: url(../images/bg.jpg) no-repeat center center;
+	background-size: 100% 100%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+
+    .header {
+    	display: block;
+    	position: absolute;
+    	top: 15px;
+    	right: 0;
+    	left: 0;
+    	height: 50px;
+    	background: url(../images/header.png) no-repeat center center;
+    	background-size: 426px auto;
+    }
+    ul.items {
+    	position: absolute;
+    	top: 89px;
+    	right: 27px;
+    	left: 27px;
+    	margin: 0;
+    	padding: 0;
+    	list-style-type: none;
+
+    	li.item {
+    		width: 140px;
+    		height: 140px;
+    		float: left;
+
+    		&.extreme-machines {
+				background: url(../images/extreme-machines.png) no-repeat 9px 11px;
+				background-size: 70px 106px;
+			}
+			&.super-materials {
+				background: url(../images/super-materials.png) no-repeat 13px 24px;
+				background-size: 96px 94px;
+			}
+			&.industrial-internet {
+				background: url(../images/industrial-internet.png) no-repeat 27px 33px;
+				background-size: 106px 85px;
+			}
+			&.mapped-minds {
+				background: url(../images/mapped-minds.png) no-repeat 18px 18px;
+				background-size: 61px 91px;
+			}
+			&.brilliant-factories {
+				background: url(../images/brilliant-factories.png) no-repeat 30px 11px;
+				background-size: 68px 99px;
+			}
+			&.energy-everywhere {
+				background: url(../images/energy-everywhere.png) no-repeat 38px 16px;
+				background-size: 85px 94px;
+			}
+    	}
+    }
+    .showcase {
+		position: absolute;
+		z-index: 101;
+		top: 76px;
+		right: 15px;
+		bottom: 14px;
+		left: 15px;
+		box-sizing: border-box;
+		background-color: rgba(0,0,0,.12);
+		padding: 13px 12px 14px 12px;
+		display: none;
+
+		.content {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: white;
+
+			.x {
+				position: absolute;
+				top: 9px;
+				right: 11px;
+				width: 15px;
+				height: 17px;
+			}
+			.area {
+				width: 100%;
+			}
+		}
+	}
 }
