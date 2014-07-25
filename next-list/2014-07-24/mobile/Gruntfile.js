@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     connect: {
       build: {
         options: {
-          hostname: 'localhost',
+          hostname: '',
           port: 8002,
           base: '',
           open: true
