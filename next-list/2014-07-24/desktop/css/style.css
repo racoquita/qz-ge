@@ -51,8 +51,8 @@ a { display: block; color: #0860ac; text-decoration: none; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon { height: 60px; } }
 #qzad .items-container ul.items li.item .icon.extreme-machines { background: url(../images/extreme-machines.svg) no-repeat center bottom; background-size: 85px 74px; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.extreme-machines { background-size: 65px 56px; } }
-#qzad .items-container ul.items li.item .icon.super-materials { background: url(../images/super-materials.svg) no-repeat center bottom; background-size: 104px 56px; }
-@media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.super-materials { background-size: 80px 30px; } }
+#qzad .items-container ul.items li.item .icon.super-materials { background: url(../images/super-materials.svg) no-repeat center bottom; background-size: 104px 55px; }
+@media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.super-materials { background-size: 80px 43px; } }
 #qzad .items-container ul.items li.item .icon.industrial-internet { background: url(../images/industrial-internet.svg) no-repeat center bottom; background-size: 141px 52px; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.industrial-internet { background-size: 108px 40px; } }
 #qzad .items-container ul.items li.item .icon.mapped-minds { background: url(../images/mapped-minds.svg) no-repeat center bottom; background-size: 68px 55px; }

@@ -260,10 +260,10 @@ a {
 					}
 					&.super-materials {
 						background: url(../images/super-materials.svg) no-repeat center bottom;
-						background-size: 104px 56px;
+						background-size: 104px 55px;
 
 						@include breakpoint(950) {
-							background-size: 80px 30px;
+							background-size: 80px 43px;
 						}
 					}
 					&.industrial-internet {
