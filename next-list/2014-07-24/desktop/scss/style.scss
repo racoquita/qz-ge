@@ -132,6 +132,7 @@ a {
 
 		ul.items {
 			width: 1060px;
+			height: 260px;
 			margin: 0 auto;
 			padding: 0;
 			list-style-type: none;
@@ -144,6 +145,7 @@ a {
 			}
 			@include breakpoint(950) {
 				width: 912px;
+				height: 240px;
 			}
 			@include breakpoint(900) {
 				width: 864px;
@@ -163,33 +165,82 @@ a {
 				width: 176px;
 				height: 100%;
 
-				&.active {
-					.content {
-						.text {
-							display: block;
-						}
-					}
+				&:nth-child(3) {
+					width: 196px;
 				}
+				&:nth-child(4), &:nth-child(5) {
+					width: 166px;
+				}
+
 				@include breakpoint(1050) {
 					width: 168px;
+
+					&:nth-child(3) {
+						width: 187px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 158px;
+					}
 				}
 				@include breakpoint(1000) {
 					width: 160px;
+
+					&:nth-child(3) {
+						width: 178px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 151px;
+					}
 				}
 				@include breakpoint(950) {
 					width: 152px;
+
+					&:nth-child(3) {
+						width: 169px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 143px;
+					}
 				}
 				@include breakpoint(900) {
 					width: 144px;
+
+					&:nth-child(3) {
+						width: 160px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 136px;
+					}
 				}
 				@include breakpoint(850) {
 					width: 136px;
+
+					&:nth-child(3) {
+						width: 151px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 128px;
+					}
 				}
 				@include breakpoint(800) {
 					width: 128px;
+
+					&:nth-child(3) {
+						width: 142px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 120px;
+					}
 				}
 				@include breakpoint(785) {
 					width: 125px;
+
+					&:nth-child(3) {
+						width: 140px;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						width: 117px;
+					}
 				}
 
 				.icon {
@@ -272,6 +323,231 @@ a {
 
 						@include breakpoint(950) {
 							font-size: 10px;
+						}
+					}
+				}
+				&.active {
+					.content {
+						.text {
+							display: block;
+						}
+					}
+					.line {
+						position: relative;
+						z-index: 101;
+						-webkit-transform: scale(1);
+						-moz-transform: scale(1);
+						transform: scale(1);
+
+						@include breakpoint(1050) {
+							-webkit-transform: scale(.9545);
+							-moz-transform: scale(.9545);
+							transform: scale(.9545);
+						}
+						@include breakpoint(1000) {
+							-webkit-transform: scale(.9090);
+							-moz-transform: scale(.9090);
+							transform: scale(.9090);
+						}
+						@include breakpoint(950) {
+							-webkit-transform: scale(.8636);
+							-moz-transform: scale(.8636);
+							transform: scale(.8636);
+						}
+						@include breakpoint(900) {
+							-webkit-transform: scale(.8181);
+							-moz-transform: scale(.8181);
+							transform: scale(.8181);
+						}
+						@include breakpoint(850) {
+							-webkit-transform: scale(.7727);
+							-moz-transform: scale(.7727);
+							transform: scale(.7727);
+						}
+						@include breakpoint(800) {
+							-webkit-transform: scale(.7272);
+							-moz-transform: scale(.7272);
+							transform: scale(.7272);
+						}
+						@include breakpoint(785) {
+							-webkit-transform: scale(.7136);
+							-moz-transform: scale(.7136);
+							transform: scale(.7136);
+						}
+
+						&.line-1 {
+							background: url(../images/lines/line-1100-01.svg) no-repeat;
+							background-position: 86% 10px;
+							background-size: 73px 96px;
+							width: 100%;
+							height: 106px;
+
+							@include breakpoint(1050) {
+								background-position: 86% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 86% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 94% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 100% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 100% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 100% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 100% 0;
+							}
+						}
+						&.line-2 {
+							background: url(../images/lines/line-1100-02.svg) no-repeat;
+							background-position: 50% 10px;
+							background-size: 9px 48px;
+							width: 100%;
+							height: 58px;
+
+							@include breakpoint(1050) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 50% 0;
+							}
+						}
+						&.line-3 {
+							background: url(../images/lines/line-1100-03.svg) no-repeat;
+							background-position: 60% 10px;
+							background-size: 31px 52px;
+							width: 100%;
+							height: 72px;
+
+							@include breakpoint(1050) {
+								background-position: 60% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 60% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 60% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 60% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 60% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 60% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 60% 0;
+							}
+						}
+						&.line-4 {
+							background: url(../images/lines/line-1100-04.svg) no-repeat;
+							background-position: 50% 10px;
+							background-size: 9px 64px;
+							width: 100%;
+							height: 74px;
+
+							@include breakpoint(1050) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 50% 0;
+							}
+						}
+						&.line-5 {
+							background: url(../images/lines/line-1100-05.svg) no-repeat;
+							background-position: 50% 10px;
+							background-size: 9px 64px;
+							width: 100%;
+							height: 74px;
+
+							@include breakpoint(1050) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 50% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 50% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 50% 0;
+							}
+						}
+						&.line-6 {
+							background: url(../images/lines/line-1100-06.svg) no-repeat;
+							background-position: 28% 10px;
+							background-size: 60px 91px;
+							width: 100%;
+							height: 101px;
+
+							@include breakpoint(1050) {
+								background-position: 28% 10px;
+							}
+							@include breakpoint(1000) {
+								background-position: 28% 10px;
+							}
+							@include breakpoint(950) {
+								background-position: 20% 0;
+							}
+							@include breakpoint(900) {
+								background-position: 20% 0;
+							}
+							@include breakpoint(850) {
+								background-position: 20% 0;
+							}
+							@include breakpoint(800) {
+								background-position: 20% 0;
+							}
+							@include breakpoint(785) {
+								background-position: 20% 0;
+							}
 						}
 					}
 				}
