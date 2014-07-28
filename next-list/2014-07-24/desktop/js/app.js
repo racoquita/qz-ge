@@ -3,7 +3,6 @@ var App = function() {
 
 	this.on = function() {
 		that.loadSvgs();
-		that.handleSvgs();
 
 		$('li.item').on('mouseenter', function(e){
 			$(e.currentTarget).addClass('active');
@@ -133,11 +132,56 @@ var App = function() {
 			var em = Snap('.mapped-minds');
 				em.append(svg);
 			var snap = Snap('#mapped-minds');
+			var gradientH = snap.select('#mapGradientH');
+			var gradientV = snap.select('#mapGradientV');
+
+			var animateGradientForward = function() {
+				gradientH.stop().animate({
+					x1: "25%",
+					y1: "0%"
+				}, 350, mina.linear, function() {
+					animateGradientBackward();
+				});
+
+				gradientV.stop().animate({
+					x1: "0%",
+					y1: "25%"
+				}, 350, mina.linear);
+			}
+
+			var animateGradientBackward = function() {
+				gradientH.stop().animate({
+					x1: "0px",
+					y1: "0%"
+				}, 350, mina.linear, function() {
+					animateGradientForward();
+				});
+
+				gradientV.stop().animate({
+					x1: "0%",
+					y1: "0px"
+				}, 350, mina.linear);
+			}
 
 			$('.mapped-minds').parent('.item').on('mouseenter', function(e){
-				
+				snap.select('#pathways1').attr({
+					fill: 'url(#mapGradientH)'
+				});
+				snap.select('#pathways2').attr({
+					fill: 'url(#mapGradientV)'
+				});
+
+				animateGradientForward();
 			}).on('mouseleave', function(e){
-				
+				gradientH.stop();
+				gradientV.stop();
+
+				snap.select('#pathways1').attr({
+					fill: '#D42027'
+				});
+				snap.select('#pathways2').attr({
+					fill: '#D42027'
+				});
 			});
 		});
 
@@ -158,16 +202,20 @@ var App = function() {
 			var em = Snap('.energy-everywhere');
 				em.append(svg);
 			var snap = Snap('#energy-everywhere');
+			var bolts = $('.bolts polygon');
+			var interval;
 
 			$('.energy-everywhere').parent('.item').on('mouseenter', function(e){
-				
+				interval = setInterval(function(){
+					$.each(bolts, function(i, bolt){
+						Math.random() > .5 ? $(bolt).hide() : $(bolt).show();
+					});
+				}, 250);
 			}).on('mouseleave', function(e){
-				
+				clearInterval(interval);
+				bolts.show();
 			});
 		});
 
-	}
-	this.handleSvgs = function() {
-		
 	}
 };
