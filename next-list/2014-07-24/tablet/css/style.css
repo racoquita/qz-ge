@@ -1,6 +1,7 @@
 body { margin: 0; }
 
-#qzad { position: absolute; width: 480px; height: 550px; overflow: hidden; font-family: "ge_inspira"; font-size: 11px; box-sizing: border-box; padding: 27px; background: url(../images/bg.jpg) no-repeat center center; background-size: 100% 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
+#qzad { position: absolute; width: 480px; height: 550px; overflow: hidden; font-family: "ge_inspira"; font-size: 11px; box-sizing: border-box; padding: 27px; background: url(../images/clouds.jpg) no-repeat center center; background-size: 100% 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
+#qzad .bg { position: absolute; right: 0; bottom: 0; left: 0; height: 160px; background: url(../images/bg.png) no-repeat center bottom; background-size: 100% 100%; }
 #qzad .header { display: block; position: absolute; top: 15px; right: 0; left: 0; height: 50px; background: url(../images/header.png) no-repeat center center; background-size: 426px auto; }
 #qzad ul.items { position: absolute; top: 89px; right: 27px; left: 27px; margin: 0; padding: 0; list-style-type: none; }
 #qzad ul.items li.item { width: 140px; height: 140px; float: left; }
@@ -14,3 +15,28 @@ body { margin: 0; }
 #qzad .showcase .content { position: relative; width: 100%; height: 100%; background-color: white; }
 #qzad .showcase .content .x { position: absolute; top: 9px; right: 11px; width: 15px; height: 17px; }
 #qzad .showcase .content .area { width: 100%; }
+#qzad .wrapper { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+#qzad .wrapper .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; animation: spin 4s linear infinite; }
+#qzad .wrapper .wind.wind-1 { top: 461px; left: 415px; width: 11px; -webkit-transform-origin: 38.52% 55.23%; transform-origin: 38.52% 55.23%; }
+#qzad .wrapper .wind.wind-2 { top: 466px; left: 433px; width: 16px; -webkit-transform-origin: 64.57% 47.51%; transform-origin: 64.57% 47.51%; }
+#qzad .wrapper .wind.wind-3 { top: 459px; left: 465px; width: 16px; -webkit-transform-origin: 36.99% 53.40%; transform-origin: 36.99% 53.40%; }
+#qzad .wrapper .waves { position: absolute; top: 485px; left: -30px; width: 110px; -webkit-animation: waves 4s linear infinite; -moz-animation: waves 4s linear infinite; animation: waves 4s linear infinite; }
+
+@-webkit-keyframes animatedBackground { 0% { background-position: 0 0; }
+  100% { background-position: 480px 0; } }
+
+@-moz-keyframes animatedBackground { 0% { background-position: 0 0; }
+  100% { background-position: 480px 0; } }
+
+@keyframes animatedBackground { 0% { background-position: 0 0; }
+  100% { background-position: 480px 0; } }
+
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+@-webkit-keyframes waves { 0% { left: -5.50%; }
+  50% { left: -6.75%; }
+  100% { left: -5.50%; } }

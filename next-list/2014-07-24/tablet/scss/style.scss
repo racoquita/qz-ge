@@ -12,11 +12,24 @@ body {
 	font-size: 11px;
 	box-sizing: border-box;
     padding: 27px;
-	background: url(../images/bg.jpg) no-repeat center center;
+	background: url(../images/clouds.jpg) no-repeat center center;
 	background-size: 100% 100%;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
+    -webkit-animation: animatedBackground 40s linear infinite;
+	   -moz-animation: animatedBackground 40s linear infinite;
+	        animation: animatedBackground 40s linear infinite;
+
+	.bg {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 160px;
+		background: url(../images/bg.png) no-repeat center bottom;
+		background-size: 100% 100%;
+	}
 
     .header {
     	display: block;
@@ -98,4 +111,105 @@ body {
 			}
 		}
 	}
+
+	.wrapper {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		.wind {
+			position: absolute;
+			z-index: 101;
+			-webkit-animation:spin 4s linear infinite;
+		       -moz-animation:spin 4s linear infinite;
+		            animation:spin 4s linear infinite;
+
+		    &.wind-1 {
+		    	top: 461px;
+				left: 415px;
+				width: 11px;
+				-webkit-transform-origin:38.52% 55.23%;
+				        transform-origin:38.52% 55.23%;
+		    }
+		    &.wind-2 {
+		    	top: 466px;
+				left: 433px;
+				width: 16px;
+		    	-webkit-transform-origin:64.57% 47.51%;
+				        transform-origin:64.57% 47.51%;
+		    }
+		    &.wind-3 {
+		    	top: 459px;
+				left: 465px;
+				width: 16px;
+		    	-webkit-transform-origin:36.99% 53.40%;
+				        transform-origin:36.99% 53.40%;
+		    }
+		}
+		.waves {
+			position: absolute;
+			top: 485px;
+			left: -30px;
+			width: 110px;
+			-webkit-animation:waves 4s linear infinite;
+		       -moz-animation:waves 4s linear infinite;
+		            animation:waves 4s linear infinite;
+		}
+	}
+}
+
+@-webkit-keyframes animatedBackground {
+	0% { 
+		background-position: 0 0;
+	}
+	100% { 
+		background-position: 480px 0; 
+	}
+}
+@-moz-keyframes animatedBackground {
+	0% { 
+		background-position: 0 0; 
+	}
+	100% { 
+		background-position: 480px 0; 
+	}
+}
+@keyframes animatedBackground {
+	0% { 
+		background-position: 0 0; 
+	}
+	100% { 
+		background-position: 480px 0; 
+	}
+}
+
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg); 
+	} 
+}
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(360deg); 
+	} 
+}
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg); 
+		transform:rotate(360deg); 
+	} 
+}
+
+@-webkit-keyframes waves {
+	0% {
+		left: -5.50%;	
+	}
+	50% {
+		left: -6.75%;	
+	}
+	100% {
+		left: -5.50%;	
+	}  
 }

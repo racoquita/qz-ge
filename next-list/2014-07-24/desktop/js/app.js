@@ -2,6 +2,9 @@ var App = function() {
 	var that = this;
 
 	this.on = function() {
+		that.loadSvgs();
+		that.handleSvgs();
+
 		$('li.item').on('mouseenter', function(e){
 			$(e.currentTarget).addClass('active');
 		}).on('mouseleave', function(e){
@@ -10,5 +13,161 @@ var App = function() {
 	}
 	this.off = function() {
 		$('li.item').off();
+	}
+	this.loadSvgs = function() {
+		Snap.load("images/extreme-machines.svg", function(svg){
+			var em = Snap('.extreme-machines');
+				em.append(svg);
+			var snap = Snap('#extreme-machines');
+
+			var l1 = snap.path("M0,59 l20.9-10.3L6.3,46").attr({
+				id: "l1",
+				fill: "none",
+				strokeWidth: "0.8887",
+				stroke: "#0AA54A",
+				strokeDasharray: "1.7773,1.7773",
+				strokeDashOffset: "100"
+			});
+
+			var l2 = snap.path("M32.5,0.1 L40.3,22l4.4-14.2").attr({
+				id: "l2",
+				fill: "none",
+				strokeWidth: "0.8887",
+				stroke: "#0AA54A",
+				strokeDasharray: "1.7773,1.7773",
+				strokeDashOffset: "100"
+			});
+
+			var l3 = snap.path("M85,67.4 l-22.1-7.2l8.5,12.1").attr({
+				id: "l3",
+				fill: "none",
+				strokeWidth: "0.8887",
+				stroke: "#0AA54A",
+				strokeDasharray: "1.7773,1.7773",
+				strokeDashOffset: "100"
+			});
+
+			var len1 = l1.getTotalLength();
+			var len2 = l2.getTotalLength();
+			var len3 = l3.getTotalLength();
+
+			var animate1 = function() {
+				l1.attr({
+					"stroke-dasharray": len1/18 + " " + len1/18,
+					"stroke-dashoffset": "100"
+				}).stop().animate({
+					"stroke-dashoffset": 5
+				}, 5000, function() {
+					animate1();
+				});
+			}
+
+			var animate2 = function() {
+				l2.attr({
+					"stroke-dasharray": len2/18 + " " + len2/18,
+					"stroke-dashoffset": "100"
+				}).stop().animate({
+					"stroke-dashoffset": 5
+				}, 5000, function() {
+					animate2();
+				});
+			}
+
+			var animate3 = function() {
+				l3.attr({
+					"stroke-dasharray": len3/18 + " " + len3/18,
+					"stroke-dashoffset": "100"
+				}).stop().animate({
+					"stroke-dashoffset": 5
+				}, 5000, function() {
+					animate3();
+				});
+			}
+
+			$('.extreme-machines').parent('.item').on('mouseenter', function(e){
+				animate1();
+				animate2();
+				animate3();
+			}).on('mouseleave', function(e){
+				l1.stop();
+				l2.stop();
+				l3.stop();
+			});
+		});
+
+		Snap.load("images/super-materials.svg", function(svg){
+			var em = Snap('.super-materials');
+				em.append(svg);
+			var snap = Snap('#super-materials');
+
+			$('.super-materials').parent('.item').on('mouseenter', function(e){
+				snap.select('.left-wing').addClass('animate');
+				snap.select('.right-wing').addClass('animate');
+			}).on('mouseleave', function(e){
+				snap.select('.left-wing').removeClass('animate');
+				snap.select('.right-wing').removeClass('animate');
+			});
+		});
+
+		Snap.load("images/industrial-internet.svg", function(svg){
+			var em = Snap('.industrial-internet');
+				em.append(svg);
+			var snap = Snap('#industrial-internet');
+			var lights = $('.lights circle');
+			var interval;
+
+			$('.industrial-internet').parent('.item').on('mouseenter', function(e){
+				interval = setInterval(function(){
+					$.each(lights, function(i, light){
+						Math.random() > .5 ? $(light).hide() : $(light).show();
+					});
+				}, 250);
+
+			}).on('mouseleave', function(e){
+				clearInterval(interval);
+				lights.show();
+			});
+		});
+
+		Snap.load("images/mapped-minds.svg", function(svg){
+			var em = Snap('.mapped-minds');
+				em.append(svg);
+			var snap = Snap('#mapped-minds');
+
+			$('.mapped-minds').parent('.item').on('mouseenter', function(e){
+				
+			}).on('mouseleave', function(e){
+				
+			});
+		});
+
+		Snap.load("images/brilliant-factories.svg", function(svg){
+			var em = Snap('.brilliant-factories');
+				em.append(svg);
+			var snap = Snap('#brilliant-factories');
+			var fins = snap.select('.fins');
+
+			$('.brilliant-factories').parent('.item').on('mouseenter', function(e){
+				fins.addClass('animate');
+			}).on('mouseleave', function(e){
+				fins.removeClass('animate');
+			});
+		});
+
+		Snap.load("images/energy-everywhere.svg", function(svg){
+			var em = Snap('.energy-everywhere');
+				em.append(svg);
+			var snap = Snap('#energy-everywhere');
+
+			$('.energy-everywhere').parent('.item').on('mouseenter', function(e){
+				
+			}).on('mouseleave', function(e){
+				
+			});
+		});
+
+	}
+	this.handleSvgs = function() {
+		
 	}
 };
