@@ -132,55 +132,79 @@ var App = function() {
 			var em = Snap('.mapped-minds');
 				em.append(svg);
 			var snap = Snap('#mapped-minds');
-			var gradientH = snap.select('#mapGradientH');
-			var gradientV = snap.select('#mapGradientV');
+			var node1 = snap.select('.mind-nodes circle:nth-child(1)');
+			var node2 = snap.select('.mind-nodes circle:nth-child(2)');
+			var node3 = snap.select('.mind-nodes circle:nth-child(3)');
+			var node4 = snap.select('.mind-nodes circle:nth-child(4)');
 
-			var animateGradientForward = function() {
-				gradientH.stop().animate({
-					x1: "25%",
-					y1: "0%"
-				}, 350, mina.linear, function() {
-					animateGradientBackward();
+
+			var animateNodes = function() {
+				node1.stop().animate({
+					cx: 17.5,
+					cy: 10
+				}, 1000, function(){
+					animateNodesBack();
 				});
 
-				gradientV.stop().animate({
-					x1: "0%",
-					y1: "25%"
-				}, 350, mina.linear);
+				node2.stop().animate({
+					cx: 26.6,
+					cy: 5
+				}, 1000);
+
+				node3.stop().animate({
+					cx: 10,
+					cy: 36.2
+				}, 1000);
+
+				node4.stop().animate({
+					cx: 60,
+					cy: 18
+				}, 1000);
 			}
 
-			var animateGradientBackward = function() {
-				gradientH.stop().animate({
-					x1: "0px",
-					y1: "0%"
-				}, 350, mina.linear, function() {
-					animateGradientForward();
+			var animateNodesBack = function() {
+				node1.stop().animate({
+					cx: 17.5,
+					cy: 35
+				}, 1000, function(){
+					animateNodes();
 				});
 
-				gradientV.stop().animate({
-					x1: "0%",
-					y1: "0px"
-				}, 350, mina.linear);
+				node2.stop().animate({
+					cx: 26.6,
+					cy: 45
+				}, 1000);
+
+				node3.stop().animate({
+					cx: 65,
+					cy: 34
+				}, 1000);
+
+				node4.stop().animate({
+					cx: 15,
+					cy: 22
+				}, 1000);
 			}
+
 
 			$('.mapped-minds').parent('.item').on('mouseenter', function(e){
-				snap.select('#pathways1').attr({
-					fill: 'url(#mapGradientH)'
-				});
-				snap.select('#pathways2').attr({
-					fill: 'url(#mapGradientV)'
-				});
-
-				animateGradientForward();
+				animateNodes();
 			}).on('mouseleave', function(e){
-				gradientH.stop();
-				gradientV.stop();
-
-				snap.select('#pathways1').attr({
-					fill: '#D42027'
+				node1.stop().attr({
+					cx: 17.5,
+					cy: 22.8
 				});
-				snap.select('#pathways2').attr({
-					fill: '#D42027'
+				node2.stop().attr({
+					cx: 26.6,
+					cy: 22
+				});
+				node3.stop().attr({
+					cx: 26.6,
+					cy: 36.2
+				});
+				node4.stop().attr({
+					cx: 26.6,
+					cy: 22
 				});
 			});
 		});

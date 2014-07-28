@@ -326,6 +326,10 @@ img {
 						@include breakpoint(950) {
 							width: 52px;
 						}
+
+						.brain-outline {
+							overflow: hidden;
+						}
 					}
 					&.brilliant-factories {
 						width: 65px;

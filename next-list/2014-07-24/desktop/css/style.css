@@ -65,6 +65,7 @@ img { outline: none; border: none; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.industrial-internet { width: 108px; } }
 #qzad .items-container ul.items li.item .icon.mapped-minds { width: 68px; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.mapped-minds { width: 52px; } }
+#qzad .items-container ul.items li.item .icon.mapped-minds .brain-outline { overflow: hidden; }
 #qzad .items-container ul.items li.item .icon.brilliant-factories { width: 65px; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.brilliant-factories { width: 50px; } }
 #qzad .items-container ul.items li.item .icon.brilliant-factories .fins { -webkit-transform-origin: 50% 67.5%; -moz-transform-origin: 50% 67.5%; transform-origin: 50% 67.5%; }
