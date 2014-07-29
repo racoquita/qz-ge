@@ -1,5 +1,6 @@
 var App = function() {
 	var that = this;
+	var timer;
 
 	this.on = function() {
 		that.loadSvgs();
@@ -9,9 +10,12 @@ var App = function() {
 		}).on('mouseleave', function(e){
 			$(e.currentTarget).removeClass('active');
 		});
+
+		that.randomize();
 	}
 	this.off = function() {
 		$('li.item').off();
+		clearInterval(timer);
 	}
 	this.loadSvgs = function() {
 		Snap.load("images/extreme-machines.svg", function(svg){
@@ -56,9 +60,7 @@ var App = function() {
 					"stroke-dashoffset": "100"
 				}).stop().animate({
 					"stroke-dashoffset": 5
-				}, 5000, function() {
-					animate1();
-				});
+				}, 5000, animate1);
 			}
 
 			var animate2 = function() {
@@ -67,9 +69,7 @@ var App = function() {
 					"stroke-dashoffset": "100"
 				}).stop().animate({
 					"stroke-dashoffset": 5
-				}, 5000, function() {
-					animate2();
-				});
+				}, 5000, animate2);
 			}
 
 			var animate3 = function() {
@@ -78,9 +78,7 @@ var App = function() {
 					"stroke-dashoffset": "100"
 				}).stop().animate({
 					"stroke-dashoffset": 5
-				}, 5000, function() {
-					animate3();
-				});
+				}, 5000, animate3);
 			}
 
 			$('.extreme-machines').parent('.item').on('mouseenter', function(e){
@@ -137,74 +135,60 @@ var App = function() {
 			var node3 = snap.select('.mind-nodes circle:nth-child(3)');
 			var node4 = snap.select('.mind-nodes circle:nth-child(4)');
 
-
 			var animateNodes = function() {
 				node1.stop().animate({
-					cx: 17.5,
-					cy: 10
+					cx: 17.5, cy: 10
 				}, 1000, function(){
 					animateNodesBack();
 				});
 
 				node2.stop().animate({
-					cx: 26.6,
-					cy: 5
+					cx: 26.6, cy: 5
 				}, 1000);
 
 				node3.stop().animate({
-					cx: 10,
-					cy: 36.2
+					cx: 10, cy: 36.2
 				}, 1000);
 
 				node4.stop().animate({
-					cx: 60,
-					cy: 18
+					cx: 60, cy: 18
 				}, 1000);
 			}
 
 			var animateNodesBack = function() {
 				node1.stop().animate({
-					cx: 17.5,
-					cy: 35
+					cx: 17.5, cy: 35
 				}, 1000, function(){
 					animateNodes();
 				});
 
 				node2.stop().animate({
-					cx: 26.6,
-					cy: 45
+					cx: 26.6, cy: 45
 				}, 1000);
 
 				node3.stop().animate({
-					cx: 65,
-					cy: 34
+					cx: 65, cy: 34
 				}, 1000);
 
 				node4.stop().animate({
-					cx: 15,
-					cy: 22
+					cx: 15, cy: 22
 				}, 1000);
 			}
-
 
 			$('.mapped-minds').parent('.item').on('mouseenter', function(e){
 				animateNodes();
 			}).on('mouseleave', function(e){
 				node1.stop().attr({
-					cx: 17.5,
-					cy: 22.8
+					cx: 17.5, cy: 22.8
 				});
 				node2.stop().attr({
-					cx: 26.6,
-					cy: 22
+					cx: 26.6, cy: 22
 				});
 				node3.stop().attr({
-					cx: 26.6,
-					cy: 36.2
+					cx: 26.6, cy: 36.2
 				});
 				node4.stop().attr({
-					cx: 26.6,
-					cy: 22
+					cx: 26.6, cy: 22
 				});
 			});
 		});
@@ -240,6 +224,18 @@ var App = function() {
 				bolts.show();
 			});
 		});
+	}
+	this.randomize = function() {
+		timer = setInterval(function() {
+			var num = Math.floor(Math.random() * 6);
+			var items = $('.item');
+
+			items.trigger('mouseleave');
+			$(items[num]).trigger('mouseenter');
+
+			console.log(num);
+		}, 3000);
+
 
 	}
 };

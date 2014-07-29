@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           unit: 'tablet',
           version: '1',
           internal_scripts: [
-            
+            'js/snap.svg-min.js'
           ],
           external_scripts: [
             'http://app.qz.com/js/vendor/jQuery-min.js',

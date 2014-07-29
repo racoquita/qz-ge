@@ -74,7 +74,7 @@ var App = function() {
 			</a> \
 		</div>',
 		'<div class="slide inactive"> \
-			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/desktop/images/slide-2-text.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/desktop/images/slide-3-text.png"/> \
 			<a href="http://bit.ly/1nc8a0N" target="_blank" class="bulletin b-three" data-ix-category="external" data-ix-label="frame 3 - click here clicked"> \
 				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-06-25/desktop/images/bulletin.png"/> \
 			</a> \
