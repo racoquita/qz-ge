@@ -72,7 +72,8 @@ module.exports = function(grunt) {
           unit: 'mobile',
           version: '1',
           internal_scripts: [
-            'js/jquery.touchSwipe.js'
+            'js/jquery.touchSwipe.js',
+            'js/snap.svg-min.js'
           ],
           external_scripts: [
             'http://app.qz.com/js/vendor/jQuery-min.js',

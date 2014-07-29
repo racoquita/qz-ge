@@ -8,37 +8,46 @@
 </head>
 <body>
 	<div id="qzad">
+		<div class="arrow arrow-left">
+			<img src="images/arrow-left.png">
+		</div>
+
 		<div class="content">
 			<div class="frame zero show">
 				<img src="images/zero.png">
 			</div>
 			<div class="frame one">
-				<img src="images/extreme-machines.png" class="extreme-machines">
+				<div class="icon-container extreme-machines"></div>
 				<img src="images/one.png" class="text">
 			</div>
 			<div class="frame two">
-				<img src="images/super-materials.png" class="super-materials">
+				<div class="icon-container super-materials"></div>
 				<img src="images/two.png" class="text">
 			</div>
 			<div class="frame three">
-				<img src="images/industrial-internet.png" class="industrial-internet">
+				<div class="icon-container industrial-internet"></div>
 				<img src="images/three.png" class="text">
 			</div>
 			<div class="frame four">
-				<img src="images/mapped-minds.png" class="mapped-minds">
+				<div class="icon-container mapped-minds"></div>
 				<img src="images/four.png" class="text">
 			</div>
 			<div class="frame five">
-				<img src="images/energy-everywhere.png" class="energy-everywhere">
+				<div class="icon-container energy-everywhere"></div>
 				<img src="images/five.png" class="text">
 				<img src="images/logo.png" class="logo">
 			</div>
 		</div>
+
+		<div class="arrow arrow-right">
+			<img src="images/arrow-right.png">
+		</div>
 	</div>
 
 	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/snap.svg-min.js"></script>
 	<script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			window.app = new App();
