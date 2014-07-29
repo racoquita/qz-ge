@@ -6,9 +6,14 @@ var App = function() {
 		that.loadSvgs();
 
 		$('li.item').on('mouseenter', function(e){
+			clearInterval(timer);
+			$('li.item').removeClass('active');
 			$(e.currentTarget).addClass('active');
 		}).on('mouseleave', function(e){
-			$(e.currentTarget).removeClass('active');
+			$('li.item').removeClass('active');
+			that.randomize();
+		}).on('click', function(e){
+			$(e.currentTarget).addClass('active');
 		});
 
 		that.randomize();
@@ -230,8 +235,8 @@ var App = function() {
 			var num = Math.floor(Math.random() * 6);
 			var items = $('.item');
 
-			items.trigger('mouseleave');
-			$(items[num]).trigger('mouseenter');
+			$('li.item').removeClass('active');
+			$(items[num]).trigger('click');
 
 			console.log(num);
 		}, 3000);
