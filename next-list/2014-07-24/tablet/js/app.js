@@ -17,6 +17,7 @@ var App = function() {
 				'background': 'url(images/bg.png) no-repeat center bottom',
 				'background-size': '100% 100%'
 			});
+			$('.wrapper').show();
 		});
 	}
 	this.off = function() {

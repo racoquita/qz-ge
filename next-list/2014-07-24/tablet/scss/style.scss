@@ -12,7 +12,7 @@ body {
 	font-size: 11px;
 	box-sizing: border-box;
     padding: 27px;
-	background: url(../images/clouds.jpg) no-repeat center center;
+	background: url(../images/clouds.jpg) repeat-x center center;
 	background-size: 100% 100%;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -101,10 +101,18 @@ body {
 
 			.x {
 				position: absolute;
-				top: 9px;
-				right: 11px;
-				width: 15px;
-				height: 17px;
+				right: 0;
+				top: 0;
+				width: 100px;
+				height: 100px;
+
+				img {
+					position: absolute;
+					top: 9px;
+					right: 11px;
+					width: 15px;
+					height: 17px;
+				}
 			}
 			.area {
 				width: 100%;

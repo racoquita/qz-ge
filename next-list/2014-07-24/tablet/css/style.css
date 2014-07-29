@@ -1,6 +1,6 @@
 body { margin: 0; }
 
-#qzad { position: absolute; width: 480px; height: 550px; overflow: hidden; font-family: "ge_inspira"; font-size: 11px; box-sizing: border-box; padding: 27px; background: url(../images/clouds.jpg) no-repeat center center; background-size: 100% 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
+#qzad { position: absolute; width: 480px; height: 550px; overflow: hidden; font-family: "ge_inspira"; font-size: 11px; box-sizing: border-box; padding: 27px; background: url(../images/clouds.jpg) repeat-x center center; background-size: 100% 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 #qzad .bg { position: absolute; right: 0; bottom: 0; left: 0; height: 160px; background: url(../images/bg.png) no-repeat center bottom; background-size: 100% 100%; }
 #qzad .header { display: block; position: absolute; top: 15px; right: 0; left: 0; height: 50px; background: url(../images/header.png) no-repeat center center; background-size: 426px auto; }
 #qzad ul.items { position: absolute; top: 89px; right: 27px; left: 27px; margin: 0; padding: 0; list-style-type: none; }
@@ -13,7 +13,8 @@ body { margin: 0; }
 #qzad ul.items li.item.energy-everywhere { background: url(../images/energy-everywhere.png) no-repeat 38px 16px; background-size: 85px 94px; }
 #qzad .showcase { position: absolute; z-index: 101; top: 76px; right: 15px; bottom: 14px; left: 15px; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.12); padding: 13px 12px 14px 12px; display: none; }
 #qzad .showcase .content { position: relative; width: 100%; height: 100%; background-color: white; }
-#qzad .showcase .content .x { position: absolute; top: 9px; right: 11px; width: 15px; height: 17px; }
+#qzad .showcase .content .x { position: absolute; right: 0; top: 0; width: 100px; height: 100px; }
+#qzad .showcase .content .x img { position: absolute; top: 9px; right: 11px; width: 15px; height: 17px; }
 #qzad .showcase .content .area { width: 100%; }
 #qzad .wrapper { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 #qzad .wrapper .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; animation: spin 4s linear infinite; }
