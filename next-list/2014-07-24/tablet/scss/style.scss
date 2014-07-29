@@ -41,6 +41,13 @@ body {
     	background: url(../images/header.png) no-repeat center center;
     	background-size: 426px auto;
     }
+    .instructions {
+    	position: absolute;
+		top: 85px;
+		left: 298px;
+		width: 110px;
+		color: $blue;
+    }
     ul.items {
     	position: absolute;
     	top: 89px;

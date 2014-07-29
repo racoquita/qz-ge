@@ -3,6 +3,7 @@ body { margin: 0; }
 #qzad { position: absolute; width: 480px; height: 550px; overflow: hidden; font-family: "ge_inspira"; font-size: 11px; box-sizing: border-box; padding: 27px; background: url(../images/clouds.jpg) repeat-x center center; background-size: 100% 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 #qzad .bg { position: absolute; right: 0; bottom: 0; left: 0; height: 160px; background: url(../images/bg.png) no-repeat center bottom; background-size: 100% 100%; }
 #qzad .header { display: block; position: absolute; top: 15px; right: 0; left: 0; height: 50px; background: url(../images/header.png) no-repeat center center; background-size: 426px auto; }
+#qzad .instructions { position: absolute; top: 85px; left: 298px; width: 110px; color: #0860ac; }
 #qzad ul.items { position: absolute; top: 89px; right: 27px; left: 27px; margin: 0; padding: 0; list-style-type: none; }
 #qzad ul.items li.item { width: 140px; height: 140px; float: left; }
 #qzad ul.items li.item.extreme-machines { background: url(../images/extreme-machines.png) no-repeat 9px 11px; background-size: 70px 106px; }
