@@ -237,8 +237,6 @@ var App = function() {
 
 			$('li.item').removeClass('active');
 			$(items[num]).trigger('click');
-
-			console.log(num);
 		}, 3000);
 
 

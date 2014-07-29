@@ -49,11 +49,16 @@ var App = function() {
 			counter++;
 			that.move();
 		});
+
+		$('.logo').on('click', function(e){
+			window.open($(e.currentTarget).data('href'), '_blank');
+		});
 	}
 	this.off = function() {
 		$('.content').swipe('destroy');
 		$('.arrow-left').off();
 		$('.arrow-right').off();
+		$('.logo').off();
 	}
 	this.move = function() {
 		$('.content').css('left', -distance[counter]);

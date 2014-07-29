@@ -9,6 +9,8 @@ body {
 	height: 150px;
 	overflow: hidden;
 	background-color: white;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
 
 	.arrow {
 		width: 40px;
