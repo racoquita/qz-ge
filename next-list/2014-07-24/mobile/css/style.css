@@ -5,7 +5,7 @@ body { margin: 0; }
 #qzad .arrow img { margin-top: 16px; margin-left: 16px; height: 7px; }
 #qzad .arrow.arrow-left { display: none; position: absolute; z-index: 201; top: 55px; left: 0; }
 #qzad .arrow.arrow-right { position: absolute; z-index: 201; top: 55px; right: 0; }
-#qzad .content { position: absolute; top: 0; left: 0; width: 826px; height: 150px; background-image: url(../images/bg.png); background-repeat: no-repeat; background-size: auto 150px; background-position: 115px 0; -webkit-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
+#qzad .content { position: absolute; top: 0; left: 0; width: 903px; height: 150px; background-image: url(../images/bg.png); background-repeat: no-repeat; background-size: auto 150px; background-position: 115px 0; -webkit-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 #qzad .content .frame { opacity: 0; -webkit-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 #qzad .content .frame.show { opacity: 1; }
 #qzad .content .frame.zero { position: absolute; top: 10px; left: 15px; width: 176px; }
@@ -35,7 +35,7 @@ body { margin: 0; }
 #qzad .content .frame.five .energy-everywhere { position: absolute; top: 7px; width: 69px; }
 #qzad .content .frame.five .energy-everywhere svg { width: 100%; }
 #qzad .content .frame.five img.text { position: absolute; top: 31px; left: 85px; width: 158px; }
-#qzad .content .frame.five img.logo { position: absolute; top: 102px; left: 205px; width: 35px; }
+#qzad .content .frame.five img.logo { position: absolute; top: 92px; left: 205px; width: 35px; }
 
 @-webkit-keyframes animateWings { 0% { -webkit-transform: rotateY(0deg); }
   50% { -webkit-transform: rotateY(50deg); }

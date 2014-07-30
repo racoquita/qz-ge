@@ -33,10 +33,14 @@ var App = function() {
 	this.on = function() {
 		$('.content').swipe({
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-          		if(direction == 'left' && counter < 5) counter++;
-				if(direction == 'right' && counter > 0) counter--;
-
-				that.move();
+          		if(direction == 'left' && counter < 5) {
+          			counter++;
+          			that.move();
+          		}
+				if(direction == 'right' && counter > 0) {
+					counter--;
+	        		that.move();
+	        	}
 	        }
 		});
 
