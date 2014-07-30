@@ -16,10 +16,14 @@ var App = function() {
 			$(e.currentTarget).addClass('active');
 		});
 
+		$('.wrapper').on('click', function(){
+			window.open('http://qz.com/bulletins/ge/', '_blank');
+		});
+
 		that.randomize();
 	}
 	this.off = function() {
-		$('li.item').off();
+		$('li.item, .wrapper').off();
 		clearInterval(timer);
 	}
 	this.loadSvgs = function() {
