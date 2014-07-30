@@ -20,9 +20,9 @@ body { margin: 0; }
 #qzad .showcase .content .panel-icon.icon-two { top: 35px; left: 126px; }
 #qzad .showcase .content .panel-icon.icon-two svg { width: 170px; height: 92px; }
 #qzad .showcase .content .panel-icon.icon-two svg .wings { -webkit-perspective: 1000px; -moz-perspective: 1000px; }
-#qzad .showcase .content .panel-icon.icon-two svg .wings .left-wing { -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 100% 50%; -moz-transform-origin: 100% 50%; transform-origin: 100% 50%; }
+#qzad .showcase .content .panel-icon.icon-two svg .wings .left-wing { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 100% 50%; transform-origin: 24.13px 8px 0px; }
 #qzad .showcase .content .panel-icon.icon-two svg .wings .left-wing.animate { -webkit-animation: animateWings 1s ease-in-out infinite; -moz-animation: animateWings 1s ease-in-out infinite; animation: animateWings 1s ease-in-out infinite; }
-#qzad .showcase .content .panel-icon.icon-two svg .wings .right-wing { -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 0% 50%; -moz-transform-origin: 0% 50%; transform-origin: 0% 50%; }
+#qzad .showcase .content .panel-icon.icon-two svg .wings .right-wing { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 0% 50%; transform-origin: 82.47px 8px 0px; }
 #qzad .showcase .content .panel-icon.icon-two svg .wings .right-wing.animate { -webkit-animation: animateWings 1s ease-in-out infinite; -moz-animation: animateWings 1s ease-in-out infinite; animation: animateWings 1s ease-in-out infinite; }
 #qzad .showcase .content .panel-icon.icon-three { top: 35px; left: 101px; }
 #qzad .showcase .content .panel-icon.icon-three svg { width: 225px; height: 88px; }
@@ -30,7 +30,7 @@ body { margin: 0; }
 #qzad .showcase .content .panel-icon.icon-four svg { width: 91px; height: 73px; }
 #qzad .showcase .content .panel-icon.icon-five { top: 16px; left: 152px; }
 #qzad .showcase .content .panel-icon.icon-five svg { width: 118px; height: 118px; }
-#qzad .showcase .content .panel-icon.icon-five svg .fins { -webkit-transform-origin: 50% 67.5%; -moz-transform-origin: 50% 67.5%; transform-origin: 50% 67.5%; }
+#qzad .showcase .content .panel-icon.icon-five svg .fins { -webkit-transform-origin: 50% 67.5%; transform-origin: 34px 25.8px 0px; }
 #qzad .showcase .content .panel-icon.icon-five svg .fins.animate { -webkit-animation: spin 1s linear infinite; -moz-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
 #qzad .showcase .content .panel-icon.icon-six { top: 16px; left: 152px; }
 #qzad .showcase .content .panel-icon.icon-six svg { width: 118px; height: 118px; }
@@ -39,9 +39,9 @@ body { margin: 0; }
 #qzad .showcase .content .area { width: 100%; }
 #qzad .wrapper { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 #qzad .wrapper .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; animation: spin 4s linear infinite; }
-#qzad .wrapper .wind.wind-1 { top: 461px; left: 415px; width: 11px; -webkit-transform-origin: 38.52% 55.23%; transform-origin: 38.52% 55.23%; }
-#qzad .wrapper .wind.wind-2 { top: 466px; left: 433px; width: 16px; -webkit-transform-origin: 64.57% 47.51%; transform-origin: 64.57% 47.51%; }
-#qzad .wrapper .wind.wind-3 { top: 459px; left: 465px; width: 16px; -webkit-transform-origin: 36.99% 53.40%; transform-origin: 36.99% 53.40%; }
+#qzad .wrapper .wind.wind-1 { top: 461px; left: 413px; width: 11px; -webkit-transform-origin: 39.03% 56.97%; transform-origin: 39.03% 56.97%; }
+#qzad .wrapper .wind.wind-2 { top: 466px; left: 431px; width: 16px; -webkit-transform-origin: 64.57% 47.51%; transform-origin: 64.57% 47.51%; }
+#qzad .wrapper .wind.wind-3 { top: 459px; left: 463px; width: 16px; -webkit-transform-origin: 36.99% 53.40%; transform-origin: 36.99% 53.40%; }
 #qzad .wrapper .waves { position: absolute; top: 485px; left: -30px; width: 110px; -webkit-animation: waves 4s linear infinite; -moz-animation: waves 4s linear infinite; animation: waves 4s linear infinite; }
 
 @-webkit-keyframes animatedBackground { 0% { background-position: 0 0; }

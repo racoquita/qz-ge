@@ -286,11 +286,9 @@ img {
 
 							.left-wing {
 								-webkit-transform: rotateY(0deg);
-								   -moz-transform: rotateY(0deg);
 									    transform: rotateY(0deg);
 								-webkit-transform-origin: 100% 50%;
-								   -moz-transform-origin: 100% 50%;
-										transform-origin: 100% 50%;
+										transform-origin: 24.13px 8px 0px;
 
 								&.animate {
 									-webkit-animation:animateWings 1s ease-in-out infinite;
@@ -300,11 +298,9 @@ img {
 							}
 							.right-wing {
 								-webkit-transform: rotateY(0deg);
-								   -moz-transform: rotateY(0deg);
 									    transform: rotateY(0deg);
 								-webkit-transform-origin: 0% 50%;
-								   -moz-transform-origin: 0% 50%;
-										transform-origin: 0% 50%;
+										transform-origin: 82.47px 8px 0px;
 
 								&.animate {
 									-webkit-animation:animateWings 1s ease-in-out infinite;
@@ -341,8 +337,7 @@ img {
 
 						.fins {
 							-webkit-transform-origin: 50% 67.5%;
-							   -moz-transform-origin: 50% 67.5%;
-									transform-origin: 50% 67.5%;
+									transform-origin: 34px 25.8px 0px;
 							&.animate {
 								-webkit-animation:spin 1s linear infinite;
 							       -moz-animation:spin 1s linear infinite;
@@ -683,7 +678,7 @@ img {
 					top: 100px;
 					left: 826px;
 					-webkit-transform-origin:38.52% 55.23%;
-					        transform-origin:38.52% 55.23%;
+					        transform-origin:6.9px 11.6px 0px;
 
 					@include breakpoint(1050) {
 						top: 101px;
@@ -718,7 +713,7 @@ img {
 			    	top: 107px;
 					left: 854px;
 			    	-webkit-transform-origin:64.57% 47.51%;
-					        transform-origin:64.57% 47.51%;
+					        transform-origin:16.3px 13.5px 0px;
 
 					@include breakpoint(1050) {
 						top: 107px;
@@ -753,7 +748,7 @@ img {
 			    	top: 96px;
 					left: 905px;
 			    	-webkit-transform-origin:36.99% 53.40%;
-					        transform-origin:36.99% 53.40%;
+					        transform-origin:9.4px 17.1px 0px;
 
 					@include breakpoint(1050) {
 						top: 96px;
@@ -885,7 +880,7 @@ img {
 		height: 72px;
 
 		.footer-container {
-			width: 750px;
+			width: 754px;
 			height: 100%;
 			margin: 0 auto;
 
@@ -1135,8 +1130,7 @@ img {
 }
 @keyframes spin {
 	100% {
-		-webkit-transform: rotate(360deg); 
-		transform:rotate(360deg); 
+		transform: rotate(360deg); 
 	} 
 }
 
