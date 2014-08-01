@@ -1,3 +1,53 @@
+var QZADPX = function ( options ) {
+	var that = this;
+
+	if(!options.base) throw new Error('You must pass in a base link');
+	
+	this.base = options.base;
+
+	if(options.el && document.getElementById(options.el)) {
+		this.el = document.getElementById(options.el);
+	} else {
+		if ( document.getElementById('qzad')) {
+			this.el = document.getElementById('qzad');
+		} else {
+			this.el = document.getElementsByTagName("BODY")[0];
+		}
+	}
+
+	if(!options.randomness) {
+		this.randomness = 10;
+	} else if(options.randomness > 32) {
+		this.randomness = 32;
+	} else {
+		this.randomness = options.randomness;
+	}
+
+	this.append = function () {
+		var cacheBuster = '?' + (Math.random().toString( 36 ).substr( 2, this.randomness));
+		var src = this.base + cacheBuster;
+
+		var img = document.createElement("IMG");
+		img.style.position = "absolute";
+		img.style.width = "1px";
+		img.style.height = "1px";
+		img.style.top = 0;
+		img.style.left = 0;
+		img.src = src;
+
+		this.el.appendChild(img);
+	};
+};
+
+var trackers = {
+	'extreme-machines':'http://bit.ly/1lj8omO',
+	'super-materials':'http://bit.ly/1oVr0hE',
+	'industrial-internet':'http://bit.ly/1oVr80m',
+	'mapped-minds':'http://bit.ly/UQ6uCC',
+	'brilliant-factories':'http://bit.ly/1qPyGVp',
+	'energy-everywhere':'http://bit.ly/UQ6ClM'
+};
+
 var App = function() {
 	var that = this;
 	var timer;
@@ -9,6 +59,8 @@ var App = function() {
 			clearInterval(timer);
 			$('li.item').removeClass('active');
 			$(e.currentTarget).addClass('active');
+
+			that.track($(e.currentTarget).data('id'));
 		}).on('mouseleave', function(e){
 			$('li.item').removeClass('active');
 			that.randomize();
@@ -242,7 +294,12 @@ var App = function() {
 			$('li.item').removeClass('active');
 			$(items[num]).trigger('click');
 		}, 3000);
-
-
+	}
+	this.track = function(id) {
+		var base = trackers[id];
+		if (base) {
+			var px = new QZADPX({"base": base});
+			px.append();				
+		}
 	}
 };
