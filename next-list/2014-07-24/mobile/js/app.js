@@ -112,6 +112,9 @@ var App = function() {
 		$('.arrow-left').off();
 		$('.arrow-right').off();
 		$('.logo').off();
+
+		counter = 0;
+		that.move();
 	}
 	this.move = function() {
 		$('.content').css('left', -distance[counter]);
@@ -158,7 +161,7 @@ var App = function() {
 		}, 600);
 	}
 	this.handleOne = function() {
-		Snap.load("images/extreme-machines.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/mobile/images/extreme-machines.svg", function(svg){
 			var em = Snap('.extreme-machines');
 				em.append(svg);
 			var snap = Snap('#extreme-machines');
@@ -227,7 +230,7 @@ var App = function() {
 		});
 	}
 	this.handleTwo = function() {
-		Snap.load("images/super-materials.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/mobile/images/super-materials.svg", function(svg){
 			var em = Snap('.super-materials');
 				em.append(svg);
 			var snap = Snap('#super-materials');
@@ -237,7 +240,7 @@ var App = function() {
 		});
 	}
 	this.handleThree = function() {
-		Snap.load("images/industrial-internet.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/mobile/images/industrial-internet.svg", function(svg){
 			var em = Snap('.industrial-internet');
 				em.append(svg);
 			var snap = Snap('#industrial-internet');
@@ -251,7 +254,7 @@ var App = function() {
 		});
 	}
 	this.handleFour = function() {
-		Snap.load("images/mapped-minds.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/mobile/images/mapped-minds.svg", function(svg){
 			var em = Snap('.mapped-minds');
 				em.append(svg);
 			var snap = Snap('#mapped-minds');
@@ -304,7 +307,7 @@ var App = function() {
 		});
 	}
 	this.handleFive = function() {
-		Snap.load("images/energy-everywhere.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/mobile/images/energy-everywhere.svg", function(svg){
 			var em = Snap('.energy-everywhere');
 				em.append(svg);
 			var snap = Snap('#energy-everywhere');

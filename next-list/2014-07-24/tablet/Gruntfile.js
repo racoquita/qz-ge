@@ -65,14 +65,15 @@ module.exports = function(grunt) {
     qzready: {
       deploy: {
         options: {
-          base: 'http://ads.quartz.cc/sponsors',
+          base: 'http://ads.qz.com/sponsors',
           client: 'ge',
           campaign: 'next-list',
           date: '2014-07-24',
           unit: 'tablet',
           version: '1',
           internal_scripts: [
-            'js/snap.svg-min.js'
+            'js/snap.svg-min.js',
+            'js/jquery.touchSwipe.js'
           ],
           external_scripts: [
             'http://app.qz.com/js/vendor/jQuery-min.js',

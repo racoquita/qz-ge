@@ -65,6 +65,7 @@ var App = function() {
 			$('li.item').removeClass('active');
 			that.randomize();
 		}).on('click', function(e){
+			$('li.item').removeClass('active');
 			$(e.currentTarget).addClass('active');
 		});
 
@@ -75,11 +76,13 @@ var App = function() {
 		that.randomize();
 	}
 	this.off = function() {
+		$('li.item').removeClass('active');
 		$('li.item, .wrapper').off();
+		$('.extreme-machines, .super-materials, .industrial-internet, .mapped-minds, .brilliant-factories, .energy-everywhere').empty();
 		clearInterval(timer);
 	}
 	this.loadSvgs = function() {
-		Snap.load("images/extreme-machines.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/extreme-machines.svg", function(svg){
 			var em = Snap('.extreme-machines');
 				em.append(svg);
 			var snap = Snap('#extreme-machines');
@@ -153,7 +156,7 @@ var App = function() {
 			});
 		});
 
-		Snap.load("images/super-materials.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/super-materials.svg", function(svg){
 			var em = Snap('.super-materials');
 				em.append(svg);
 			var snap = Snap('#super-materials');
@@ -167,7 +170,7 @@ var App = function() {
 			});
 		});
 
-		Snap.load("images/industrial-internet.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/industrial-internet.svg", function(svg){
 			var em = Snap('.industrial-internet');
 				em.append(svg);
 			var snap = Snap('#industrial-internet');
@@ -187,7 +190,7 @@ var App = function() {
 			});
 		});
 
-		Snap.load("images/mapped-minds.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/mapped-minds.svg", function(svg){
 			var em = Snap('.mapped-minds');
 				em.append(svg);
 			var snap = Snap('#mapped-minds');
@@ -254,7 +257,7 @@ var App = function() {
 			});
 		});
 
-		Snap.load("images/brilliant-factories.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/brilliant-factories.svg", function(svg){
 			var em = Snap('.brilliant-factories');
 				em.append(svg);
 			var snap = Snap('#brilliant-factories');
@@ -267,7 +270,7 @@ var App = function() {
 			});
 		});
 
-		Snap.load("images/energy-everywhere.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/desktop/images/energy-everywhere.svg", function(svg){
 			var em = Snap('.energy-everywhere');
 				em.append(svg);
 			var snap = Snap('#energy-everywhere');

@@ -52,31 +52,38 @@ var App = function() {
 	var that = this;
 
 	this.on = function() {
-		$('li.item').on('click', function(e){
-			var number = $(e.currentTarget).data('id');
+		$('li.item').swipe({
+		 	tap: function(event, target) {
+		    	var number = $(target).data('id');
 			
-			that.handleIcons(number);
+				that.handleIcons(number);
 
-			$('.showcase[data-id="'+ number +'"]').show();
-			$('.bg').css({
-				'background': 'url(images/bg-blur.png) no-repeat center bottom',
-				'background-size': '100% 100%'
-			});
-			$('.wrapper').hide();
+				$('.showcase[data-id="'+ number +'"]').show();
+				$('.bg').css({
+					'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg-blur.png) no-repeat center bottom',
+					'background-size': '100% 100%'
+				});
+				$('.wrapper').hide();
 
-			that.track($(e.currentTarget).data('name'));
+				that.track($(target).data('name'));
+        	}
 		});
 	}
 	this.off = function() {
-		$('li.item').off();
-		$('.wrapper').show();
+		$('li.item').swipe('destroy');
+		$('.panel-icon').empty();
 		$('.showcase').hide();
+		$('.bg').css({
+			'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg.png) no-repeat center bottom',
+			'background-size': '100% 100%'
+		});
+		$('.wrapper').show();
 	}
 	this.handleClose = function() {
 		$('.panel-icon').empty();
 		$('.showcase').hide();
 		$('.bg').css({
-			'background': 'url(images/bg.png) no-repeat center bottom',
+			'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg.png) no-repeat center bottom',
 			'background-size': '100% 100%'
 		});
 		$('.wrapper').show();		
@@ -104,7 +111,7 @@ var App = function() {
 		}
 	}
 	this.handleOne = function() {
-		Snap.load("images/extreme-machines.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/extreme-machines.svg", function(svg){
 			var em = Snap('.icon-one');
 				em.append(svg);
 			var snap = Snap('#extreme-machines');
@@ -171,13 +178,16 @@ var App = function() {
 			animate2();
 			animate3();
 
-			$('.x').on('click', function(){
-				that.handleClose();
+			$('.x').swipe('destroy');
+			$('.x').swipe({
+				tap: function(event, target) {
+					that.handleClose();
+				}
 			});
 		});
 	}
 	this.handleTwo = function() {
-		Snap.load("images/super-materials.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/super-materials.svg", function(svg){
 			var em = Snap('.icon-two');
 				em.append(svg);
 			var snap = Snap('#super-materials');
@@ -191,7 +201,7 @@ var App = function() {
 		});
 	}
 	this.handleThree = function() {
-		Snap.load("images/industrial-internet.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/industrial-internet.svg", function(svg){
 			var em = Snap('.icon-three');
 				em.append(svg);
 			var snap = Snap('#industrial-internet');
@@ -204,14 +214,17 @@ var App = function() {
 				});
 			}, 250);
 
-			$('.x').on('click', function(){
-				clearInterval(interval);
-				that.handleClose();
+			$('.x').swipe('destroy');
+			$('.x').swipe({
+				tap: function(event, target) {
+					clearInterval(interval);
+					that.handleClose();
+				}
 			});
 		});
 	}
 	this.handleFour = function() {
-		Snap.load("images/mapped-minds.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/mapped-minds.svg", function(svg){
 			var em = Snap('.icon-four');
 				em.append(svg);
 			var snap = Snap('#mapped-minds');
@@ -262,13 +275,16 @@ var App = function() {
 
 			animateNodes();
 
-			$('.x').on('click', function(){
-				that.handleClose();
+			$('.x').swipe('destroy');
+			$('.x').swipe({
+				tap: function(event, target) {
+					that.handleClose();
+				}
 			});
 		});
 	}
 	this.handleFive = function() {
-		Snap.load("images/brilliant-factories.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/brilliant-factories.svg", function(svg){
 			var em = Snap('.icon-five');
 				em.append(svg);
 			var snap = Snap('#brilliant-factories');
@@ -276,13 +292,16 @@ var App = function() {
 
 			fins.addClass('animate');
 
-			$('.x').on('click', function(){
-				that.handleClose();
+			$('.x').swipe('destroy');
+			$('.x').swipe({
+				tap: function(event, target) {
+					that.handleClose();
+				}
 			});
 		});
 	}
 	this.handleSix = function() {
-		Snap.load("images/energy-everywhere.svg", function(svg){
+		Snap.load("http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/energy-everywhere.svg", function(svg){
 			var em = Snap('.icon-six');
 				em.append(svg);
 			var snap = Snap('#energy-everywhere');
@@ -295,9 +314,12 @@ var App = function() {
 				});
 			}, 250);
 
-			$('.x').on('click', function(){
-				clearInterval(interval);
-				that.handleClose();
+			$('.x').swipe('destroy');
+			$('.x').swipe({
+				tap: function(event, target) {
+					clearInterval(interval);
+					that.handleClose();
+				}
 			});
 		});
 	}
