@@ -72,10 +72,10 @@ module.exports = function(grunt) {
           unit: 'tablet',
           version: '1',
           internal_scripts: [
-            'js/snap.svg-min.js',
             'js/jquery.touchSwipe.js'
           ],
           external_scripts: [
+            'http://cdn.jsdelivr.net/snap.svg/0.3.0/snap.svg-min.js',
             'http://app.qz.com/js/vendor/jQuery-min.js',
             'http://app.qz.com/js/frameMessager/min/frameMessager.min.2.5.93.js',
             'http://app.qz.com/js/frameMessager/QZIX.js'

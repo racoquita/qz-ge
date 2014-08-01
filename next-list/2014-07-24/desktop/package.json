@@ -1,7 +1,7 @@
 {
 	"name": "ad_template",
 	"version": "0.3.2",
-	"build": 8,
+	"build": 11,
 	"author": "Richard Stovall",
 	"devDependencies": {
 		"grunt": "^0.4.x",
