@@ -52,25 +52,23 @@ var App = function() {
 	var that = this;
 
 	this.on = function() {
-		$('li.item').swipe({
-		 	tap: function(event, target) {
-		    	var number = $(target).data('id');
+		$('li.item').on('click', function(e){
+			var number = $(e.currentTarget).data('id');
 			
-				that.handleIcons(number);
+			that.handleIcons(number);
 
-				$('.showcase[data-id="'+ number +'"]').show();
-				$('.bg').css({
-					'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg-blur.png) no-repeat center bottom',
-					'background-size': '100% 100%'
-				});
-				$('.wrapper').hide();
+			$('.showcase[data-id="'+ number +'"]').show();
+			$('.bg').css({
+				'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg-blur.png) no-repeat center bottom',
+				'background-size': '100% 100%'
+			});
+			$('.wrapper').hide();
 
-				that.track($(target).data('name'));
-        	}
+			that.track($(e.currentTarget).data('name'));
 		});
 	}
 	this.off = function() {
-		$('li.item').swipe('destroy');
+		$('li.item').off();
 		$('.showcase').hide();
 		$('.bg').css({
 			'background': 'url(http://ads.qz.com/sponsors/ge/next-list/2014-07-24/tablet/images/bg.png) no-repeat center bottom',
@@ -175,14 +173,11 @@ var App = function() {
 		animate2();
 		animate3();
 
-		$('.x').swipe('destroy');
-		$('.x').swipe({
-			tap: function(event, target) {
-				l1.stop();
-				l2.stop();
-				l3.stop();
-				that.handleClose();
-			}
+		$('.x').off().on('click', function(){
+			l1.stop();
+			l2.stop();
+			l3.stop();
+			that.handleClose();
 		});
 	}
 	this.handleTwo = function() {
@@ -191,7 +186,7 @@ var App = function() {
 		snap.select('.left-wing').addClass('animate');
 		snap.select('.right-wing').addClass('animate');
 
-		$('.x').on('click', function(){
+		$('.x').off().on('click', function(){
 			that.handleClose();
 		});
 	}
@@ -206,12 +201,9 @@ var App = function() {
 			});
 		}, 250);
 
-		$('.x').swipe('destroy');
-		$('.x').swipe({
-			tap: function(event, target) {
-				clearInterval(interval);
-				that.handleClose();
-			}
+		$('.x').off().on('click', function(){
+			clearInterval(interval);
+			that.handleClose();
 		});
 	}
 	this.handleFour = function() {
@@ -241,11 +233,8 @@ var App = function() {
 
 		animateNodes();
 
-		$('.x').swipe('destroy');
-		$('.x').swipe({
-			tap: function(event, target) {
-				that.handleClose();
-			}
+		$('.x').off().on('click', function(){
+			that.handleClose();
 		});
 	}
 	this.handleFive = function() {
@@ -254,11 +243,8 @@ var App = function() {
 
 		fins.addClass('animate');
 
-		$('.x').swipe('destroy');
-		$('.x').swipe({
-			tap: function(event, target) {
-				that.handleClose();
-			}
+		$('.x').off().on('click', function(){
+			that.handleClose();
 		});
 	}
 	this.handleSix = function() {
@@ -272,12 +258,9 @@ var App = function() {
 			});
 		}, 250);
 
-		$('.x').swipe('destroy');
-		$('.x').swipe({
-			tap: function(event, target) {
-				clearInterval(interval);
-				that.handleClose();
-			}
+		$('.x').off().on('click', function(){
+			clearInterval(interval);
+			that.handleClose();
 		});
 	}
 	this.track = function(id) {
