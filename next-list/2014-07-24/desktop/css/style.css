@@ -59,7 +59,7 @@ img { outline: none; border: none; }
 #qzad .items-container ul.items li.item .icon.super-materials .wings { -webkit-perspective: 1000px; -moz-perspective: 1000px; }
 #qzad .items-container ul.items li.item .icon.super-materials .wings .left-wing { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 100% 50%; transform-origin: 24.13px 8px 0px; }
 #qzad .items-container ul.items li.item .icon.super-materials .wings .left-wing.animate { -webkit-animation: animateWings 1s ease-in-out infinite; -moz-animation: animateWings 1s ease-in-out infinite; animation: animateWings 1s ease-in-out infinite; }
-#qzad .items-container ul.items li.item .icon.super-materials .wings .right-wing { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 0% 50%; transform-origin: 82.47px 8px 0px; }
+#qzad .items-container ul.items li.item .icon.super-materials .wings .right-wing { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); -webkit-transform-origin: 10% 50%; transform-origin: 82.47px 8px 0px; }
 #qzad .items-container ul.items li.item .icon.super-materials .wings .right-wing.animate { -webkit-animation: animateWings 1s ease-in-out infinite; -moz-animation: animateWings 1s ease-in-out infinite; animation: animateWings 1s ease-in-out infinite; }
 #qzad .items-container ul.items li.item .icon.industrial-internet { width: 141px; }
 @media (max-width: 1000px) { #qzad .items-container ul.items li.item .icon.industrial-internet { width: 108px; } }
