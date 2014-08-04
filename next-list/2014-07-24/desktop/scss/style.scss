@@ -645,6 +645,7 @@ img {
 			height: 250px;
 			background: url(../images/bg.png) no-repeat center center;
 			background-size: 100% auto;
+			cursor: pointer;
 
 			@include breakpoint(1050) {
 				width: 1050px;

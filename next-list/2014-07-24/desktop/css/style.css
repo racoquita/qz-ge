@@ -141,7 +141,7 @@ img { outline: none; border: none; }
 @media (max-width: 900px) { #qzad .wrapper { bottom: 93px; } }
 @media (max-width: 850px) { #qzad .wrapper { bottom: 99px; } }
 @media (max-width: 835px) { #qzad .wrapper { bottom: 100px; } }
-#qzad .wrapper .container { position: relative; margin: 0 auto; width: 1100px; height: 250px; background: url(../images/bg.png) no-repeat center center; background-size: 100% auto; }
+#qzad .wrapper .container { position: relative; margin: 0 auto; width: 1100px; height: 250px; background: url(../images/bg.png) no-repeat center center; background-size: 100% auto; cursor: pointer; }
 @media (max-width: 1100px) { #qzad .wrapper .container { width: 1050px; } }
 @media (max-width: 1050px) { #qzad .wrapper .container { width: 1000px; } }
 @media (max-width: 1000px) { #qzad .wrapper .container { width: 950px; } }

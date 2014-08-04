@@ -1,5 +1,7 @@
 body { margin: 0; }
 
+.noflicker { -webkit-perspective: 1000; -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden; }
+
 #qzad { position: absolute; width: 320px; height: 150px; overflow: hidden; background-color: white; border: 1px solid #ccc; box-sizing: border-box; }
 #qzad .arrow { width: 40px; height: 40px; }
 #qzad .arrow img { margin-top: 16px; margin-left: 16px; height: 7px; }

@@ -76,6 +76,7 @@ var App = function() {
 
 		$('.wrapper').on('click', function(){
 			window.open('http://qz.com/bulletins/ge/', '_blank');
+			QZIX.manualTrigger('external', 'click', 'clicked on map', false);
 		});
 
 		that.randomize();

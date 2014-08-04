@@ -3,6 +3,11 @@ $blue: #0860AC;
 body {
 	margin: 0;
 }
+.noflicker {
+	-webkit-perspective: 1000;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility:hidden;
+}
 #qzad {
 	position: absolute;
 	width: 320px;
