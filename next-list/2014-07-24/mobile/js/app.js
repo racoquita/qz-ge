@@ -82,6 +82,8 @@ var App = function() {
 	this.on = function() {
 		$('.content').swipe({
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+				QZIX.manualTrigger('internal', 'swipe', 'swiped', false);
+
           		if(direction == 'left' && counter < 5) {
           			counter++;
           			that.move();
