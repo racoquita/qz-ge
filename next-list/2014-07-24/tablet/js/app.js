@@ -65,6 +65,8 @@ var App = function() {
 			$('.wrapper').hide();
 
 			that.track($(e.currentTarget).data('name'));
+
+			QZIX.manualTrigger('internal', 'click', 'clicked ' + $(e.currentTarget).data('name'), false);
 		});
 	}
 	this.off = function() {
