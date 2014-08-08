@@ -81,15 +81,15 @@ var App = function() {
 		</div>'];
 
 	this.on = function() {
-		$('.next-slide').off().on('click', function() {
+		$('.next-slide').click(function() {
 			that.change(currentSlide + 1);
 		});
 
-		$('.prev-slide').off().on('click', function() {
+		$('.prev-slide').click(function() {
 			that.change(currentSlide - 1);
 		});
 
-		$('.dot').off().on('click', function(e) {
+		$('.dot').on('click', function(e) {
 			if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
 			QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
 		});
