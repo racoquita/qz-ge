@@ -64,7 +64,6 @@ var App = function() {
 			clearInterval(timer);
 			$('li.item').removeClass('active');
 			$(e.currentTarget).addClass('active');
-
 			that.track($(e.currentTarget).data('id'));
 		}).on('mouseleave', function(e){
 			$('li.item').removeClass('active');
@@ -72,6 +71,7 @@ var App = function() {
 		}).on('click', function(e){
 			$('li.item').removeClass('active');
 			$(e.currentTarget).addClass('active');
+			that.track($(e.currentTarget).data('id'));
 		});
 
 		$('.wrapper').on('click', function(){
@@ -246,6 +246,8 @@ var App = function() {
 		});
 	}
 	this.randomize = function() {
+		if(typeof interval != 'undefined') clearInterval(timer);
+		
 		timer = setInterval(function() {
 			var num = Math.floor(Math.random() * 6);
 			var items = $('.item');
