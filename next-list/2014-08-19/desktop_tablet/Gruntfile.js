@@ -21,6 +21,7 @@ module.exports = function(grunt) {
     compass: {
       build: {
         options: {
+          require: 'animation',
           sassDir: 'scss',
           cssDir: 'css',
           outputStyle: 'compact',
@@ -72,10 +73,10 @@ module.exports = function(grunt) {
           unit: 'desktop_tablet',
           version: '1',
           internal_scripts: [
-            'js/qzintelslideshow.js'
+            
           ],
           external_scripts: [
-            'http://admin.brightcove.com/js/BrightcoveExperiences.js',
+            'http://cdn.jsdelivr.net/snap.svg/0.3.0/snap.svg-min.js',
             'http://app.qz.com/js/vendor/jQuery-min.js',
             'http://app.qz.com/js/frameMessager/min/frameMessager.min.2.5.93.js',
             'http://app.qz.com/js/frameMessager/QZIX.js'
