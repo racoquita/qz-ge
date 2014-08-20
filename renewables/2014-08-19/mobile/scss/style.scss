@@ -1,12 +1,380 @@
 body {
 	margin: 0;
 }
-#qzad {
-	position: absolute;
+// #qzad {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 430px;
+// 	min-width: 320px;
+// 	max-width: 600px;
+// 	overflow: hidden;
+// 	background-color: white;
+// }
+.wrapper {
+	position: relative;
+	height: 430px;
+	min-width: 320px;
+	max-width: 600px;
 	width: 100%;
-	height: 520px;
-	min-width: 769px;
-	max-width: 1600px;
+	background-color: #ffffff;
 	overflow: hidden;
-	background-color: white;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left:0;
+	bottom:0;
+	background: url(../images/GE_WindmillLoop.gif) center center no-repeat; 
+	background-size: auto 525px;
+	z-index: 1;
+}
+.fadable {
+	-webkit-transition: opacity 500ms ease-in;
+	-moz-transition: opacity 500ms ease-in;
+	-ms-transition: opacity 500ms ease-in;
+	-o-transition: opacity 500ms ease-in;
+	transition: opacity 500ms ease-in;
+	transition-delay: 900ms;
+	-webkit-transition-delay: 900ms;
+}
+
+.animated {
+	-webkit-animation-duration: 500ms;
+	animation-duration: 500ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.delay {
+	animation-delay: 500ms;
+	-webkit-animation-delay: 500ms;
+}
+
+.bounceIn {
+	-webkit-animation-name: bounceIn;
+	animation-name: bounceIn;
+}
+
+.clearfix {
+	zoom: 1;
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.hide {
+	display: none !important;
+}
+
+a {
+	display: block;
+}
+
+@-webkit-keyframes pulsate {
+	0% {
+		-webkit-transform: scale(0.1, 0.1);
+		opacity: 0.0;
+	}
+	50% {
+		opacity: 1.0;
+	}
+	100% {
+		-webkit-transform: scale(1.2, 1.2);
+		opacity: 0.0;
+	}
+}
+
+
+@-webkit-keyframes bump {
+	0% {
+		padding-right: 40px;
+	}
+	10% {
+		padding-right: 50px;
+	}
+	14% {
+		padding-right: 38px;
+	}
+	15%, 100% {
+		padding-right: 40px;
+	}
+}
+
+
+@-webkit-keyframes bounceIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0.3);
+		transform: scale(0.3);
+	}
+	50% {
+		opacity: 1;
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+	70% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0.3);
+		-ms-transform: scale(0.3);
+		transform: scale(0.3);
+	}
+	50% {
+		opacity: 1;
+		-webkit-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+	70% {
+		-webkit-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #eeeeee;
+}
+
+a {
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	transition: all 100ms linear;
+	color: inherit;
+	text-decoration: none;
+}
+
+ul li {
+	list-style-type: none;
+	padding: 0;
+}
+
+img {
+	opacity: inherit;
+}
+
+
+
+.smoke {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 2;
+}
+
+.logo {
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	transition: all 100ms linear;
+	position: absolute;
+	right: 5.5%;//33px;
+	bottom: 20px;
+	z-index: 10;
+	cursor: pointer;
+	width: 45px;
+	&:hover {
+		-ms-transform: scale(0.9);
+		/* IE 9 */
+		-webkit-transform: scale(0.9);
+		/* Chrome, Safari, Opera */
+		transform: scale(0.9);
+	}
+}
+
+#slides {
+	position: relative;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	.slide {
+		position: absolute;
+		width: 100%;
+		-webkit-transition: all .5s ease;
+		-o-transition: all .5s ease;
+		transition: all .5s ease;
+
+		&.active {
+			display: block;
+			left: 0;
+		}
+		&.inactive {
+			display: none;
+			-webkit-transition: all 0s ease;
+			-o-transition: all 0s ease;
+			transition: all 0s ease;
+		}
+		&.left {
+			display: block;
+			left: -100%;
+		}
+		&.right {
+			display: block;
+			left: 100%;
+		}
+		.text{
+			margin: 95.5px auto 49px auto;
+			display: block;
+			width: 75%;//450px;
+		}
+		// &.one {
+		// 	.text {
+		// 		display: block;
+		// 		margin: 13px auto 0;
+		// 		width: 211px;
+		// 	}
+		// }
+		// &.two {
+		// 	.text {
+		// 		display: block;
+		// 		margin: 13px auto 0;
+		// 		width: 237px;
+		// 	}
+		// }
+		// &.three {
+		// 	.text {
+		// 		display: block;
+		// 		margin: 13px auto 0;
+		// 		width: 254px;
+		// 	}
+		// 	.click-here {
+		// 		position: absolute;
+		// 		top: 80px;
+		// 		left: 210px;
+		// 		width: 64px;
+		// 	}
+		// }
+		.bulletin {
+			width: 66.666666%;//400px;
+			text-align: center;
+			position: relative;
+			margin: 0 auto;
+			
+			//margin-left: -65px;
+			padding-top: 16px;
+			padding-bottom: 13px;
+			background-color: #0079C1;
+
+			img {
+				width: 82.635%;//330px;
+			}
+		}
+	}	
+}
+
+.arrow-left, .arrow-right {
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	transition: all 100ms linear;
+	position: absolute;
+	top: 148.5px;
+	cursor: pointer;
+	width: 12px;
+	z-index: 11;
+}
+
+.arrow-left {
+	left: 2%; //12px
+	&:hover {
+		left: 1%;
+	}
+}
+
+.arrow-right {
+	right: 2%; //12px
+	&:hover {
+		right: 1%;
+	}
+}
+
+.dots {
+	position: relative;
+	top:-30px;
+	margin: 0 auto;
+	width: 11.66666%; //70px;
+	z-index: 10;
+}
+
+.dot {
+	width: 17.1428%;//12px;
+}
+
+.dots .dot {
+	margin: 0 4.2807% 0 4.2807%;
+	opacity: 0.5;
+	cursor: pointer;
+	-webkit-transition: all 100ms linear;
+	-moz-transition: all 100ms linear;
+	-o-transition: all 100ms linear;
+	-ms-transition: all 100ms linear;
+	transition: all 100ms linear;
+	
+	&.active {
+		opacity: 1.0;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.carousel {
+		padding-top: 100px !important;
+		-ms-transform: scale(0.8);
+		/* IE 9 */
+		-webkit-transform: scale(0.8);
+		/* Chrome, Safari, Opera */
+		transform: scale(0.8);
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.carousel {
+		padding-top: 150px !important;
+		-ms-transform: scale(0.6);
+		/* IE 9 */
+		-webkit-transform: scale(0.6);
+		/* Chrome, Safari, Opera */
+		transform: scale(0.6);
+	}
 }

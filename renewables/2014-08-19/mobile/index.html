@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Plus Ad Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width">
+
+	<title>GE - Renewables - Mobile</title>
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div id="qzad"></div>
+	<div id="qzad" class="wrapper">
+		<div class="background"></div>
+		<!-- <img class="background" src="./images/GE_WindmillLoop.gif"> -->
 
+		<!-- Smoke -->
+		<div class="smoke"></div>
+
+		<!-- Slideshow -->
+		<div id="slides">
+			<div class="slide active one">
+				<img class="text show" src="images/slide-1-text.png"/>
+				<a href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked">
+					<img src="images/bulletin.png"/>
+				</a>
+			</div>
+		</div>
+		<div class="dots">
+			<img class="dot slide-1-dot active" src="images/dot.png" data-num="1">
+			<img class="dot slide-2-dot" src="images/dot.png" data-num="2">
+			<img class="dot slide-3-dot" src="images/dot.png" data-num="3">
+		</div>
+		<!-- Logo, dots, and arrows -->
+		<a href="http://www.ge.com/" target="_blank" class="ixtrack" data-ix-category="external" data-ix-label="logo clicked">
+			<img class="logo" src="./images/ge-logo.png">
+		</a>
+
+		<img id="prev" class="arrow-left hide prev-slide ixtrack" src="./images/arrow-left.png" data-ix-category="internal" data-ix-label="previous clicked">
+		<img id="next" class="arrow-right next-slide ixtrack" src="./images/arrow-right.png" data-ix-category="internal" data-ix-label="next clicked">
+
+		
+
+	</div>
 	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+	<script src="http://app.qz.com/js/frameMessager/QZIX.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
