@@ -68,14 +68,19 @@ var App = function() {
         that.handleSix('#energy-everywhere', true);
 		that.handleSix('#energy-everywhere-2', false);
 
-		$('li.item').on(this.hasTouch ? 'touchend' : 'click', function(e){
-            $('.wrapper .container, .clouds, .items-container').addClass('blur');
 
-            var id = $(this).data('id');
-            $('.overlay .content').removeClass('active');
-            $('.wrapper').addClass('active');
-            $('.overlay').addClass('active').find('.' + id).addClass('active');
+		$('li.item').hammer().bind('tap', function(){
+			console.log('tapped');
 		});
+
+		// $('li.item').on(this.hasTouch ? 'touchend' : 'click', function(e){
+  //           $('.wrapper .container, .clouds, .items-container').addClass('blur');
+
+  //           var id = $(this).data('id');
+  //           $('.overlay .content').removeClass('active');
+  //           $('.wrapper').addClass('active');
+  //           $('.overlay').addClass('active').find('.' + id).addClass('active');
+		// });
 
         $('.wrapper .overlay .close').on(this.hasTouch ? 'touchend' : 'click', function(e){
             e.stopPropagation();
