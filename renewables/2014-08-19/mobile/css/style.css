@@ -2,7 +2,7 @@ body { margin: 0; }
 
 .wrapper { position: relative; height: 430px; min-width: 320px; max-width: 600px; width: 100%; background-color: #ffffff; overflow: hidden; }
 
-.background { position: absolute; top: 0; right: 0; left: 0; bottom: 0; background: url(../images/GE_WindmillLoop.gif) center center no-repeat; background-size: auto 430px; z-index: 1; }
+.background { position: absolute; top: 0; right: 0; left: 0; bottom: 0; background: url(../images/GE_WindmillLoop-o.gif) center center no-repeat; background-size: auto 430px; z-index: 1; }
 
 .fadable { -webkit-transition: opacity 500ms ease-in; -moz-transition: opacity 500ms ease-in; -ms-transition: opacity 500ms ease-in; -o-transition: opacity 500ms ease-in; transition: opacity 500ms ease-in; transition-delay: 900ms; -webkit-transition-delay: 900ms; }
 
