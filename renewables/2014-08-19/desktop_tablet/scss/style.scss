@@ -167,6 +167,12 @@ img {
 	background-color: #ffffff;
 	overflow: hidden;
 	border: 1px solid #000;
+	@media all and (min-device-width:768px)  and (max-device-width:1024px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+		background: url(../images/GE_WindmillLoop.jpg) center 0 no-repeat;
+		background-size: auto 520px;
+		display: block;
+	}
 }
 
 .background {
@@ -183,7 +189,12 @@ img {
 	// width:145.545454%;
 	height: 175%;
 	top: -39%;
+	@media all and (min-device-width:768px)  and (max-device-width:1024px) and (-webkit-min-device-pixel-ratio: 2) { 
+		display: none;
+	}
+	
 }
+
 
 .smoke {
 	position: absolute;
@@ -192,6 +203,9 @@ img {
 	bottom: 0;
 	right: 0;
 	background-color: rgba(0, 0, 0, 0.6);
+	@media all and (min-device-width:768px)  and (max-device-width:1024px) and (-webkit-min-device-pixel-ratio: 2) { 
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 	z-index: 2;
 }
 
