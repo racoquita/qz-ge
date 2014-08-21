@@ -59,28 +59,69 @@ var App = function() {
 	var currentSlide = 1;
 	var dir = 'next';
 	var slideCount = $('.slides li.slide').length;
+  var timeouts=[];
+  var currentImg;
+  var times = [3000, 3000];
+  var imageSets = [
+        function () { 
+          $('.background .img-2').addClass('fade');
+          console.log('image2')
+        },
+        function () {
+          console.log('image 3')
+            $('.background .img-3').addClass('fade');
+        }
+    ];
 	var slides = [
 		'<div class="slide inactive one"> \
-			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-1-text.png"/> \
+      <div class="background"></div>\
+			<img class="text show" src="images/slide-1-text.png"/> \
+      <img class="text-320 show" src="images/slide-1-text-320.png"/> \
 			<a href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+				<img class="bulletin-img" src="images/bulletin.png"/> \
+        <img class="bulletin-320" src="images/bulletin-320.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive two"> \
-			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-2-text.png"/> \
+      <div class="background"></div>\
+			<img class="text" src="images/slide-2-text.png"/> \
+      <img class="text-320" src="images/slide-2-text-320.png"/> \
 			<a href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+				<img class="bulletin-img" src="images/bulletin.png"/> \
+        <img class="bulletin-320" src="images/bulletin-320.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive three"> \
-			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-3-text.png"/> \
+    <div class="background"></div>\
+			<img class="text" src="images/slide-3-text.png"/> \
+      <img class="text-320" src="images/slide-3-text-320.png"/> \
       <a href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-        <img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+        <img class="bulletin-img" src="images/bulletin.png"/> \
+        <img class="bulletin-320" src="images/bulletin-320.png"/> \
       </a> \
 		</div>'];
-
+  this.init = function () {
+    currentImg = 0;
+    that.changeImage();
+    timeouts[0] = setTimeout(function() {
+        $('.background .img-1').addClass('fade');
+    }, 1500);
+  }
+  this.changeImage = function() {
+      
+      if($.isFunction(imageSets[currentImg])) {
+        ct = setTimeout(function() {
+          
+          imageSets[currentImg]();
+          currentImg++;
+          that.changeImage();
+         }, times[currentImg]);
+      }
+    };
 	this.on = function() {
-
+    that.init()
+  
+    
 		$('.next-slide').swipe({
 			tap: function(e, target) {
 				that.change(currentSlide + 1);
@@ -119,6 +160,9 @@ var App = function() {
 		});
 	}
 	this.off = function() {
+    $.each(timeouts, function(i, to){
+        clearTimeout(to);
+    });
 		$('.dot').off();
 		$('.next-slide').swipe('destroy');
 		$('.prev-slide').swipe('destroy');
@@ -128,7 +172,6 @@ var App = function() {
 		dir = 'next';
 	}
 	this.change = function(num, dontTrack) {
-  
 
     if (num > 0 && num <= 3) {
       dir = num > currentSlide ? 'next' : 'prev';

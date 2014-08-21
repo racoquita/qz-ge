@@ -1,27 +1,46 @@
 body {
     margin: 0;
 }
-
 .wrapper {
     position: relative;
     height: 430px;
     min-width: 320px;
     max-width: 600px;
     width: 100%;
-    background-color: #ffffff;
     overflow: hidden;
 }
 
-.background {
+ .background {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: url(../images/GE_WindmillLoop.gif) center center no-repeat;
-    background-size: auto 430px;
+    -webkit-transition: all 5s ease;
+    -o-transition: all 5s ease;
+    transition: all 5s ease;
+    //background: url(../images/bg-1.jpg) center center no-repeat, rgba(0, 0, 0, 0.6);
+    background-size:cover;
     z-index: 1;
-}
+    img{
+        display: block;
+        position:absolute;
+        top:0;
+        left: 0;
+        &.fade {
+            opacity: 0;
+            -webkit-transition: opacity 1s linear;
+               -moz-transition: opacity 1s linear;
+                 -o-transition: opacity 1s linear;
+                    transition: opacity 1s linear;
+                
+        }
+        &.fade-in{
+             opacity: 1;
+        }
+    }
+    
+ }
 
 .fadable {
     -webkit-transition: opacity 500ms ease-in;
@@ -186,7 +205,7 @@ img {
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 2;
+    z-index: 0;
 }
 
 .logo {
@@ -219,9 +238,12 @@ img {
     .slide {
         position: absolute;
         width: 100%;
+        bottom:0;
+        top:0;
         -webkit-transition: all .5s ease;
         -o-transition: all .5s ease;
         transition: all .5s ease;
+    
         &.active {
             display: block;
             left: 0;
@@ -244,6 +266,18 @@ img {
             margin: 95.5px auto 49px auto;
             display: block;
             width: 75%;
+            z-index: 3;
+            @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+                display: none;
+            }
+        }
+        .text-320 {
+            margin: 54px auto 30px auto;
+            display: none;
+            width: 72.1875%;
+            @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+                display: block;
+            }
         }
         .bulletin {
             width: 66.666666%;
@@ -253,10 +287,26 @@ img {
             padding-top: 16px;
             padding-bottom: 13px;
             background-color: #0079C1;
-            img {
+            .bulletin-img {
                 width: 82.635%;
+                @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+                    display: none;
+                }
             }
+            .bulletin-320{
+                display: none;
+               
+                @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+                    width: 71.3483%;
+                    display: block;
+                    margin:0 auto;
+
+                }
+            }
+           
         }
+
+
     }
 }
 
