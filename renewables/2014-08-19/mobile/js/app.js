@@ -61,21 +61,21 @@ var App = function() {
 	var slideCount = $('.slides li.slide').length;
 	var slides = [
 		'<div class="slide inactive one"> \
-			<img class="text show" src="images/slide-1-text.png"/> \
+			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-1-text.png"/> \
 			<a href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="images/bulletin.png"/> \
+				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive two"> \
-			<img class="text" src="images/slide-2-text.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-2-text.png"/> \
 			<a href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img src="images/bulletin.png"/> \
+				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
 			</a> \
 		</div>',
 		'<div class="slide inactive three"> \
-			<img class="text" src="images/slide-3-text.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-3-text.png"/> \
       <a href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-        <img src="images/bulletin.png"/> \
+        <img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
       </a> \
 		</div>'];
 
