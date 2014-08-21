@@ -105,7 +105,7 @@ var App = function() {
     that.changeImage();
     timeouts[0] = setTimeout(function() {
         $('.background .img-1').addClass('fade');
-    }, 1500);
+    }, 500);
   }
   this.changeImage = function() {
       
