@@ -134,7 +134,8 @@ var App = function() {
         }
 	}
 	this.off = function() {
-		$('li.item').removeClass('active');
+        $('.blur').removeClass('blur');
+		$('li.item, .overlay, .wrapper').removeClass('active');
 		$('li.item, .wrapper, .wrapper .overlay .close').off();
 		clearInterval(timer);
 	}
