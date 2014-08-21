@@ -65,11 +65,11 @@ module.exports = function(grunt) {
     qzready: {
       deploy: {
         options: {
-          base: 'http://ads.quartz.cc/sponsors',
-          client: 'example_client',
-          campaign: 'example_campaign',
-          date: '2014-08-07',
-          unit: 'desktop',
+          base: 'http://ads.qz.com/sponsors',
+          client: 'ge',
+          campaign: 'renewbles',
+          date: '2014-08-19',
+          unit: 'mobile',
           version: '1',
           internal_scripts: [
             

@@ -6,7 +6,7 @@ a { display: block; color: #0860ac; text-decoration: none; outline: none; border
 
 img { outline: none; border: none; }
 
-#qzad { position: absolute; width: 100%; height: 430px; min-width: 320px; max-width: 600px; overflow: hidden; border: 1px solid #cccccc; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: ge_inspira; font-size: 11px; }
+#qzad { position: absolute; width: 100%; height: 430px; min-width: 320px; max-width: 600px; overflow: hidden; border: 1px solid #cccccc; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: ge_inspira; font-size: 11px; background-color: white; }
 #qzad .clouds { position: absolute; left: 5%; right: 5%; width: 90%; height: 100%; top: 28%; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 150% auto; background-color: white; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; -ms-animation: animatedBackground 40s linear infinite; -o-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 @media (max-width: 500px) { #qzad .clouds { top: 30%; } }
 @media (max-width: 420px) { #qzad .clouds { top: 34%; } }

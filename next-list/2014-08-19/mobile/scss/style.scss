@@ -45,6 +45,7 @@ img {
   @include box-sizing(border-box);
   font-family: $font_0;
   font-size: 11px;
+  background-color: white;
 
   .clouds {
     position: absolute;
