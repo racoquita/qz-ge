@@ -90,6 +90,10 @@ img {
     font-size: 13px;
     text-align: center;
     color: $endeavour_approx;
+
+    span.click {
+    	padding-right: 5px;
+    }
   }
 
   @media (max-width: 1100px) {
