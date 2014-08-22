@@ -50,7 +50,7 @@ ul li { list-style-type: none; padding: 0; }
 
 img { opacity: inherit; }
 
-.smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 1; }
+.smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 2; }
 
 .logo { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; position: absolute; right: 5.5%; bottom: 20px; z-index: 10; cursor: pointer; width: 45px; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { .logo { bottom: 17.5px; width: 14.0625%; } }
