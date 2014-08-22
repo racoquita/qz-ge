@@ -147,7 +147,8 @@ var App = function() {
     this.touchItem = function(evt) {
         // $('.wrapper .container, .clouds, .items-container').addClass('blur');
 
-        $('.bg').attr('src', 'images/bg2-blur.png');
+        $('.bg').attr('src', 'http://ads.qz.com/sponsors/ge/next-list/2014-08-19/desktop_tablet/images/bg2-blur.png');
+        $('.clouds').css('background-image', 'url(http://ads.qz.com/sponsors/ge/next-list/2014-08-19/desktop_tablet/images/clouds-blur.png)');
         $('.wind, .waves').hide();
 
         if($(window).width() < 1100) $('.items-container').hide();
@@ -159,11 +160,13 @@ var App = function() {
 
         that.activeOverlay = id;
         that.overlayAnimHandlers[ id ].call(that, '#' + id + '-2', false, true);
+        that.track(id);
     };
     this.touchClose = function(evt) {
         if(!that.activeOverlay) return;
 
-        $('.bg').attr('src', 'images/bg2.png');
+        $('.bg').attr('src', 'http://ads.qz.com/sponsors/ge/next-list/2014-08-19/desktop_tablet/images/bg2.png');
+        $('.clouds').css('background-image', 'url(http://ads.qz.com/sponsors/ge/next-list/2014-08-19/desktop_tablet/images/clouds.png)');
         $('.wind, .waves').show();
 
         if($(window).width() < 1100) $('.items-container').show();
@@ -342,10 +345,8 @@ var App = function() {
     			node4.stop().attr({ cx: 26.6, cy: 22 });
     		});
         } else if(run) {
-            console.log('run');
             animateNodes();
         } else if(!run) {
-            console.log('stop');
             node1.stop().attr({ cx: 17.5, cy: 22.8 });
             node2.stop().attr({ cx: 26.6, cy: 22 });
             node3.stop().attr({ cx: 26.6, cy: 36.2 });

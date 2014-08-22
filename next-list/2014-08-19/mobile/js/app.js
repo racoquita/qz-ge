@@ -122,8 +122,7 @@ var App = function() {
     this.touchItem = function(evt) {
         // $('.wrapper .container, .clouds, .items-container').addClass('blur');
 
-        $('.bg').attr('src', 'images/bg2-blur.png');
-        $('.clouds').css('background-image', 'url(images/clouds-blur.png)');
+        $('.bg').attr('src', 'http://ads.qz.com/sponsors/ge/next-list/2014-08-19/mobile/images/bg2-blur.png');
         $('.wind, .waves').hide();
 
         if($(window).width() < 1100) $('.items-container').hide();
@@ -135,12 +134,12 @@ var App = function() {
 
         that.activeOverlay = id;
         that.overlayAnimHandlers[ id ].call(that, '#' + id + '-2', true);
+        that.track(id);
     };
     this.touchClose = function(evt) {
         if(!that.activeOverlay) return;
 
-        $('.bg').attr('src', 'images/bg2.png');
-        $('.clouds').css('background-image', 'url(images/clouds.png)');
+        $('.bg').attr('src', 'http://ads.qz.com/sponsors/ge/next-list/2014-08-19/mobile/images/bg2.png');
         $('.wind, .waves').show();
 
         if($(window).width() < 1100) $('.items-container').show();

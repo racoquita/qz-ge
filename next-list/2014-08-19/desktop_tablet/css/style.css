@@ -11,7 +11,7 @@ a { display: block; color: #0860ac; text-decoration: none; outline: none; border
 img { outline: none; border: none; }
 
 #qzad { position: absolute; width: 100%; height: 520px; min-width: 768px; max-width: 1600px; overflow: hidden; border: 1px solid #cccccc; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: ge_inspira; font-size: 11px; background-color: white; }
-#qzad .clouds { position: absolute; width: 80%; height: 100%; top: 0; left: 0; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 1100px 100px; background-color: white; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; -ms-animation: animatedBackground 40s linear infinite; -o-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
+#qzad .clouds { position: absolute; width: 80%; height: 1100px; top: 0; left: 0; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 1100px 100px; background-color: white; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; -ms-animation: animatedBackground 40s linear infinite; -o-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 @media (max-width: 1100px) { #qzad .clouds { left: 5%; right: 5%; width: 90%; top: 70px; } }
 #qzad .instructions { position: absolute; top: 65px; right: 45px; left: 80%; font-size: 13px; text-align: center; color: #0860ac; }
 @media (max-width: 1100px) { #qzad > .instructions { display: none; } }
