@@ -218,6 +218,10 @@ img {
     z-index: 10;
     cursor: pointer;
     width: 45px;
+    @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+        bottom:17.5px;
+        width: 14.0625%;
+    }
     &:hover {
         -ms-transform: scale(0.9);
         -webkit-transform: scale(0.9);
@@ -270,7 +274,7 @@ img {
             }
         }
         .text-320 {
-            margin: 54px auto 30px auto;
+            margin: 53px auto 30px auto;
             display: none;
             width: 72.1875%;
             @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
@@ -285,6 +289,10 @@ img {
             padding-top: 16px;
             padding-bottom: 13px;
             background-color: #0079C1;
+            @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+                padding-bottom:10px;
+                padding-top:11px;
+            }
             .bulletin-img {
                 width: 82.635%;
                 @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
