@@ -65,13 +65,13 @@ img { opacity: inherit; }
 #slides .slide .text { margin: 95.5px auto 49px auto; display: block; width: 75%; z-index: 3; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text { display: none; } }
 #slides .slide .text-320 { margin: 53px auto 30px auto; display: none; width: 72.1875%; }
-@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text-320 { display: block; } }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text-320 { display: block; width: 70%; } }
 #slides .slide .bulletin { width: 66.666666%; text-align: center; position: relative; margin: 0 auto; padding-top: 16px; padding-bottom: 13px; background-color: #0079C1; }
-@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin { padding-bottom: 10px; padding-top: 11px; } }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin { padding-bottom: 10px; padding-top: 10px; } }
 #slides .slide .bulletin .bulletin-img { width: 82.635%; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-img { display: none; } }
 #slides .slide .bulletin .bulletin-320 { display: none; }
-@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-320 { width: 71.3483%; display: block; margin: 0 auto; } }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-320 { width: 70%; display: block; margin: 0 auto; } }
 
 .arrow-left, .arrow-right { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; position: absolute; top: 148.5px; cursor: pointer; width: 12px; z-index: 11; }
 
