@@ -272,8 +272,8 @@ img {
         zoom: 0.6;
 
         &.wind-1 {
-          top: 42%;
-          left: 77.1%;
+          top: 41.5%;
+          left: 76.1%;
           @include transform-origin(6.9px 11.6px 0);
 
           @media (max-width: 420px) {
@@ -282,7 +282,7 @@ img {
         }
         &.wind-2 {
           top: 40.6%;
-          left: 79.7%;
+          left: 78.7%;
           @include transform-origin(16.3px 13.5px 0);
 
           @media (max-width: 360px) {
@@ -292,7 +292,7 @@ img {
         }
         &.wind-3 {
           top: 37%;
-          left: 84.75%;
+          left: 83.2%;
           @include transform-origin(9.4px 17.1px 0);
 
           @media (max-width: 360px) {
