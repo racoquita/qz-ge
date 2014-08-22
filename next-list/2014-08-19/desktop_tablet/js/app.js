@@ -51,8 +51,11 @@ var trackers = {
 var App = function() {
 	var that = this;
 	var timer;
+    var intervals = [];
 
     this.hasTouch = 'ontouchstart' in document;
+
+    this.activeOverlay = false;
 
     if( this.hasTouch ) {
         $('span.click').hide();
@@ -60,6 +63,15 @@ var App = function() {
     }
 
 	this.on = function() {
+        that.overlayAnimHandlers = {
+            'extreme-machines': that.handleOne,
+            'super-materials': that.handleTwo,
+            'industrial-internet': that.handleThree,
+            'mapped-minds': that.handleFour,
+            'brilliant-factories': that.handleFive,
+            'energy-everywhere': that.handleSix
+        };
+
         if( !that.hasTouch ) {
             that.handleOne('#extreme-machines', true);
             that.handleTwo('#super-materials', true);
@@ -68,13 +80,6 @@ var App = function() {
             that.handleFive('#brilliant-factories', true);
             that.handleSix('#energy-everywhere', true);
         }
-
-        that.handleOne('#extreme-machines-2', false);
-        that.handleTwo('#super-materials-2', false);
-        that.handleThree('#industrial-internet-2', false);
-        that.handleFour('#mapped-minds-2', false);
-        that.handleFive('#brilliant-factories-2', false);
-		that.handleSix('#energy-everywhere-2', false);
 
         if( this.hasTouch ) {
             $('li.item').on( {
@@ -134,8 +139,7 @@ var App = function() {
         }
 	}
 	this.off = function() {
-        $('.blur').removeClass('blur');
-		$('li.item, .overlay, .wrapper').removeClass('active');
+		$('li.item').removeClass('active');
 		$('li.item, .wrapper, .wrapper .overlay .close').off();
 		clearInterval(timer);
 	}
@@ -145,19 +149,29 @@ var App = function() {
         var id = $(this).data('id');
         $('.overlay .content').removeClass('active');
         $('.wrapper').addClass('active');
-        $('.overlay').addClass('active').find('.' + id).addClass('active');
+        var $overlay = $('.overlay').addClass('active').find('.' + id).addClass('active');
+
+        that.activeOverlay = id;
+        that.overlayAnimHandlers[ id ].call(that, '#' + id + '-2', false, true);
     };
     this.touchClose = function(evt) {
+        if(!that.activeOverlay)
+            return;
+
         evt.stopPropagation();
         $('.overlay, .wrapper').removeClass('active');
         $('.wrapper .container, .clouds, .items-container').removeClass('blur');
+
+        that.overlayAnimHandlers[ that.activeOverlay ].call(that, '#' + that.activeOverlay + '-2', false, false);
+        that.activeOverlay = null;
+
         return false;
     };
     this.touchBulletin = function(evt) {
         window.open('http://qz.com/bulletins/ge/', '_blank');
         QZIX.manualTrigger('external', 'click', 'clicked on map', false);
     };
-	this.handleOne = function(id, onHover) {
+	this.handleOne = function(id, onHover, run) {
 		var snap = Snap(id);
 
 		var l1 = snap.path("M0,59 l20.9-10.3L6.3,46").attr({
@@ -228,13 +242,17 @@ var App = function() {
     			l2.stop();
     			l3.stop();
     		});
-        } else {
+        } else if(run) {
             animate1();
             animate2();
             animate3();
+        } else if(!run) {
+            l1.stop();
+            l2.stop();
+            l3.stop();
         }
 	}
-	this.handleTwo = function(id, onHover) {
+	this.handleTwo = function(id, onHover, run) {
 		var snap = Snap(id);
 
         if(onHover) {
@@ -245,36 +263,41 @@ var App = function() {
     			snap.select('.left-wing').removeClass('animate');
     			snap.select('.right-wing').removeClass('animate');
     		});
-        } else {
+        } else if(run) {
             snap.select('.left-wing').addClass('animate');
             snap.select('.right-wing').addClass('animate');
+        } else if(!run) {
+            snap.select('.left-wing').removeClass('animate');
+            snap.select('.right-wing').removeClass('animate');
         }
 	}
-	this.handleThree = function(id, onHover) {
+	this.handleThree = function(id, onHover, run) {
 		var snap = Snap(id);
 		var lights = $(id).find('.lights circle');
-		var interval;
 
         if(onHover) {
     		$('.industrial-internet').parent('.item').on('mouseenter', function(e){
-    			interval = setInterval(function(){
+    			intervals[id] = setInterval(function(){
     				$.each(lights, function(i, light){
     					Math.random() > .5 ? $(light).hide() : $(light).show();
     				});
     			}, 250);
     		}).on('mouseleave', function(e){
-    			clearInterval(interval);
+    			clearInterval(intervals[id]);
     			lights.show();
     		});
-        } else {
-            interval = setInterval(function(){
+        } else if(run) {
+            intervals[id] = setInterval(function(){
                 $.each(lights, function(i, light){
                     Math.random() > .5 ? $(light).hide() : $(light).show();
                 });
             }, 250);
+        } else if(!run) {
+            clearInterval(intervals[id]);
+            lights.show();
         }
 	}
-	this.handleFour = function(id, onHover) {
+	this.handleFour = function(id, onHover, run) {
 		var snap = Snap(id);
 		var node1 = snap.select('.mind-nodes circle:nth-child(1)');
 		var node2 = snap.select('.mind-nodes circle:nth-child(2)');
@@ -308,11 +331,16 @@ var App = function() {
     			node3.stop().attr({ cx: 26.6, cy: 36.2 });
     			node4.stop().attr({ cx: 26.6, cy: 22 });
     		});
-        } else {
+        } else if(run) {
             animateNodes();
+        } else if(!run) {
+            node1.stop().attr({ cx: 17.5, cy: 22.8 });
+            node2.stop().attr({ cx: 26.6, cy: 22 });
+            node3.stop().attr({ cx: 26.6, cy: 36.2 });
+            node4.stop().attr({ cx: 26.6, cy: 22 });
         }
 	}
-	this.handleFive = function(id, onHover) {
+	this.handleFive = function(id, onHover, run) {
 		var snap = Snap(id);
 		var fins = snap.select('.fins');
 
@@ -322,32 +350,36 @@ var App = function() {
     		}).on('mouseleave', function(e){
     			fins.removeClass('animate');
     		});
-        } else {
+        } else if(run) {
             fins.addClass('animate');
+        } else if(!run) {
+            fins.removeClass('animate');
         }
 	}
-	this.handleSix = function(id, onHover) {
+	this.handleSix = function(id, onHover, run) {
 		var snap = Snap(id);
 		var bolts = $(id).find('.bolts polygon');
-		var interval;
 
         if(onHover) {
     		$('.energy-everywhere').parent('.item').on('mouseenter', function(e){
-    			interval = setInterval(function(){
+    			intervals[id] = setInterval(function(){
     				$.each(bolts, function(i, bolt){
     					Math.random() > .5 ? $(bolt).hide() : $(bolt).show();
     				});
     			}, 250);
     		}).on('mouseleave', function(e){
-    			clearInterval(interval);
+    			clearInterval(intervals[id]);
     			bolts.show();
     		});
-        } else {
-            interval = setInterval(function(){
+        } else if(run) {
+            intervals[id] = setInterval(function(){
                 $.each(bolts, function(i, bolt){
                     Math.random() > .5 ? $(bolt).hide() : $(bolt).show();
                 });
             }, 250);
+        } else if(!run) {
+            clearInterval(intervals[id]);
+            bolts.show();
         }
 	}
 	this.track = function(id) {
