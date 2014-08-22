@@ -52,6 +52,7 @@ var App = function() {
 	var that = this;
 	var timer;
     var intervals = [];
+    var touched = false;
 
     this.hasTouch = 'ontouchstart' in document;
 
@@ -144,7 +145,12 @@ var App = function() {
 		clearInterval(timer);
 	}
     this.touchItem = function(evt) {
-        $('.wrapper .container, .clouds, .items-container').addClass('blur');
+        // $('.wrapper .container, .clouds, .items-container').addClass('blur');
+
+        $('.bg').attr('src', 'images/bg2-blur.png');
+        $('.wind, .waves').hide();
+
+        if($(window).width() < 1100) $('.items-container').hide();
 
         var id = $(this).data('id');
         $('.overlay .content').removeClass('active');
@@ -155,12 +161,16 @@ var App = function() {
         that.overlayAnimHandlers[ id ].call(that, '#' + id + '-2', false, true);
     };
     this.touchClose = function(evt) {
-        if(!that.activeOverlay)
-            return;
+        if(!that.activeOverlay) return;
+
+        $('.bg').attr('src', 'images/bg2.png');
+        $('.wind, .waves').show();
+
+        if($(window).width() < 1100) $('.items-container').show();
 
         evt.stopPropagation();
         $('.overlay, .wrapper').removeClass('active');
-        $('.wrapper .container, .clouds, .items-container').removeClass('blur');
+        // $('.wrapper .container, .clouds, .items-container').removeClass('blur');
 
         that.overlayAnimHandlers[ that.activeOverlay ].call(that, '#' + that.activeOverlay + '-2', false, false);
         that.activeOverlay = null;
@@ -332,8 +342,10 @@ var App = function() {
     			node4.stop().attr({ cx: 26.6, cy: 22 });
     		});
         } else if(run) {
+            console.log('run');
             animateNodes();
         } else if(!run) {
+            console.log('stop');
             node1.stop().attr({ cx: 17.5, cy: 22.8 });
             node2.stop().attr({ cx: 26.6, cy: 22 });
             node3.stop().attr({ cx: 26.6, cy: 36.2 });

@@ -14,7 +14,6 @@ img { outline: none; border: none; }
 #qzad .clouds { position: absolute; left: 5%; right: 5%; width: 90%; height: 100%; top: 28%; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 150% auto; background-color: white; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; -ms-animation: animatedBackground 40s linear infinite; -o-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
 @media (max-width: 500px) { #qzad .clouds { top: 30%; } }
 @media (max-width: 420px) { #qzad .clouds { top: 34%; } }
-#qzad .clouds.blur { -webkit-filter: blur(8.7px); -moz-filter: blur(8.7px); filter: blur(8.7px); }
 #qzad .instructions { position: absolute; top: 65px; right: 45px; left: 80%; font-size: 13px; text-align: center; color: #0860ac; }
 #qzad .items-container { position: absolute; top: 105px; left: 42px; right: 42px; height: 100px; z-index: 100; }
 @media (max-width: 420px) { #qzad .items-container { left: 15px; right: 15px; } }
@@ -44,7 +43,6 @@ img { outline: none; border: none; }
 #qzad .wrapper.active { z-index: 200; }
 @media (max-width: 420px) { #qzad .wrapper { left: -10%; right: -10%; } }
 #qzad .wrapper .container { position: absolute; bottom: 0; margin: 0 auto; width: 100%; height: auto; cursor: pointer; }
-#qzad .wrapper .container.blur { -webkit-filter: blur(8.7px); -moz-filter: blur(8.7px); filter: blur(8.7px); }
 #qzad .wrapper .container .bg { width: 100%; }
 #qzad .wrapper .container .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; -ms-animation: spin 4s linear infinite; -o-animation: spin 4s linear infinite; animation: spin 4s linear infinite; zoom: 0.6; }
 #qzad .wrapper .container .wind.wind-1 { top: 42%; left: 77.1%; -webkit-transform-origin: 6.9px 11.6px 0 50%; -moz-transform-origin: 6.9px 11.6px 0 50%; -ms-transform-origin: 6.9px 11.6px 0 50%; -o-transform-origin: 6.9px 11.6px 0 50%; transform-origin: 6.9px 11.6px 0 50%; }

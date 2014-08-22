@@ -120,7 +120,13 @@ var App = function() {
         clearInterval(timer);
     }
     this.touchItem = function(evt) {
-        $('.wrapper .container, .clouds, .items-container').addClass('blur');
+        // $('.wrapper .container, .clouds, .items-container').addClass('blur');
+
+        $('.bg').attr('src', 'images/bg2-blur.png');
+        $('.clouds').css('background-image', 'url(images/clouds-blur.png)');
+        $('.wind, .waves').hide();
+
+        if($(window).width() < 1100) $('.items-container').hide();
 
         var id = $(this).data('id');
         $('.overlay .content').removeClass('active');
@@ -131,12 +137,18 @@ var App = function() {
         that.overlayAnimHandlers[ id ].call(that, '#' + id + '-2', true);
     };
     this.touchClose = function(evt) {
-        if(!that.activeOverlay)
-            return;
+        if(!that.activeOverlay) return;
+
+        $('.bg').attr('src', 'images/bg2.png');
+        $('.clouds').css('background-image', 'url(images/clouds.png)');
+        $('.wind, .waves').show();
+
+        if($(window).width() < 1100) $('.items-container').show();
+
 
         evt.stopPropagation();
         $('.overlay, .wrapper').removeClass('active');
-        $('.wrapper .container, .clouds, .items-container').removeClass('blur');
+        // $('.wrapper .container, .clouds, .items-container').removeClass('blur');
 
         that.overlayAnimHandlers[ that.activeOverlay ].call(that, '#' + that.activeOverlay + '-2', false);
         that.activeOverlay = null;

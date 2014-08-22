@@ -12,13 +12,11 @@ img { outline: none; border: none; }
 
 #qzad { position: absolute; width: 100%; height: 520px; min-width: 768px; max-width: 1600px; overflow: hidden; border: 1px solid #cccccc; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-family: ge_inspira; font-size: 11px; background-color: white; }
 #qzad .clouds { position: absolute; width: 80%; height: 100%; top: 0; left: 0; background-image: url(../images/clouds.png); background-repeat: repeat-x; background-position: 0 169px; background-size: 1100px 100px; background-color: white; -webkit-animation: animatedBackground 40s linear infinite; -moz-animation: animatedBackground 40s linear infinite; -ms-animation: animatedBackground 40s linear infinite; -o-animation: animatedBackground 40s linear infinite; animation: animatedBackground 40s linear infinite; }
-#qzad .clouds.blur { -webkit-filter: blur(8.7px); -moz-filter: blur(8.7px); filter: blur(8.7px); }
 @media (max-width: 1100px) { #qzad .clouds { left: 5%; right: 5%; width: 90%; top: 70px; } }
 #qzad .instructions { position: absolute; top: 65px; right: 45px; left: 80%; font-size: 13px; text-align: center; color: #0860ac; }
 @media (max-width: 1100px) { #qzad > .instructions { display: none; } }
 #qzad .items-container { position: absolute; top: 100px; right: 45px; left: 80%; height: 450px; }
-@media (max-width: 1100px) { #qzad .items-container { top: 135px; left: 42px; right: 42px; height: 100px; z-index: 100; }
-  #qzad .items-container.blur { -webkit-filter: blur(8.7px); -moz-filter: blur(8.7px); filter: blur(8.7px); } }
+@media (max-width: 1100px) { #qzad .items-container { top: 135px; left: 42px; right: 42px; height: 100px; z-index: 100; } }
 #qzad .items-container ul.items { width: 100%; height: 450px; margin: 0 auto; padding: 0; list-style-type: none; }
 @media (max-width: 1100px) { #qzad .items-container ul.items { height: 100px; } }
 #qzad .items-container ul.items li.item { float: left; width: 50%; height: 140px; }
@@ -43,26 +41,25 @@ img { outline: none; border: none; }
 @media (max-width: 1100px) { #qzad .wrapper { left: 5%; right: 5%; } }
 @media (max-width: 1100px) { #qzad .wrapper.active { z-index: 200; } }
 #qzad .wrapper .container { position: absolute; bottom: 0; margin: 0 auto; width: 100%; height: auto; cursor: pointer; }
-#qzad .wrapper .container.blur { -webkit-filter: blur(8.7px); -moz-filter: blur(8.7px); filter: blur(8.7px); }
 #qzad .wrapper .container .bg { width: 100%; }
 #qzad .wrapper .container .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; -ms-animation: spin 4s linear infinite; -o-animation: spin 4s linear infinite; animation: spin 4s linear infinite; }
-#qzad .wrapper .container .wind.wind-1 { top: 42%; left: 77.3%; -webkit-transform-origin: 6.9px 11.6px 0; -moz-transform-origin: 6.9px 11.6px 0; -ms-transform-origin: 6.9px 11.6px 0; -o-transform-origin: 6.9px 11.6px 0; transform-origin: 6.9px 11.6px 0; }
-@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-1 { top: 41.2%; } }
-@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-1 { top: 40.4%; left: 77.2%; } }
-@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-1 { left: 77.1%; } }
-@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-1 { left: 76.8%; top: 39%; } }
-#qzad .wrapper .container .wind.wind-2 { top: 44%; left: 80.275%; -webkit-transform-origin: 16.3px 13.5px 0; -moz-transform-origin: 16.3px 13.5px 0; -ms-transform-origin: 16.3px 13.5px 0; -o-transform-origin: 16.3px 13.5px 0; transform-origin: 16.3px 13.5px 0; }
-@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-2 { top: 43.9%; left: 80.2%; } }
-@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-2 { top: 43.6%; left: 80.1%; } }
-@media (max-width: 1200px) { #qzad .wrapper .container .wind.wind-2 { top: 43%; left: 79.95%; } }
-@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-2 { top: 40.6%; left: 79.7%; } }
-@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-2 { left: 79.1%; } }
-#qzad .wrapper .container .wind.wind-3 { top: 40%; left: 85%; -webkit-transform-origin: 9.4px 17.1px 0; -moz-transform-origin: 9.4px 17.1px 0; -ms-transform-origin: 9.4px 17.1px 0; -o-transform-origin: 9.4px 17.1px 0; transform-origin: 9.4px 17.1px 0; }
-@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-3 { top: 39.5%; } }
-@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-3 { top: 39.6%; left: 84.9%; } }
-@media (max-width: 1200px) { #qzad .wrapper .container .wind.wind-3 { top: 38.2%; left: 84.75%; } }
-@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-3 { top: 38%; left: 84.7%; } }
-@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-3 { top: 35.8%; left: 84.4%; } }
+#qzad .wrapper .container .wind.wind-1 { top: 42.2%; left: 76.2%; -webkit-transform-origin: 6.9px 11.6px 0; -moz-transform-origin: 6.9px 11.6px 0; -ms-transform-origin: 6.9px 11.6px 0; -o-transform-origin: 6.9px 11.6px 0; transform-origin: 6.9px 11.6px 0; }
+@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-1 { top: 41.9%; left: 76.2%; } }
+@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-1 { top: 41.4%; left: 76.2%; } }
+@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-1 { top: 41.2%; left: 76%; } }
+@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-1 { left: 75.8%; top: 39%; } }
+#qzad .wrapper .container .wind.wind-2 { top: 44.3%; left: 79.1%; -webkit-transform-origin: 16.3px 13.5px 0; -moz-transform-origin: 16.3px 13.5px 0; -ms-transform-origin: 16.3px 13.5px 0; -o-transform-origin: 16.3px 13.5px 0; transform-origin: 16.3px 13.5px 0; }
+@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-2 { top: 44%; left: 78.9%; } }
+@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-2 { top: 43.6%; left: 78.9%; } }
+@media (max-width: 1200px) { #qzad .wrapper .container .wind.wind-2 { top: 43%; left: 78.6%; } }
+@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-2 { top: 43.5%; left: 78.6%; } }
+@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-2 { top: 42.5%; left: 78.1%; } }
+#qzad .wrapper .container .wind.wind-3 { top: 40.6%; left: 83.6%; -webkit-transform-origin: 9.4px 17.1px 0; -moz-transform-origin: 9.4px 17.1px 0; -ms-transform-origin: 9.4px 17.1px 0; -o-transform-origin: 9.4px 17.1px 0; transform-origin: 9.4px 17.1px 0; }
+@media (max-width: 1500px) { #qzad .wrapper .container .wind.wind-3 { top: 40%; } }
+@media (max-width: 1400px) { #qzad .wrapper .container .wind.wind-3 { top: 39.6%; left: 83.6%; } }
+@media (max-width: 1200px) { #qzad .wrapper .container .wind.wind-3 { top: 38.2%; left: 83.4%; } }
+@media (max-width: 1100px) { #qzad .wrapper .container .wind.wind-3 { top: 38.9%; left: 83.5%; } }
+@media (max-width: 900px) { #qzad .wrapper .container .wind.wind-3 { top: 36.9%; left: 83.2%; } }
 #qzad .wrapper .container .waves { position: absolute; top: 57.80%; left: 11.82%; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); -webkit-animation: waves 6s linear infinite; -moz-animation: waves 6s linear infinite; -ms-animation: waves 6s linear infinite; -o-animation: waves 6s linear infinite; animation: waves 6s linear infinite; }
 @media (max-width: 1400px) { #qzad .wrapper .container .waves { margin-left: -2%; } }
 @media (max-width: 1300px) { #qzad .wrapper .container .waves { margin-left: -5%; } }

@@ -79,9 +79,9 @@ img {
       top: 34%;
     }
 
-    &.blur {
-      @include filter(blur(8.7px));
-    }
+    // &.blur {
+    //   @include filter(blur(8.7px));
+    // }
   }
 
   .instructions {
@@ -257,9 +257,9 @@ img {
       height: auto;
       cursor: pointer;
 
-      &.blur {
-        @include filter(blur(8.7px));
-      }
+      // &.blur {
+      //   @include filter(blur(8.7px));
+      // }
 
       .bg {
         width: 100%;

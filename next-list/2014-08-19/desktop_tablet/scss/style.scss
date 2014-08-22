@@ -60,7 +60,7 @@ img {
   .clouds {
     position: absolute;
     width: 80%;
-    height: 100%;
+    height: 100px;
     top: 0;
     left: 0;
     background-image: url(../images/clouds.png);
@@ -70,9 +70,9 @@ img {
     background-color: $white;
     @include animation(animatedBackground 40s linear infinite);
 
-    &.blur {
-      @include filter(blur(8.7px));
-    }
+    // &.blur {
+    //   @include filter(blur(8.7px));
+    // }
 
     @media (max-width: 1100px) {
       left: 5%;
@@ -90,10 +90,6 @@ img {
     font-size: 13px;
     text-align: center;
     color: $endeavour_approx;
-
-    span.click {
-    	padding-right: 5px;
-    }
   }
 
   @media (max-width: 1100px) {
@@ -116,9 +112,9 @@ img {
       height: 100px;
       z-index: 100;
 
-      &.blur {
-        @include filter(blur(8.7px));
-      }
+      // &.blur {
+      //   @include filter(blur(8.7px));
+      // }
     }
 
     ul.items {
@@ -252,9 +248,9 @@ img {
       height: auto;
       cursor: pointer;
 
-      &.blur {
-        @include filter(blur(8.7px));
-      }
+      // &.blur {
+      //   @include filter(blur(8.7px));
+      // }
 
       .bg {
         width: 100%;
@@ -266,84 +262,87 @@ img {
         @include animation(spin 4s linear infinite);
 
         &.wind-1 {
-          top: 42%;
-          left: 77.3%;
+          top: 42.2%;
+          left: 76.2%;
           @include experimental(transform-origin, 6.9px 11.6px 0);
 
           @media (max-width: 1500px) {
-            top: 41.2%;
+            top: 41.9%;
+            left: 76.2%
           }
 
           @media (max-width: 1400px) {
-            top: 40.4%;
-            left: 77.2%;
+            top: 41.4%;
+            left: 76.2%;
           }
 
           @media (max-width: 1100px) {
-            left: 77.1%;
+          	top: 41.2%;
+            left: 76%;
           }
 
           @media (max-width: 900px) {
-            left: 76.8%;
+            left: 75.8%;
             top: 39%;
           }
         }
         &.wind-2 {
-          top: 44%;
-          left: 80.275%;
+          top: 44.3%;
+          left: 79.1%;
           @include experimental(transform-origin, 16.3px 13.5px 0);
 
           @media (max-width: 1500px) {
-            top: 43.9%;
-            left: 80.2%;
+            top: 44%;
+            left: 78.9%;
           }
 
           @media (max-width: 1400px) {
             top: 43.6%;
-            left: 80.1%;
+            left: 78.9%;
           }
 
           @media (max-width: 1200px) {
             top: 43%;
-            left: 79.95%;
+            left: 78.6%;
           }
 
           @media (max-width: 1100px) {
-            top: 40.6%;
-            left: 79.7%;
+            top: 43.5%;
+            left: 78.6%;
           }
 
           @media (max-width: 900px) {
-            left: 79.1%;
+          	top: 42.5%;
+            left: 78.1%;
           }
         }
         &.wind-3 {
-          top: 40%;
-          left: 85%;
+          top: 40.6%;
+          left: 83.6%;
           @include experimental(transform-origin, 9.4px 17.1px 0);
 
           @media (max-width: 1500px) {
-            top: 39.5%;
+            top: 40%;
           }
 
           @media (max-width: 1400px) {
             top: 39.6%;
-            left: 84.9%;
+            left: 83.6%;
           }
 
           @media (max-width: 1200px) {
             top: 38.2%;
-            left: 84.75%;
+            left: 83.4%;
           }
 
           @media (max-width: 1100px) {
-            top: 38%;
-            left: 84.7%;
+            top: 38.9%;
+            left: 83.5%;
           }
 
           @media (max-width: 900px) {
-            top: 35.8%;
-            left: 84.4%;
+            top: 36.9%;
+            left: 83.2%;
           }
         }
       }
