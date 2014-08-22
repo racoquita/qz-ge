@@ -19,7 +19,6 @@ body {
     -webkit-transition: all 5s ease;
     -o-transition: all 5s ease;
     transition: all 5s ease;
-    //background: url(../images/bg-1.jpg) center center no-repeat, rgba(0, 0, 0, 0.6);
     background-size:cover;
     z-index: 1;
     img{
@@ -27,16 +26,15 @@ body {
         position:absolute;
         top:0;
         left: 0;
+    -webkit-transition: opacity 1s linear;
+       -moz-transition: opacity 1s linear;
+         -o-transition: opacity 1s linear;
+            transition: opacity 1s linear;
         &.fade {
             opacity: 0;
-            -webkit-transition: opacity 1s linear;
-               -moz-transition: opacity 1s linear;
-                 -o-transition: opacity 1s linear;
-                    transition: opacity 1s linear;
-                
         }
-        &.fade-in{
-             opacity: 1;
+        @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
+            left: -100px;
         }
     }
     

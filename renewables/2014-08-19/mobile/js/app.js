@@ -61,15 +61,15 @@ var App = function() {
 	var slideCount = $('.slides li.slide').length;
   var timeouts=[];
   var currentImg;
-  var times = [3000, 3000];
+  var times = [4000, 4000];
+  var ct;
   var imageSets = [
         function () { 
-          $('.background .img-2').addClass('fade');
-          console.log('image2')
+          $('.background .img-1').addClass('fade');
+       
         },
         function () {
-          console.log('image 3')
-            $('.background .img-3').addClass('fade');
+            $('.background .img-2').addClass('fade');
         }
     ];
 	var slides = [
@@ -104,18 +104,27 @@ var App = function() {
     currentImg = 0;
     that.changeImage();
     timeouts[0] = setTimeout(function() {
-        $('.background .img-1').addClass('fade');
-    }, 500);
+        $('.background .img-0').toggleClass('fade');
+    }, 1000);
   }
   this.changeImage = function() {
       
-      if($.isFunction(imageSets[currentImg])) {
+      if($.isFunction(imageSets[currentImg]) && currentImg < 1) {
+       
         ct = setTimeout(function() {
           
           imageSets[currentImg]();
           currentImg++;
           that.changeImage();
-         }, times[currentImg]);
+         
+        }, times[currentImg]);
+      }else{
+        ct = setTimeout(function() {
+          currentImg--;
+          $('.background .img-'+currentImg).toggleClass('fade');
+         that.changeImage();
+         
+        }, times[currentImg]);
       }
     };
 	this.on = function() {
@@ -168,6 +177,8 @@ var App = function() {
 		$('.prev-slide').swipe('destroy');
 		$('.slide span').swipe('destroy');
 		$('.wrapper').swipe('destroy');
+    $('.background .img-1').removeClass('fade');
+    $('.background .img-2').removeClass('fade');
 		that.change(1, true);
 		dir = 'next';
 	}

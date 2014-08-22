@@ -3,9 +3,9 @@ body { margin: 0; }
 .wrapper { position: relative; height: 430px; min-width: 320px; max-width: 600px; width: 100%; overflow: hidden; }
 
 .background { position: absolute; top: 0; right: 0; left: 0; bottom: 0; -webkit-transition: all 5s ease; -o-transition: all 5s ease; transition: all 5s ease; background-size: cover; z-index: 1; }
-.background img { display: block; position: absolute; top: 0; left: 0; }
-.background img.fade { opacity: 0; -webkit-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -o-transition: opacity 1s linear; transition: opacity 1s linear; }
-.background img.fade-in { opacity: 1; }
+.background img { display: block; position: absolute; top: 0; left: 0; -webkit-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -o-transition: opacity 1s linear; transition: opacity 1s linear; }
+.background img.fade { opacity: 0; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { .background img { left: -100px; } }
 
 .fadable { -webkit-transition: opacity 500ms ease-in; -moz-transition: opacity 500ms ease-in; -ms-transition: opacity 500ms ease-in; -o-transition: opacity 500ms ease-in; transition: opacity 500ms ease-in; transition-delay: 900ms; -webkit-transition-delay: 900ms; }
 
