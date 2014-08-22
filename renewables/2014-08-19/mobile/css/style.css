@@ -50,7 +50,7 @@ ul li { list-style-type: none; padding: 0; }
 
 img { opacity: inherit; }
 
-.smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 0; }
+.smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 2; }
 
 .logo { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; position: absolute; right: 5.5%; bottom: 20px; z-index: 10; cursor: pointer; width: 45px; }
 .logo:hover { -ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9); }
