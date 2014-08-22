@@ -46,12 +46,13 @@ img { outline: none; border: none; }
 #qzad .wrapper .container .bg { width: 100%; }
 #qzad .wrapper .container .wind { position: absolute; z-index: 101; -webkit-animation: spin 4s linear infinite; -moz-animation: spin 4s linear infinite; -ms-animation: spin 4s linear infinite; -o-animation: spin 4s linear infinite; animation: spin 4s linear infinite; zoom: 0.6; }
 #qzad .wrapper .container .wind.wind-1 { top: 41.5%; left: 76.1%; -webkit-transform-origin: 6.9px 11.6px 0 50%; -moz-transform-origin: 6.9px 11.6px 0 50%; -ms-transform-origin: 6.9px 11.6px 0 50%; -o-transform-origin: 6.9px 11.6px 0 50%; transform-origin: 6.9px 11.6px 0 50%; }
-@media (max-width: 420px) { #qzad .wrapper .container .wind.wind-1 { top: 39%; } }
+@media (max-width: 420px) { #qzad .wrapper .container .wind.wind-1 { top: 39%; left: 75.6%; } }
 #qzad .wrapper .container .wind.wind-2 { top: 40.6%; left: 78.7%; -webkit-transform-origin: 16.3px 13.5px 0 50%; -moz-transform-origin: 16.3px 13.5px 0 50%; -ms-transform-origin: 16.3px 13.5px 0 50%; -o-transform-origin: 16.3px 13.5px 0 50%; transform-origin: 16.3px 13.5px 0 50%; }
-@media (max-width: 360px) { #qzad .wrapper .container .wind.wind-2 { top: 40%; left: 79%; } }
+@media (max-width: 360px) { #qzad .wrapper .container .wind.wind-2 { top: 40.3%; left: 78%; } }
+@media (max-width: 320px) { #qzad .wrapper .container .wind.wind-2 { top: 40%; left: 77.9%; } }
 #qzad .wrapper .container .wind.wind-3 { top: 37%; left: 83.2%; -webkit-transform-origin: 9.4px 17.1px 0 50%; -moz-transform-origin: 9.4px 17.1px 0 50%; -ms-transform-origin: 9.4px 17.1px 0 50%; -o-transform-origin: 9.4px 17.1px 0 50%; transform-origin: 9.4px 17.1px 0 50%; }
-@media (max-width: 360px) { #qzad .wrapper .container .wind.wind-3 { top: 35%; left: 84.5%; } }
-@media (max-width: 320px) { #qzad .wrapper .container .wind.wind-3 { top: 34.75%; left: 84.25%; } }
+@media (max-width: 360px) { #qzad .wrapper .container .wind.wind-3 { top: 35%; left: 83%; } }
+@media (max-width: 320px) { #qzad .wrapper .container .wind.wind-3 { top: 34.75%; left: 83%; } }
 #qzad .wrapper .container .waves { position: absolute; top: 53.30%; left: 5.82%; -webkit-transform: scale(0.5); -moz-transform: scale(0.5); -ms-transform: scale(0.5); -o-transform: scale(0.5); transform: scale(0.5); -webkit-animation: waves785 6s linear infinite; -moz-animation: waves785 6s linear infinite; -ms-animation: waves785 6s linear infinite; -o-animation: waves785 6s linear infinite; animation: waves785 6s linear infinite; -webkit-transform-origin: 35px 5px 0 50%; -moz-transform-origin: 35px 5px 0 50%; -ms-transform-origin: 35px 5px 0 50%; -o-transform-origin: 35px 5px 0 50%; transform-origin: 35px 5px 0 50%; }
 #qzad .wrapper .overlay { display: none; position: absolute; top: -5px; bottom: 13px; left: -2%; right: -2%; background: rgba(0, 0, 0, 0.12); }
 @media (max-width: 420px) { #qzad .wrapper .overlay { left: 10%; right: 10%; } }
