@@ -175,9 +175,11 @@ img {
 }
 .ff-bg{
     display: none;
+   
     &.show{
         z-index: -1;
         img{
+             
             display: block;
             position:absolute;
             top:0;
@@ -187,12 +189,30 @@ img {
        -moz-transition: opacity 1s linear;
          -o-transition: opacity 1s linear;
             transition: opacity 1s linear;
+            
             &.fade {
                 opacity: 0;
             }
 
         }
         display: block;
+    }
+     img{
+
+            @media screen and (min-width: 892px) and (max-width: 1145px) {
+               width: 145% !important;
+               height: auto;
+            }
+            @media screen and (min-width: 855px) and (max-width: 891px) {
+                width: 140% !important;
+            }
+            @media screen and (min-width: 769px) and (max-width: 854px) {
+               width: 150% !important;
+            }
+            @media screen  and (max-width: 768px) {
+                width: 150% !important;
+                
+            }
     }
 }
 
