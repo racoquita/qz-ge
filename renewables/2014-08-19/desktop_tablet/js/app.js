@@ -60,6 +60,7 @@ var App = function() {
 	var currentSlide = 1;
 	var dir = 'next';
 	var slideCount = $('.slides .slide').length;
+	this.hasTouch = 'ontouchstart' in document;
 	var slides = [
 		'<div class="slide inactive"> \
 			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/slide-1-text.png"/> \
@@ -81,6 +82,38 @@ var App = function() {
 		</div>'];
 
 	this.on = function() {
+		if( this.hasTouch ) {
+			$('.next-slide').swipe({
+				tap: function(e, target) {
+					that.change(currentSlide + 1);
+				}
+			});
+
+			$('.prev-slide').swipe({
+				tap: function(e, target) {
+					that.change(currentSlide - 1);
+				}
+			});
+			$('.slide span').swipe({
+				tap: function(e, target) {
+					QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+					window.open($(e.currentTarget).attr('href'), '_blank');
+				}
+			});
+
+			$('.wrapper').swipe({
+				swipe: function(e, direction, distance, duration, fingerCount) {
+					if(direction == 'left') {
+						that.change(currentSlide + 1);
+						QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
+					}
+					if(direction == 'right') {
+						that.change(currentSlide - 1);
+						QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
+					}
+				}
+			});
+		}
 		$('.next-slide').click(function() {
 			that.change(currentSlide + 1);
 		});
@@ -96,6 +129,10 @@ var App = function() {
 	}
 	this.off = function() {
 		$('.next-slide, .prev-slide, .dot').off();
+		$('.next-slide').swipe('destroy');
+		$('.prev-slide').swipe('destroy');
+		$('.slide span').swipe('destroy');
+		$('.wrapper').swipe('destroy');
 		that.change(1, true);
 		dir = 'next';
 	}
