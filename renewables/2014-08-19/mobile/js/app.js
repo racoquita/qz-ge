@@ -77,28 +77,28 @@ var App = function() {
       <div class="background"></div>\
 			<img class="text show" src="images/slide-1-text.png"/> \
       <img class="text-320 show" src="images/slide-1-text-320.png"/> \
-			<a href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+			<span href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
 				<img class="bulletin-img" src="images/bulletin.png"/> \
         <img class="bulletin-320" src="images/bulletin-320.png"/> \
-			</a> \
+			</span> \
 		</div>',
 		'<div class="slide inactive two"> \
       <div class="background"></div>\
 			<img class="text" src="images/slide-2-text.png"/> \
       <img class="text-320" src="images/slide-2-text-320.png"/> \
-			<a href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+			<span href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
 				<img class="bulletin-img" src="images/bulletin.png"/> \
         <img class="bulletin-320" src="images/bulletin-320.png"/> \
-			</a> \
+			</span> \
 		</div>',
 		'<div class="slide inactive three"> \
     <div class="background"></div>\
 			<img class="text" src="images/slide-3-text.png"/> \
       <img class="text-320" src="images/slide-3-text-320.png"/> \
-      <a href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
+      <span href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
         <img class="bulletin-img" src="images/bulletin.png"/> \
         <img class="bulletin-320" src="images/bulletin-320.png"/> \
-      </a> \
+      </span> \
 		</div>'];
   this.init = function () {
     currentImg = 0;
@@ -150,6 +150,7 @@ var App = function() {
 
 		$('.slide span').swipe({
 			tap: function(e, target) {
+        console.log('swipe');
 				QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
 				window.open($(e.currentTarget).attr('href'), '_blank');
 			}
@@ -234,9 +235,9 @@ var App = function() {
           window.open($(e.currentTarget).attr('href'), '_blank');
         }
       }); 
-      $('.slide a').off().on('click', function(e){
-        QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
-      });     
+      // $('.slide span').off().on('click', function(e){
+      //   QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+      // });     
     }
 	}
 };

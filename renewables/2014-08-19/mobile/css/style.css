@@ -66,7 +66,7 @@ img { opacity: inherit; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text { display: none; } }
 #slides .slide .text-320 { margin: 53px auto 30px auto; display: none; width: 72.1875%; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text-320 { display: block; width: 70%; } }
-#slides .slide .bulletin { width: 66.666666%; text-align: center; position: relative; margin: 0 auto; padding-top: 16px; padding-bottom: 13px; background-color: #0079C1; }
+#slides .slide .bulletin { width: 66.666666%; text-align: center; position: relative; margin: 0 auto; padding-top: 16px; padding-bottom: 13px; display: block; background-color: #0079C1; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin { padding-bottom: 10px; padding-top: 10px; } }
 #slides .slide .bulletin .bulletin-img { width: 82.635%; }
 @media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-img { display: none; } }
