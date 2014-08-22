@@ -244,6 +244,10 @@ img {
                 display: block;
                 width: 59.125%;
                 min-width: 470px;
+                @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+                    margin-top: 130px;
+                    margin-bottom: 65px;
+                }
                 &.down {
                     margin: 185px auto 0;
                 }
@@ -275,7 +279,11 @@ img {
             margin: 100px auto 44px auto;
             display: block;
             width: 59.125%;
-            min-width: 469px;
+            min-width: 473px;
+            @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+                margin-top: 130px;
+                margin-bottom: 65px;
+            }
             &.down {
                 margin: 185px auto 0;
             }

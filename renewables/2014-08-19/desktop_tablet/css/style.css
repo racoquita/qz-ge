@@ -59,13 +59,15 @@ img { opacity: inherit; }
 #slides .slide { position: absolute; width: 100%; -webkit-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 #slides .slide.active { display: block; left: 0; }
 #slides .slide.active .text { margin: 100px auto 44px auto; display: block; width: 59.125%; min-width: 470px; }
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide.active .text { margin-top: 130px; margin-bottom: 65px; } }
 #slides .slide.active .text.down { margin: 185px auto 0; }
 #slides .slide.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
 #slides .slide.inactive .text { margin: 100px auto 44px auto; display: block; width: 59.125%; }
 #slides .slide.inactive .text.down { margin: 185px auto 0; }
 #slides .slide.left { display: block; left: -100%; }
 #slides .slide.right { display: block; left: 100%; }
-#slides .slide .text { margin: 100px auto 44px auto; display: block; width: 59.125%; min-width: 469px; }
+#slides .slide .text { margin: 100px auto 44px auto; display: block; width: 59.125%; min-width: 473px; }
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text { margin-top: 130px; margin-bottom: 65px; } }
 #slides .slide .text.down { margin: 185px auto 0; }
 #slides .slide .bulletin { width: 402px; text-align: center; position: relative; margin: 0 auto; padding-top: 15px; padding-bottom: 10px; background-color: #0079C1; cursor: pointer; }
 #slides .slide .bulletin img { width: 330px; }
