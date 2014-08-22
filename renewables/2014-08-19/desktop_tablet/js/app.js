@@ -59,8 +59,23 @@ var App = function() {
 	var that = this;
 	var currentSlide = 1;
 	var dir = 'next';
+	var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 	var slideCount = $('.slides .slide').length;
 	this.hasTouch = 'ontouchstart' in document;
+	var timeouts=[];
+	var currentImg;
+	var times = [4000, 4000];
+	var ct;
+	var imageSets = [
+	    function () { 
+	      $('.ff-bg .img-1').addClass('fade');
+	   
+	    },
+	    function () {
+	        $('.ff-bg .img-2').addClass('fade');
+	    }
+	];
+	
 	var slides = [
 		'<div class="slide inactive"> \
 			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/slide-1-text.png"/> \
@@ -80,8 +95,41 @@ var App = function() {
 				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/bulletin.png"/> \
 			</a> \
 		</div>'];
-
+	this.init = function () {
+		currentImg = 0;
+		that.changeImage();
+		timeouts[0] = setTimeout(function() {
+		    $('.ff-bg .img-0').toggleClass('fade');
+		}, 1000);
+	}
+	this.changeImage = function() {
+      
+      if($.isFunction(imageSets[currentImg]) && currentImg < 1) {
+       
+        ct = setTimeout(function() {
+          
+          imageSets[currentImg]();
+          currentImg++;
+          that.changeImage();
+         
+        }, times[currentImg]);
+      }else{
+        ct = setTimeout(function() {
+          currentImg--;
+          $('.ff-bg .img-'+currentImg).toggleClass('fade');
+         that.changeImage();
+         
+        }, times[currentImg]);
+      }
+    };
 	this.on = function() {
+	
+		if(is_firefox){
+			
+			$('.ff-bg').addClass('show');
+			$('.background').toggle();
+			that.init()
+		}
 		if( this.hasTouch ) {
 			$('.next-slide').swipe({
 				tap: function(e, target) {
@@ -128,6 +176,12 @@ var App = function() {
 		});
 	}
 	this.off = function() {
+		if(is_firefox){
+			$.each(timeouts, function(i, to){
+	        	clearTimeout(to);
+	    	});	
+		}
+
 		$('.next-slide, .prev-slide, .dot').off();
 		$('.next-slide').swipe('destroy');
 		$('.prev-slide').swipe('destroy');

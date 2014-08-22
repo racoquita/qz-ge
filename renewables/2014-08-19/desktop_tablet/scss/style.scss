@@ -173,6 +173,28 @@ img {
         display: block;
     }
 }
+.ff-bg{
+    display: none;
+    &.show{
+        z-index: -1;
+        img{
+            display: block;
+            position:absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+    -webkit-transition: opacity 1s linear;
+       -moz-transition: opacity 1s linear;
+         -o-transition: opacity 1s linear;
+            transition: opacity 1s linear;
+            &.fade {
+                opacity: 0;
+            }
+
+        }
+        display: block;
+    }
+}
 
 .background {
     position: absolute;
@@ -186,6 +208,9 @@ img {
     background-size: auto 530px;
     @media all and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     
+        display: none;
+    }
+    &.hide{
         display: none;
     }
 }
