@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     connect: {
       build: {
         options: {
-          hostname: 'localhost',
+          hostname: '',
           port: 8002,
           base: '',
           open: true
@@ -72,7 +72,8 @@ module.exports = function(grunt) {
           unit: 'desktop_tablet',
           version: '1',
           internal_scripts: [
-            
+            'js/jquery.touchSwipe.min.js',
+            'js/jquery.velocity.min.js'
           ],
           external_scripts: [
             'http://app.qz.com/js/vendor/jQuery-min.js',

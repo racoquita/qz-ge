@@ -9,8 +9,13 @@ body {
     width: 100%;
     overflow: hidden;
 }
+.noflicker {
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
 
- .background {
+.background {
     position: absolute;
     top: 0;
     right: 0;
@@ -21,6 +26,7 @@ body {
     transition: all 5s ease;
     background-size:cover;
     z-index: 2;
+
     img{
         display: block;
         position:absolute;
@@ -36,9 +42,8 @@ body {
         @media only screen and (max-device-width : 420px) and (-webkit-min-device-pixel-ratio : 2) {
             left: -100px;
         }
-    }
-    
- }
+    } 
+}
 
 .fadable {
     -webkit-transition: opacity 500ms ease-in;

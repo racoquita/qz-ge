@@ -75,29 +75,29 @@ var App = function() {
 	var slides = [
 		'<div class="slide inactive one"> \
       <div class="background"></div>\
-			<img class="text show" src="images/slide-1-text.png"/> \
-      <img class="text-320 show" src="images/slide-1-text-320.png"/> \
+			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-1-text.png"/> \
+      <img class="text-320 show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-1-text-320.png"/> \
 			<span href="http://bit.ly/1mYj8uk" target="_blank" class="bulletin b-one" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img class="bulletin-img" src="images/bulletin.png"/> \
-        <img class="bulletin-320" src="images/bulletin-320.png"/> \
+				<img class="bulletin-img" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+        <img class="bulletin-320" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin-320.png"/> \
 			</span> \
 		</div>',
 		'<div class="slide inactive two"> \
       <div class="background"></div>\
-			<img class="text" src="images/slide-2-text.png"/> \
-      <img class="text-320" src="images/slide-2-text-320.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-2-text.png"/> \
+      <img class="text-320" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-2-text-320.png"/> \
 			<span href="http://bit.ly/1oh6Bzd" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-				<img class="bulletin-img" src="images/bulletin.png"/> \
-        <img class="bulletin-320" src="images/bulletin-320.png"/> \
+				<img class="bulletin-img" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+        <img class="bulletin-320" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin-320.png"/> \
 			</span> \
 		</div>',
 		'<div class="slide inactive three"> \
     <div class="background"></div>\
-			<img class="text" src="images/slide-3-text.png"/> \
-      <img class="text-320" src="images/slide-3-text-320.png"/> \
+			<img class="text" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-3-text.png"/> \
+      <img class="text-320" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/slide-3-text-320.png"/> \
       <span href="http://bit.ly/1ihQhkN" target="_blank" class="bulletin b-two" data-ix-category="external" data-ix-label="read bulletin now clicked"> \
-        <img class="bulletin-img" src="images/bulletin.png"/> \
-        <img class="bulletin-320" src="images/bulletin-320.png"/> \
+        <img class="bulletin-img" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin.png"/> \
+        <img class="bulletin-320" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/mobile/images/bulletin-320.png"/> \
       </span> \
 		</div>'];
   this.init = function () {
@@ -128,7 +128,7 @@ var App = function() {
       }
     };
 	this.on = function() {
-    that.init()
+    that.init();
   
     
 		$('.next-slide').swipe({

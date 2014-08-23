@@ -48,15 +48,13 @@ img { opacity: inherit; }
 
 .ff-bg { display: none; }
 .ff-bg.show { z-index: -1; display: block; }
-.ff-bg.show img { display: block; position: absolute; top: 0; left: 0; width: 100%; -webkit-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -o-transition: opacity 1s linear; transition: opacity 1s linear; }
-.ff-bg.show img.fade { opacity: 0; }
+.ff-bg.show img { display: block; position: absolute; top: 0; left: 0; width: 100%; }
 @media screen and (min-width: 892px) and (max-width: 1145px) { .ff-bg img { width: 145% !important; height: auto; } }
 @media screen and (min-width: 855px) and (max-width: 891px) { .ff-bg img { width: 140% !important; } }
 @media screen and (min-width: 769px) and (max-width: 854px) { .ff-bg img { width: 150% !important; } }
 @media screen and (max-width: 768px) { .ff-bg img { width: 150% !important; } }
 
 .background { position: absolute; right: 0; bottom: 0; z-index: 1; left: -23%; height: 175%; top: -39%; background: url(../images/GE_WindmillLoop.jpg) center center no-repeat; background-size: auto 530px; }
-@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) { .background { display: none; } }
 .background.hide { display: none; }
 
 .smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 2; }

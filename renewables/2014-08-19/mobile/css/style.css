@@ -2,6 +2,8 @@ body { margin: 0; }
 
 .wrapper { position: relative; height: 430px; min-width: 320px; max-width: 600px; width: 100%; overflow: hidden; }
 
+.noflicker { -webkit-perspective: 1000; -webkit-backface-visibility: hidden; -webkit-transform-style: preserve-3d; }
+
 .background { position: absolute; top: 0; right: 0; left: 0; bottom: 0; -webkit-transition: all 5s ease; -o-transition: all 5s ease; transition: all 5s ease; background-size: cover; z-index: 2; }
 .background img { display: block; position: absolute; top: 0; left: 0; -webkit-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -o-transition: opacity 1s linear; transition: opacity 1s linear; }
 .background img.fade { opacity: 0; }

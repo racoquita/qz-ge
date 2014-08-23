@@ -60,12 +60,15 @@ var App = function() {
 	var currentSlide = 1;
 	var dir = 'next';
 	var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 	var slideCount = $('.slides .slide').length;
-	this.hasTouch = 'ontouchstart' in document;
+	var hasTouch = 'ontouchstart' in document;
 	var timeouts=[];
 	var currentImg;
 	var times = [4000, 4000];
 	var ct;
+	var isAnimating = false;
+	var rotate;
 	var imageSets = [
 	    function () { 
 	      $('.ff-bg .img-1').addClass('fade');
@@ -96,12 +99,15 @@ var App = function() {
 			</a> \
 		</div>'];
 	this.init = function () {
-		currentImg = 0;
-		that.changeImage();
-		timeouts[0] = setTimeout(function() {
-		    $('.ff-bg .img-0').toggleClass('fade');
-		}, 1000);
+		rotate = setInterval(that.doRotate, 5000);	
 	}
+	this.doRotate = function() {
+		$('.ff-bg img').first().velocity('fadeOut', { duration: 500, complete: function(){
+			$('.ff-bg img').first().appendTo($('.ff-bg'));
+		}});
+		$('.ff-bg img').first().velocity('fadeIn', {duration: 500});
+	}
+
 	this.changeImage = function() {
       
       if($.isFunction(imageSets[currentImg]) && currentImg < 1) {
@@ -123,64 +129,91 @@ var App = function() {
       }
     };
 	this.on = function() {
-	
-		if(is_firefox){
-			
+
+		if(is_firefox || iOS){
 			$('.ff-bg').addClass('show');
-			$('.background').toggle();
-			that.init()
+			$('.background').hide();
+			that.init();
 		}
-		if( this.hasTouch ) {
-			$('.next-slide').swipe({
-				tap: function(e, target) {
-					that.change(currentSlide + 1);
-				}
-			});
-
-			$('.prev-slide').swipe({
-				tap: function(e, target) {
-					that.change(currentSlide - 1);
-				}
-			});
-			$('.slide span').swipe({
-				tap: function(e, target) {
-					QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
-					window.open($(e.currentTarget).attr('href'), '_blank');
-				}
-			});
-
-			$('.wrapper').swipe({
-				swipe: function(e, direction, distance, duration, fingerCount) {
-					if(direction == 'left') {
-						that.change(currentSlide + 1);
-						QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
-					}
-					if(direction == 'right') {
-						that.change(currentSlide - 1);
-						QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
-					}
-				}
-			});
-		}
+		hasTouch == true ? that.setTouchEvents() : that.setEvents();
+	}
+	this.setEvents = function() {
 		$('.next-slide').click(function() {
-			that.change(currentSlide + 1);
+			if(!isAnimating) {
+				isAnimating = true;
+				that.change(currentSlide + 1);
+			}
 		});
 
 		$('.prev-slide').click(function() {
-			that.change(currentSlide - 1);
+			if(!isAnimating) {
+				isAnimating = true;
+				that.change(currentSlide - 1);
+			}
+		});
+		$('.dot').on('click', function(e) {
+			if(!isAnimating) {
+				isAnimating = true;
+				if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
+				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
+			}
+		});
+	}
+	this.setTouchEvents = function() {
+		$('.next-slide').swipe({
+			tap: function(e, target) {
+				if(!isAnimating) {
+					isAnimating = true;
+					that.change(currentSlide + 1);
+				}
+			}
 		});
 
+		$('.prev-slide').swipe({
+			tap: function(e, target) {
+				if(!isAnimating) {
+					isAnimating = true;
+					that.change(currentSlide - 1);
+				}
+			}
+		});
+		$('.slide span').swipe({
+			tap: function(e, target) {
+				QZIX.manualTrigger($(e.currentTarget).data('ix-category'), 'click', $(e.currentTarget).data('ix-label'), false);
+				window.open($(e.currentTarget).attr('href'), '_blank');
+			}
+		});
+
+		$('.wrapper').swipe({
+			swipe: function(e, direction, distance, duration, fingerCount) {
+				if(direction == 'left') {
+					that.change(currentSlide + 1);
+					QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
+				}
+				if(direction == 'right') {
+					that.change(currentSlide - 1);
+					QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
+				}
+			}
+		});
 		$('.dot').on('click', function(e) {
-			if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
-			QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
+			if(!isAnimating) {
+				isAnimating = true;
+				if(!$(e.currentTarget).hasClass('active')) that.change($(e.currentTarget).data('num'));
+				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
+			}
 		});
 	}
 	this.off = function() {
-		if(is_firefox){
+		if(is_firefox || iOS){
 			$.each(timeouts, function(i, to){
 	        	clearTimeout(to);
 	    	});	
 		}
+		
+		$('.ff-bg img').velocity('stop');
+
+		if(rotate) clearInterval(rotate);
 
 		$('.next-slide, .prev-slide, .dot').off();
 		$('.next-slide').swipe('destroy');
@@ -211,6 +244,7 @@ var App = function() {
 			}, 100);
 			setTimeout(function(){
 				$('.slide.left').remove();
+				isAnimating = false;
 			}, 500);
 		}
 		if(dir == 'prev') {
@@ -223,6 +257,7 @@ var App = function() {
 			}, 100);
 			setTimeout(function(){
 				$('.slide.right').remove();
+				isAnimating = false;
 			}, 500);
 		}
 
