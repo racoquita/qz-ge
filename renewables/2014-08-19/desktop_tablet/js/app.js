@@ -99,13 +99,14 @@ var App = function() {
 			</a> \
 		</div>'];
 	this.init = function () {
-		rotate = setInterval(that.doRotate, 5000);	
+		rotate = setInterval(that.doRotate, 5000);
 	}
 	this.doRotate = function() {
-		$('.ff-bg img').first().velocity('fadeOut', { duration: 500, complete: function(){
+		$('.ff-bg img').first().velocity('stop');
+		$('.ff-bg img').first().velocity('fadeOut', { duration: 1000, complete: function(){
 			$('.ff-bg img').first().appendTo($('.ff-bg'));
 		}});
-		$('.ff-bg img').first().velocity('fadeIn', {duration: 500});
+		$('.ff-bg img').first().velocity('fadeIn', {duration: 1000});
 	}
 
 	this.changeImage = function() {
@@ -210,7 +211,7 @@ var App = function() {
 	        	clearTimeout(to);
 	    	});	
 		}
-		
+
 		$('.ff-bg img').velocity('stop');
 
 		if(rotate) clearInterval(rotate);
