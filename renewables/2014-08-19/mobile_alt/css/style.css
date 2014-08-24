@@ -1,0 +1,92 @@
+body { margin: 0; }
+
+.wrapper { position: relative; height: 430px; min-width: 320px; max-width: 600px; width: 100%; overflow: hidden; }
+
+.noflicker { -webkit-perspective: 1000; -webkit-backface-visibility: hidden; -webkit-transform-style: preserve-3d; }
+
+.background { position: absolute; top: 0; right: 0; left: 0; bottom: 0; -webkit-transition: all 5s ease; -o-transition: all 5s ease; transition: all 5s ease; background-size: cover; z-index: 2; }
+.background img { display: block; position: absolute; top: 0; left: 0; -webkit-transition: opacity 1s linear; -moz-transition: opacity 1s linear; -o-transition: opacity 1s linear; transition: opacity 1s linear; }
+.background img.fade { opacity: 0; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { .background img { left: -100px; } }
+
+.fadable { -webkit-transition: opacity 500ms ease-in; -moz-transition: opacity 500ms ease-in; -ms-transition: opacity 500ms ease-in; -o-transition: opacity 500ms ease-in; transition: opacity 500ms ease-in; transition-delay: 900ms; -webkit-transition-delay: 900ms; }
+
+.animated { -webkit-animation-duration: 500ms; animation-duration: 500ms; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+
+.delay { animation-delay: 500ms; -webkit-animation-delay: 500ms; }
+
+.bounceIn { -webkit-animation-name: bounceIn; animation-name: bounceIn; }
+
+.clearfix { zoom: 1; }
+.clearfix:before { content: ""; display: table; }
+.clearfix:after { content: ""; display: table; clear: both; }
+
+.hide { display: none !important; }
+
+a { display: block; }
+
+@-webkit-keyframes pulsate { 0% { -webkit-transform: scale(0.1, 0.1); opacity: 0.0; }
+  50% { opacity: 1.0; }
+  100% { -webkit-transform: scale(1.2, 1.2); opacity: 0.0; } }
+
+@-webkit-keyframes bump { 0% { padding-right: 40px; }
+  10% { padding-right: 50px; }
+  14% { padding-right: 38px; }
+  15%, 100% { padding-right: 40px; } }
+
+@-webkit-keyframes bounceIn { 0% { opacity: 0; -webkit-transform: scale(0.3); transform: scale(0.3); }
+  50% { opacity: 1; -webkit-transform: scale(1.05); transform: scale(1.05); }
+  70% { -webkit-transform: scale(0.9); transform: scale(0.9); }
+  100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1); } }
+
+@keyframes bounceIn { 0% { opacity: 0; -webkit-transform: scale(0.3); -ms-transform: scale(0.3); transform: scale(0.3); }
+  50% { opacity: 1; -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); }
+  70% { -webkit-transform: scale(0.9); -ms-transform: scale(0.9); transform: scale(0.9); }
+  100% { opacity: 1; -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); } }
+
+html, body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background-color: #eeeeee; }
+
+a { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; color: inherit; text-decoration: none; }
+
+ul li { list-style-type: none; padding: 0; }
+
+img { opacity: inherit; }
+
+.smoke { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 2; }
+
+.logo { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; position: absolute; right: 5.5%; bottom: 20px; z-index: 10; cursor: pointer; width: 45px; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { .logo { bottom: 17.5px; width: 14.0625%; } }
+.logo:hover { -ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9); }
+
+#slides { position: relative; z-index: 10; margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+#slides .slide { position: absolute; width: 100%; bottom: 0; top: 0; -webkit-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
+#slides .slide.active { display: block; left: 0; }
+#slides .slide.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
+#slides .slide.left { display: block; left: -100%; }
+#slides .slide.right { display: block; left: 100%; }
+#slides .slide .text { margin: 95.5px auto 49px auto; display: block; width: 75%; z-index: 3; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text { display: none; } }
+#slides .slide .text-320 { margin: 53px auto 30px auto; display: none; width: 72.1875%; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .text-320 { display: block; width: 70%; } }
+#slides .slide .bulletin { width: 66.666666%; text-align: center; position: relative; margin: 0 auto; padding-top: 16px; padding-bottom: 13px; display: block; z-index: 30; background-color: #0079C1; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin { padding-bottom: 10px; padding-top: 10px; } }
+#slides .slide .bulletin .bulletin-img { width: 82.635%; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-img { display: none; } }
+#slides .slide .bulletin .bulletin-320 { display: none; }
+@media only screen and (max-device-width: 420px) and (-webkit-min-device-pixel-ratio: 2) { #slides .slide .bulletin .bulletin-320 { width: 70%; display: block; margin: 0 auto; } }
+
+.arrow-left, .arrow-right { -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; position: absolute; top: 148.5px; cursor: pointer; width: 12px; z-index: 11; }
+
+.arrow-left { left: 2%; }
+
+.arrow-right { right: 2%; }
+
+.dots { position: relative; top: -30px; margin: 0 auto; width: 11.66666%; z-index: 10; }
+
+.dot { width: 17.1428%; }
+
+.dots .dot { margin: 0 4.2807% 0 4.2807%; opacity: 0.5; cursor: pointer; -webkit-transition: all 100ms linear; -moz-transition: all 100ms linear; -o-transition: all 100ms linear; -ms-transition: all 100ms linear; transition: all 100ms linear; }
+.dots .dot.active { opacity: 1.0; }
+
+@media only screen and (max-width: 1000px) { .carousel { padding-top: 100px !important; -ms-transform: scale(0.8); -webkit-transform: scale(0.8); transform: scale(0.8); } }
+@media only screen and (max-width: 850px) { .carousel { padding-top: 150px !important; -ms-transform: scale(0.6); -webkit-transform: scale(0.6); transform: scale(0.6); } }
