@@ -46,6 +46,12 @@ body {
     display: none !important;
 }
 
+.noflicker {
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+
 a {
     display: block;
 }
@@ -166,8 +172,10 @@ img {
     max-width: 1600px;
     background-color: #ffffff;
     overflow: hidden;
+    background: url(../images/temp.jpg) no-repeat center center;
+    background-size: auto 910px;
+
     @media all and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-    
         background: url(../images/GE_WindmillLoop.jpg) center center no-repeat;
         background-size: cover;
         display: block;

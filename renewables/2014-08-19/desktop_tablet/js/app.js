@@ -72,13 +72,11 @@ var App = function() {
 	var imageSets = [
 	    function () { 
 	      $('.ff-bg .img-1').addClass('fade');
-	   
 	    },
 	    function () {
 	        $('.ff-bg .img-2').addClass('fade');
 	    }
 	];
-	
 	var slides = [
 		'<div class="slide inactive"> \
 			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/slide-1-text.png"/> \
@@ -98,6 +96,7 @@ var App = function() {
 				<img src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/bulletin.png"/> \
 			</a> \
 		</div>'];
+
 	this.init = function () {
 		rotate = setInterval(that.doRotate, 5000);
 	}
@@ -135,6 +134,8 @@ var App = function() {
 			$('.ff-bg').addClass('show');
 			$('.background').hide();
 			that.init();
+		} else {
+			$('.background').removeClass('hide');
 		}
 		hasTouch == true ? that.setTouchEvents() : that.setEvents();
 	}
