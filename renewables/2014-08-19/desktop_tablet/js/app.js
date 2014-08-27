@@ -1,14 +1,11 @@
 var QZADPX = function ( options ) {
   var that = this;
 
-  // Handle the options:
-  // (1) base
   if ( !options.base ) {
     throw new Error( 'You must pass in a base link' );
   }
   this.base = options.base;
 
-  // (2) el
   if ( options.el && document.getElementById( options.el ) ) {
     this.el = document.getElementById( options.el );
   } else {
@@ -19,7 +16,6 @@ var QZADPX = function ( options ) {
     }
   }
 
-  // (3) randomness
   if ( !options.randomness ) {
     this.randomness = 10;
   } else if ( options.randomness > 32 ) {
@@ -29,11 +25,9 @@ var QZADPX = function ( options ) {
   }
 
   this.append = function () {
-    // Create the url for the 1x1.
-    var cacheBuster = '?' + ( Math.random().toString( 36 ).substr( 2, this.randomness ) ); // create the cache busting string.
-    var src         = this.base + cacheBuster; // create the url, appending the cacheBuster.
+    var cacheBuster = '?' + ( Math.random().toString( 36 ).substr( 2, this.randomness ) );
+    var src         = this.base + cacheBuster;
     
-    // Create the 1x1.
     var img = document.createElement( "IMG" );
         img.style.position = "absolute";
         img.style.width = "1px";
@@ -42,7 +36,6 @@ var QZADPX = function ( options ) {
         img.style.left = 0;
         img.src = src;
 
-    // Append it.
     this.el.appendChild( img );
   };
 
@@ -69,14 +62,6 @@ var App = function() {
 	var ct;
 	var isAnimating = false;
 	var rotate;
-	var imageSets = [
-	    function () { 
-	      $('.ff-bg .img-1').addClass('fade');
-	    },
-	    function () {
-	        $('.ff-bg .img-2').addClass('fade');
-	    }
-	];
 	var slides = [
 		'<div class="slide inactive"> \
 			<img class="text show" src="http://ads.qz.com/sponsors/ge/renewables/2014-08-19/desktop_tablet/images/slide-1-text.png"/> \
@@ -107,27 +92,6 @@ var App = function() {
 		}});
 		$('.ff-bg img').first().velocity('fadeIn', {duration: 1000});
 	}
-
-	this.changeImage = function() {
-      
-      if($.isFunction(imageSets[currentImg]) && currentImg < 1) {
-       
-        ct = setTimeout(function() {
-          
-          imageSets[currentImg]();
-          currentImg++;
-          that.changeImage();
-         
-        }, times[currentImg]);
-      }else{
-        ct = setTimeout(function() {
-          currentImg--;
-          $('.ff-bg .img-'+currentImg).toggleClass('fade');
-         that.changeImage();
-         
-        }, times[currentImg]);
-      }
-    };
 	this.on = function() {
 
 		if(is_firefox || iOS){
@@ -162,6 +126,16 @@ var App = function() {
 		});
 	}
 	this.setTouchEvents = function() {
+		$('.wrapper').swipe({
+			fingers: 'all',
+			swipeLeft: that.swipeLeft,
+			swipeRight: that.swipeRight,
+			allowPageScroll: 'vertical',
+			swipeStatus: function(event, phase, direction, distance, duration, fingers) {
+				if(direction == 'down' || direction == 'up') return false;
+			}
+		});
+
 		$('.next-slide').swipe({
 			tap: function(e, target) {
 				if(!isAnimating) {
@@ -186,18 +160,6 @@ var App = function() {
 			}
 		});
 
-		$('.wrapper').swipe({
-			swipe: function(e, direction, distance, duration, fingerCount) {
-				if(direction == 'left') {
-					that.change(currentSlide + 1);
-					QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
-				}
-				if(direction == 'right') {
-					that.change(currentSlide - 1);
-					QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
-				}
-			}
-		});
 		$('.dot').on('click', function(e) {
 			if(!isAnimating) {
 				isAnimating = true;
@@ -205,6 +167,17 @@ var App = function() {
 				QZIX.manualTrigger('internal', 'click', 'tapped on dot ' + $(e.currentTarget).data('num'), false);
 			}
 		});
+	}
+	this.swipeLeft = function() {
+		if(currentSlide < 3) {
+			that.change(currentSlide + 1);
+			QZIX.manualTrigger('internal', 'swipe', 'swiped next', false);
+		}
+	}
+	this.swipeRight = function() {
+		if(currentSlide > 1)
+		that.change(currentSlide - 1);
+		QZIX.manualTrigger('internal', 'swipe', 'swiped previous', false);
 	}
 	this.off = function() {
 		if(is_firefox || iOS){
