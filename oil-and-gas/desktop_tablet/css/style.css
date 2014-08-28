@@ -136,3 +136,7 @@ a { text-decoration: none; }
 .tier.show.tier03 { top: 30px; left: 72.6353125%; }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-device-pixel-ratio: 2) { .tier.show.tier03 { left: 420px; } }
 .tier.show .close { display: block; width: 100%; text-align: center; color: white; height: 25px; background-color: #549ED6; line-height: 25px; border-bottom: 3px solid #376897; }
+
+.vid-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; height: 100%; z-index: 30; display: none; }
+
+.video-close { display: block; }

@@ -302,6 +302,8 @@ a{
 			@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) and (-webkit-device-pixel-ratio : 2){
 				left:208px;
 			}
+
+			
 		}
 		&.tier03{
 			top: 30px;
@@ -321,4 +323,17 @@ a{
 			border-bottom: 3px solid #376897;
 		}
 	}
+}
+.vid-container{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right: 0;
+	height: 100%;
+	z-index:30;
+	display:none;
+}
+.video-close{
+	display:block;
 }
