@@ -1,57 +1,27 @@
 // _mixins.scss
 @mixin breakpoint($point) {
-	@if $point == 1550 {
-		@media (max-width : 1600px) {
-			@content; 
-		}
-	}
 	@if $point == 1500 {
 		@media (max-width : 1550px) {
 			@content; 
 		}
 	}
-	@if $point == 1450 {
-		@media (max-width : 1500px) {
-			@content; 
-		}
-	}
-	@if $point == 1400 {
+	@else if $point == 1400 {
 		@media (max-width : 1450px) {
 			@content; 
 		}
 	}
-	@if $point == 1350 {
-		@media (max-width : 1400px) {
-			@content; 
-		}
-	}
-	@if $point == 1300 {
+	@else if $point == 1300 {
 		@media (max-width : 1350px) {
 			@content; 
 		}
 	}
-	@if $point == 1250 {
-		@media (max-width : 1300px) {
-			@content; 
-		}
-	}
-	@if $point == 1200 {
+	@else if $point == 1200 {
 		@media (max-width : 1250px) {
 			@content; 
 		}
 	}
-	@if $point == 1150 {
-		@media (max-width : 1200px) {
-			@content; 
-		}
-	}
-	@if $point == 1100 {
+	@else if $point == 1100 {
 		@media (max-width : 1150px) {
-			@content; 
-		}
-	}
-	@if $point == 1050 {
-		@media (max-width : 1100px) {
 			@content; 
 		}
 	}
@@ -60,28 +30,13 @@
 			@content; 
 		}
 	}
-	@else if $point == 950 {
-		@media (max-width : 1000px) {
-			@content; 
-		}
-	}
 	@else if $point == 900 {
 		@media (max-width : 950px) {
 			@content; 
 		}
 	}
-	@else if $point == 850 {
-		@media (max-width : 900px) {
-			@content; 
-		}
-	}
 	@else if $point == 800 {
 		@media (max-width : 850px) {
-			@content; 
-		}
-	}
-	@else if $point == 785 {
-		@media (max-width : 835px) {
 			@content; 
 		}
 	}

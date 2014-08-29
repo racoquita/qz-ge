@@ -1,36 +1,14 @@
 var App = function() {
 	var that = this;
-	var vidContainer;
-	this.on = function() {
-		that.init()
-		$('.tooltip .discoverCta').on('click', function (e) {
-			var target = $(this).attr('href');
 
-			$('.tier').removeClass('show').addClass('hide');
-			$(target).addClass('show');
-			if(target == '#tier02'){
-				$('#tier02 img').on('click', function() {
-					that.showVideo()
-				})
-			}
-			e.preventDefault();
-		});
-		$('.close').on('click', function(e){
-			$(this).parent().removeClass('show').addClass('hide');
-			console.log($(this))
-			e.preventDefault();
-		})
-	}
-	this.init = function() {
-		// body...
-		vidContainer = $('#vid-container');
-	}
-	this.showVideo = function() {
-		vidContainer.show();
-		vidContainer.html(that.getPlayer());
-		brightcove.createExperiences();
-	}
-	this.getPlayer = function() {
+	var discoverCTAs  	= $('.discoverCta')
+	,	tiers			= $('.tier')
+	,	closers			= $('.close')
+	,	vidContainer  	= $('#vid-container')
+	,	tier2VideoCTA 	= $('#video-cta')
+	,	videoCloser   	= $('.video-close');
+
+	var getPlayer = function() {
 		return '<object id="player3558926841001" class="BrightcoveExperience">\
 			<param name="bgcolor" value="#000000" />\
 			<param name="width" value="100%" />\
@@ -47,30 +25,69 @@ var App = function() {
 			<param name="wmode" value="transparent" />\
 			<param name="@videoPlayer" value="3753129145001" />\
 		</object>';
-	}
+	};
+
 	this.templateLoadedHandler = function (experienceID) {
-		player = brightcove.api.getExperience(experienceID);
-		APIModules = brightcove.api.modules.APIModules;
-	}
+		that.player = brightcove.api.getExperience(experienceID);
+		that.APIModules = brightcove.api.modules.APIModules;
+	};
 
 	this.templateReadyHandler = function (event) {
-		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
-	    contentModule = player.getModule(APIModules.CONTENT);
+		var videoPlayer = that.player.getModule(that.APIModules.VIDEO_PLAYER);
+	  var contentModule = that.player.getModule(that.APIModules.CONTENT);
 
-	    videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, function() {
-	    	that.hideVideo();
-	    });
+	  videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, function() {
+	  	that.hideVideo();
+	  });
 
-	    videoPlayer.getCurrentVideo(function (videoDTO) {
-	      	if(videoDTO) {
-	        	videoDTO.displayName = "";
-	        	contentModule.updateMedia(videoDTO, function (newVideoDTO) {
-	          		videoPlayer.play();
-	        	});
-	      	}
-	    });
-	}
+    videoPlayer.getCurrentVideo(function (videoDTO) {
+    	if(videoDTO) {
+      	videoDTO.displayName = "";
+      	contentModule.updateMedia(videoDTO, function (newVideoDTO) {
+        	videoPlayer.play();
+      	});
+    	}
+    });
+	};
+
+	var discoverCTAHandler = function (e) {
+		var targetTier = $(this).data('target-tier');
+		tiers.removeClass('show');
+		$(targetTier).addClass('show');
+	};
+
+	var closeHandler = function (e) {
+		$(this).parent().removeClass('show').addClass('hide');
+	};
+
+	var showVideo = function () {
+		vidContainer.show();
+		videoCloser.show();
+		vidContainer.html(
+			'<div class="vid">'+ getPlayer() +'</div>'
+		);
+		brightcove.createExperiences();		
+	};
+
+	var hideVideo = function () {
+		vidContainer.html('');
+		vidContainer.hide();
+		videoCloser.hide();
+
+	};
+
+	this.on = function() {
+		videoCloser.on('click', hideVideo);
+		discoverCTAs.on('click', discoverCTAHandler);
+		closers.on('click', closeHandler);
+		tier2VideoCTA.on('click', showVideo);
+	};
+
 	this.off = function() {
-
-	}
+		videoCloser.off('click', hideVideo);
+		discoverCTAs.off('click', discoverCTAHandler);
+		closers.off('click', closeHandler);
+		tier2VideoCTA.off('click', showVideo);
+		hideVideo();
+	};
 };
