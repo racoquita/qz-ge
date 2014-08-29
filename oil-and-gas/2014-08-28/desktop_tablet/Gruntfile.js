@@ -75,6 +75,7 @@ module.exports = function(grunt) {
             
           ],
           external_scripts: [
+            'http://admin.brightcove.com/js/BrightcoveExperiences.js',
             'http://app.qz.com/js/vendor/jQuery-min.js',
             'http://app.qz.com/js/frameMessager/min/frameMessager.min.3.0.2.js',
             'http://app.qz.com/js/frameMessager/QZIX.js'
