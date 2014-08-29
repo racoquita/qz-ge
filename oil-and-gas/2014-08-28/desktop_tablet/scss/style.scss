@@ -29,6 +29,8 @@ a{
 	max-width: 1600px;
 	overflow: hidden;
 	background-color: white;
+	border: 1px solid #eee;
+	box-sizing: border-box;
 }
 .clouds, .ground, .intro, .tooltip{
 	position:absolute;
