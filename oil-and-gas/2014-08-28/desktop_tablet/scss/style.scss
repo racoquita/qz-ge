@@ -53,28 +53,13 @@ a{
 	right:0;
 	height: 257.59px;
 	width: 100%;
+	background-image: url(../images/ground.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 100% auto;
 
-	img{
-		display: block;
-		width: 100%;
-		position:inherit;
-		bottom:0;
-
-		&.g1600{
-			display: block;
-
-			@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) and (-webkit-device-pixel-ratio : 2){
-				display: none;
-			}
-		}
-		&.g768{
-			display: none;
-
-			@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) and (-webkit-device-pixel-ratio : 2){
-				display: block;
-				height: 100%;
-			}
-		}
+	@include breakpoint(900) {
+		background-image: url(../images/ground_768.png);
 	}
 }
 .intro{
@@ -131,7 +116,8 @@ a{
 		text-align: center;
 	}
 	&.t01{
-		left: 6.1345%;
+		left: 6.2%;
+
 		@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) and (-webkit-device-pixel-ratio : 2){
 			left:10px;
 		}
@@ -141,7 +127,8 @@ a{
 		margin-left: -110px;
 	}
 	&.t03{
-		right: 6.1345%;
+		right: 6.2%;
+
 		@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) and (-webkit-device-pixel-ratio : 2){
 			right: 10px;
 		}
