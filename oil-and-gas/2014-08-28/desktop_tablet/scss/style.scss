@@ -30,7 +30,6 @@ a{
 	overflow: hidden;
 	background-color: white;
 	border: 1px solid #eee;
-	box-sizing: border-box;
 }
 .clouds, .ground, .intro, .tooltip{
 	position:absolute;
@@ -90,7 +89,7 @@ a{
 }
 .tooltip{
 	width: 13.75%;
-	min-width:219px;
+	min-width:220px;
 	background-color: #E9E9E9;
 	font-family:$font_0;
 	font-size: 24px;
