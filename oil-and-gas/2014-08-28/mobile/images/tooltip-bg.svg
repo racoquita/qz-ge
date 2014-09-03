@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="190px" height="130px" viewBox="0 0 190 130">
+	<g>
+		<defs>
+		    <filter id="f1" x="0" y="0" width="200%" height="200%">
+		      	<feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+		      	<feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+		      	<feColorMatrix in="blurOut" result="color-out" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .25 0" />
+		      	<feBlend in="SourceGraphic" in2="color-out" mode="normal" />
+		    </filter>
+	  	</defs>
+		<polygon fill="#EAEAEA" filter="url(#f1)" points="3,0.5 3,109 80.3,109 95.3,124 110.4,109 187.7,109 187.7,0.5"/>
+	</g>
+</svg>
