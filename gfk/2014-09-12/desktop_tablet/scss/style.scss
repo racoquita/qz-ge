@@ -1,0 +1,36 @@
+html,
+body {
+	margin: 0;
+	width: 100%;
+}
+#qzad {
+	box-sizing: border-box;
+	background-color: black;
+	height: 520px;
+	min-width: 768px;
+	max-width: 1600px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+#quizContainer {
+	bottom: 0px;
+	display: none;
+	left: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+#dsmObjectdsmTag3362 {
+	display: block !important;
+	margin: 0 auto;
+	position: relative;
+}
+#loader {
+	display: block;
+	left: 50%;
+	margin: -75px 0px 0px -75px;
+	position: absolute;
+	top: 50%;
+}
