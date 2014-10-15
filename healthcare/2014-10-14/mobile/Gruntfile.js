@@ -69,7 +69,7 @@ module.exports = function(grunt) {
           client: 'GE',
           campaign: 'healthcare',
           date: '2014-10-14',
-          unit: 'desktop_tablet',
+          unit: 'mobile',
           version: '1',
           internal_scripts: [
             
