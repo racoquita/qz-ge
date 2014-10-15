@@ -40,6 +40,8 @@ var App = function() {
 				$('.frame.left').remove();
 				isAnimating = false;
 			}, 500);
+			$('.next').addClass('hidden');
+			$('.prev').removeClass('hidden');
 		}
 		if(dir == 'prev') {
 			$('.frame.inactive').removeClass('inactive').addClass('left');
@@ -52,6 +54,9 @@ var App = function() {
 				$('.frame.right').remove();
 				isAnimating = false;
 			}, 500);
+
+			$('.next').removeClass('hidden');
+			$('.prev').addClass('hidden');
 		}
 		$('.f-pag.selected').removeClass('selected');
 		$('.f-pag:eq('+ currentSlide +')').addClass('selected');
@@ -78,5 +83,7 @@ var App = function() {
 	}
 	this.off = function() {
 		dir = 'next';
+		$('.next').removeClass('hidden');
+		$('.prev').addClass('hidden')
 	}
 };

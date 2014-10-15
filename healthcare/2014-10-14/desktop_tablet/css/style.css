@@ -1,6 +1,7 @@
 body { margin: 0; }
 
 #qzad { position: absolute; width: 100%; height: 520px; min-width: 769px; max-width: 1600px; overflow: hidden; background-color: #6b84a0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#qzad .hidden { display: none; }
 #qzad .logo, #qzad .cta, #qzad .slides, #qzad .copy, #qzad .chart, #qzad .f-pagination-container { position: absolute; }
 #qzad .title { position: relative; top: 30px; margin: 0 auto; width: 94.4%; padding-top: 6px; padding-bottom: 6px; border-top: 1.5px solid white; border-bottom: 1.5px solid white; }
 #qzad .title img { display: inline-block; vertical-align: middle; width: 25.7%; max-width: 413px; }
@@ -12,15 +13,18 @@ body { margin: 0; }
 #qzad .frame.f1 .f1-pagination-container { position: relative; margin: 15px auto 0; }
 #qzad .frame.f1 .f1-pagination-container a { display: inline-block; width: 40px; height: 8px; border: 1px solid white; }
 #qzad .frame.f1 .f1-pagination-container a.selected { background-color: white; }
-#qzad .frame.f2 .copy { width: 50.1043841336%; }
-#qzad .frame.f2 .chart { left: 56.2282%; width: 34.6555323591%; }
+#qzad .frame.f2 .copy { width: 42.93667%; }
+#qzad .frame.f2 .chart { left: 50.3827418232%; width: 47.04245%; }
 #qzad .frame.active { display: block; }
 #qzad .frame.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
 #qzad .frame.left { display: block; left: -100%; }
 #qzad .frame.right { display: block; left: 100%; }
 #qzad .cta { top: 293px; display: block; width: 25.0521920668%; border: 2px solid white; }
 #qzad .cta img { display: block; width: 88.6111111111%; margin-top: 15px; margin-bottom: 15px; margin-left: 6.11111111111%; margin-right: 6.11111111111%; }
-#qzad .next { position: absolute; top: 251px; right: 44px; display: block; width: 29px; height: 61px; background: url(../images/arrow.png) 0 0 no-repeat; background-size: 100%; }
+#qzad .nav { position: absolute; top: 251px; width: 29px; height: 61px; display: block; }
+#qzad .nav.hidden { display: none; }
+#qzad .nav.next { right: 2.75%; background: url(../images/arrow_next.png) 0 0 no-repeat; background-size: 100%; }
+#qzad .nav.prev { left: 2.75%; background: url(../images/arrow_prev.png) 0 0 no-repeat; background-size: 100%; }
 #qzad .f-pagination-container { top: 483px; left: 43px; border-top: 1.5px solid white; width: 88.9375%; height: 38px; }
 #qzad .f-pagination-container a { position: relative; top: 13px; display: inline-block; width: 78px; height: 9px; border: 1px solid white; }
 #qzad .f-pagination-container a.selected { background-color: white; }

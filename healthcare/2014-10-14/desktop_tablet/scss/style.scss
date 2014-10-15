@@ -12,6 +12,9 @@ body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	.hidden{
+		display: none;
+	}
 	.logo, .cta, .slides, .copy, .chart, .f-pagination-container{
 		position:absolute;
 	}
@@ -79,11 +82,11 @@ body {
 		}
 		&.f2{
 			.copy{
-				width: 50.1043841336%;
+				width: 42.9366736256% //617;
 			}
 			.chart{
-				left: 56.2282%;// 808px;
-				width: 34.6555323591%;
+				left: 50.3827418232%;// 724px;
+				width: 47.0424495477% //676;
 			}
 		}
 		&.active {
@@ -119,17 +122,28 @@ body {
 			margin-right:6.11111111111%;//22px;
 		}
 	}
-	.next{
+	.nav{
 		position:absolute;
 		top:251px;
-		right: 44px;
-		display: block;
 		width: 29px;
 		height: 61px;
-		background: url(../images/arrow.png) 0 0 no-repeat;
-		background-size: 100%;
+		display: block;
+		&.hidden{
+			display: none;
+		}
+		&.next{
+			right: 2.75%;//44px;
+			background: url(../images/arrow_next.png) 0 0 no-repeat;
+			background-size: 100%;
 
+		}
+		&.prev{
+			left: 2.75%;//44px;
+			background: url(../images/arrow_prev.png) 0 0 no-repeat;
+			background-size: 100%;
+		}
 	}
+	
 	.f-pagination-container{
 		top:483px;
 		left:43px;
