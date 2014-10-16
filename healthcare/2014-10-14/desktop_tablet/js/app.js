@@ -91,7 +91,7 @@ var App = function() {
 		
 	}
 	this.setTouchEvents = function () {
-		console.log('touchy')
+		
 		$('#slides').swipe({
 			fingers: 'all',
 			swipeLeft: that.swipeLeft,
@@ -103,10 +103,10 @@ var App = function() {
 		});
 	}
 	this.swipeLeft = function() {
-		if(currentSlide == 1) that.change(0);
+		if(currentSlide == 0) that.change(1);
 	}
 	this.swipeRight = function() {
-		if(currentSlide == 0) that.change(1);
+		if(currentSlide == 1) that.change(0);
 		
 	}
 	this.setEvents = function() {
