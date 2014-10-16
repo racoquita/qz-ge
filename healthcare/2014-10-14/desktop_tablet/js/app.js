@@ -97,10 +97,30 @@ var App = function() {
 			swipeLeft: that.swipeLeft,
 			swipeRight: that.swipeRight,
 			allowPageScroll: 'vertical',
+			excludeElements: '',
 			swipeStatus: function(event, phase, direction, distance, duration, fingers) {
 				if(direction == 'down' || direction == 'up') return false;
 			}
 		});
+		// $('.next').swipe({
+
+		// 	tap: function(e, target) {
+		// 		console.log('next')
+		// 		if(!isAnimating) {
+		// 			isAnimating = true;
+		// 			that.change(1);
+		// 		}
+		// 	}
+		// });
+
+		// $('.prev').swipe({
+		// 	tap: function(e, target) {
+		// 		if(!isAnimating) {
+		// 			isAnimating = true;
+		// 			that.change(0);
+		// 		}
+		// 	}
+		// });
 	}
 	this.swipeLeft = function() {
 		if(currentSlide == 0) that.change(1);
@@ -132,7 +152,7 @@ var App = function() {
 				current = 0;
 				that.rotatef1Chart();
 			} 
-		})
+		});
 		
 	}
 	this.off = function() {
