@@ -15,7 +15,7 @@ body {
 	.hidden{
 		display: none;
 	}
-	.logo, .cta, .slides, .copy, .chart, .f-pagination-container{
+	.logo, .cta, .slides, .f-pagination-container, .copy, .chart{
 		position:absolute;
 	}
 	.title{
@@ -25,14 +25,15 @@ body {
 		width: 94.4%;
 		padding-top: 6px;
 		padding-bottom:6px;
+		margin-left: 1.52015862525%;//23px;
 		border-top: 1.5px solid white;
 		border-bottom: 1.5px solid white;
-		
 		img{
 
 			display: inline-block;
 			vertical-align: middle;
 			width: 25.7%;
+
 			max-width: 413px;
 		}
 	}
@@ -57,6 +58,12 @@ body {
 			display: block;
 			width: 100%;
 		}
+		// .copy{
+		// 	float: left;
+		// }
+		// .chart{
+		// 	float: left;
+		// }
 		&.f1{
 			//border: 1px solid #000;
 			.copy{
@@ -65,10 +72,23 @@ body {
 			.chart{
 				left: 56.2282%;// 808px;
 				width: 34.6555323591%;
+				overflow: hidden;
+				top:0;
+				bottom:0;
+
+				.f1-chart-b, .f1-chart-a{
+					position:absolute;
+					top:0;
+				}
+				.f1-chart-b{
+					display: none;
+				}
+				
 			}
 			.f1-pagination-container{
-				position:relative;
-				margin: 15px auto 0;
+				position:absolute;
+				bottom:0;
+			
 				a{
 					display: inline-block;
 					width: 40px;
@@ -168,7 +188,7 @@ body {
 		height: 9.8%;
 		max-width: 52px;
 		bottom: 13px;
-		right: 44px;
+		right: 2.75%;//44px;
 		img{
 			display: block;
 			width: 100%;

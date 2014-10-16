@@ -2,18 +2,20 @@ var App = function() {
 	var that = this;
 	var currentSlide = 0;
 	var dir = 'next';
-
+	var current = 0;
 	var isAnimating = false;
 	var slides = [
 		'<div class="f1 frame inactive"> \
 			<div class="copy"><img src="images/f1-a_text.png" alt=""></div> \
 			<div class="chart"> \
-					<img src="images/f1-a_graph.png" alt=""> \
+					<img class="f1-chart-a" src="images/f1-a_graph.png" alt=""> \
+					<img class="f1-chart-b" src="images/f1-b_graph.png" alt=""> \
 					<div class="f1-pagination-container"> \
 						<a href="#" data-num="0" class="f1-pag selected"></a> \
 						<a href="#" data-num="1" class="f1-pag"></a> \
 					</div> \
 			</div> \
+			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
 		</div>',
 		'<div class="f2 frame inactive"> \
 			<div class="copy"><img src="images/f2_copy.png" alt=""></div> \
@@ -22,6 +24,7 @@ var App = function() {
 		</div>'];
 	this.on = function() {
 		that.setEvents();
+		that.rotatef1Chart()
 	}
 	this.change = function (num) {
 		dir = num > currentSlide ? 'next' : 'prev';
@@ -60,6 +63,22 @@ var App = function() {
 		}
 		$('.f-pag.selected').removeClass('selected');
 		$('.f-pag:eq('+ currentSlide +')').addClass('selected');
+	}
+	this.rotatef1Chart = function () {
+		
+		interval = setInterval(function(){
+			$('.f1 .chart img:eq('+ current +')').velocity('fadeOut', {
+				duration: 500,
+				complete: function() {
+					current == 1 ? current = 0 : current++;
+					$('.f1 .chart img:eq('+ current +')').velocity('fadeIn', {
+						duration: 500
+					});
+				}
+			});
+		}, 2000);
+
+		
 	}
 	this.setEvents = function() {
 		$('.next').on('click', function(e) {
