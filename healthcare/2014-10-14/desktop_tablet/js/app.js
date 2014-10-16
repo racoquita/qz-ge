@@ -4,9 +4,11 @@ var App = function() {
 	var dir = 'next';
 	var current = 0;
 	var isAnimating = false;
+	var hasTouch = 'ontouchstart' in document;
 	var slides = [
 		'<div class="f1 frame inactive"> \
-			<div class="copy"><img src="images/f1-a_text.png" alt=""></div> \
+			<div class="copy desktop"><img src="images/f1-a_text.png" alt=""></div> \
+				<div class="copy tablet"><img src="images/f1_copy_768.png" alt=""></div> \
 			<div class="chart"> \
 					<img class="f1-chart-a" src="images/f1-a_graph.png" alt=""> \
 					<img class="f1-chart-b" src="images/f1-b_graph.png" alt=""> \
@@ -15,16 +17,21 @@ var App = function() {
 						<a href="#" data-num="1" class="f1-pag"></a> \
 					</div> \
 			</div> \
-			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
+			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" > \
+				<img class="desktop" src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "> \
+				<img class="tablet" src="images/f1_cta_text_768.png" alt="Read Bulletin on QZ.com "> \
+			</a> \
 		</div>',
 		'<div class="f2 frame inactive"> \
-			<div class="copy"><img src="images/f2_copy.png" alt=""></div> \
+			<div class="copy desktop"><img src="images/f2_copy.png" alt=""></div> \
+			<div class="copy tablet"><img src="images/f2_copy_768.png" alt=""></div> \
 			<div class="chart"><img src="images/f2-chart.png" alt=""></div> \
 			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
 		</div>'];
 	this.on = function() {
-		that.setEvents();
-		that.rotatef1Chart()
+		//that.setEvents();
+		hasTouch == true ? that.setTouchEvents() : that.setEvents();
+		that.rotatef1Chart();
 	}
 	this.change = function (num) {
 		dir = num > currentSlide ? 'next' : 'prev';
@@ -72,12 +79,34 @@ var App = function() {
 				complete: function() {
 					current == 1 ? current = 0 : current++;
 					$('.f1 .chart img:eq('+ current +')').velocity('fadeIn', {
-						duration: 500
+						duration: 500,
+						complete: function () {
+							$('.f1-pag.selected').removeClass('selected');
+							$('.f1-pag:eq('+ current +')').addClass('selected');
+						}
 					});
 				}
 			});
 		}, 2000);
-
+		
+	}
+	this.setTouchEvents = function () {
+		console.log('touchy')
+		$('#slides').swipe({
+			fingers: 'all',
+			swipeLeft: that.swipeLeft,
+			swipeRight: that.swipeRight,
+			allowPageScroll: 'vertical',
+			swipeStatus: function(event, phase, direction, distance, duration, fingers) {
+				if(direction == 'down' || direction == 'up') return false;
+			}
+		});
+	}
+	this.swipeLeft = function() {
+		if(currentSlide == 1) that.change(0);
+	}
+	this.swipeRight = function() {
+		if(currentSlide == 0) that.change(1);
 		
 	}
 	this.setEvents = function() {
@@ -97,11 +126,22 @@ var App = function() {
 		});
 		$('.f-pag').on('click', function(e) {
 			if(!$(e.currentTarget).hasClass('selected')) that.change($(e.currentTarget).data('num'));
+		});
+		$('.f1-pag').on('click', function(e) {
+			if(!$(e.currentTarget).hasClass('selected')){
+				current = 0;
+				that.rotatef1Chart();
+			} 
 		})
 		
 	}
 	this.off = function() {
 		dir = 'next';
+		$.each(timeouts, function(i, to){
+	        clearTimeout(to);
+	    });	
+	    that.change(0);
+	    if(rotate) clearInterval(rotate);
 		$('.next').removeClass('hidden');
 		$('.prev').addClass('hidden')
 	}

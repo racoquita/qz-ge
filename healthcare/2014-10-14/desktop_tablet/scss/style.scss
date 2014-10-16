@@ -43,6 +43,7 @@ body {
 		bottom:0;
 		left:0;
 		width: 100%;
+		
 	}
 	.frame{
 		position:absolute;
@@ -58,6 +59,20 @@ body {
 			display: block;
 			width: 100%;
 		}
+		.copy{
+			&.desktop{
+					@media all and (max-width: 1000px) { 
+						display: none;
+					}
+			}
+			&.tablet{
+				display: none;
+				@media all and (max-width: 1000px) { 
+					display: block;
+
+				}
+			}
+		}
 		// .copy{
 		// 	float: left;
 		// }
@@ -67,7 +82,10 @@ body {
 		&.f1{
 			//border: 1px solid #000;
 			.copy{
-				width: 50.1043841336%;
+				width: 50.1043841336%;	
+				&.tablet{
+					width: 558px;
+				}
 			}
 			.chart{
 				left: 56.2282%;// 808px;
@@ -75,6 +93,11 @@ body {
 				overflow: hidden;
 				top:0;
 				bottom:0;
+				@media all and (max-width: 1000px) { 
+					top:114px;
+					left: 0;
+					width: 44.4010416667%;//341px;
+				}
 
 				.f1-chart-b, .f1-chart-a{
 					position:absolute;
@@ -99,14 +122,38 @@ body {
 					}
 				}
 			}
+			.cta{
+				@media all and (max-width: 1000px) { 
+					top:131px;
+				}
+
+			}
 		}
 		&.f2{
 			.copy{
-				width: 42.9366736256% //617;
+				width: 42.9366736256%; //617;
+				@media all and (max-width: 1000px) { 
+					left: 6.11979166667%;//47px;
+					width: 80.9895833333%;
+				}
 			}
 			.chart{
 				left: 50.3827418232%;// 724px;
-				width: 47.0424495477% //676;
+				width: 47.0424495477% ;//676;
+
+				@media all and (max-width: 1000px) { 
+					top:65px;
+					left: 6.11979166667%;//47px;
+					width: 80.9895833333%;
+				}
+			}
+			.cta{
+				@media all and (max-width: 1000px) { 
+					top:310px;
+					left: 6.11979166667%;//47px;
+					width: 45.1822916667%;
+					
+				}
 			}
 		}
 		&.active {
@@ -133,6 +180,11 @@ body {
 		display: block;
 		width: 25.0521920668%; //360px;
 		border: 2px solid white;
+		@media all and (max-width: 1000px) { 
+			top:114px;
+			left: 423px;
+			
+		}
 		img{
 			display: block;
 			width: 88.6111111111%;//319px;
@@ -140,6 +192,19 @@ body {
 			margin-bottom:15px;
 			margin-left:6.11111111111%; //22px;
 			margin-right:6.11111111111%;//22px;
+			&.desktop{
+					@media all and (max-width: 1000px) { 
+						display: none;
+					}
+			}
+			&.tablet{
+				display: none;
+				@media all and (max-width: 1000px) { 
+					display: block;
+
+				}
+			}
+		
 		}
 	}
 	.nav{
@@ -170,6 +235,11 @@ body {
 		border-top:1.5px solid white;
 		width: 88.9375%;
 		height: 38px;
+		@media all and (max-width: 1000px) { 
+			
+			width: 80%;
+			
+		}
 		a{
 			position:relative;
 			top:13px;
@@ -186,7 +256,7 @@ body {
 		display: block;
 		width: 3.2%;
 		height: 9.8%;
-		max-width: 52px;
+		min-width: 52px;
 		bottom: 13px;
 		right: 2.75%;//44px;
 		img{

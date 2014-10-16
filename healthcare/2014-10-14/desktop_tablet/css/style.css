@@ -8,27 +8,41 @@ body { margin: 0; }
 #qzad .slides { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; }
 #qzad .frame { position: absolute; width: 89.8125%; height: 355px; top: 96px; left: 67px; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 #qzad .frame img { display: block; width: 100%; }
+@media all and (max-width: 1000px) { #qzad .frame .copy.desktop { display: none; } }
+#qzad .frame .copy.tablet { display: none; }
+@media all and (max-width: 1000px) { #qzad .frame .copy.tablet { display: block; } }
 #qzad .frame.f1 .copy { width: 50.1043841336%; }
+#qzad .frame.f1 .copy.tablet { width: 558px; }
 #qzad .frame.f1 .chart { left: 56.2282%; width: 34.6555323591%; overflow: hidden; top: 0; bottom: 0; }
+@media all and (max-width: 1000px) { #qzad .frame.f1 .chart { top: 114px; left: 0; width: 44.4010416667%; } }
 #qzad .frame.f1 .chart .f1-chart-b, #qzad .frame.f1 .chart .f1-chart-a { position: absolute; top: 0; }
 #qzad .frame.f1 .chart .f1-chart-b { display: none; }
 #qzad .frame.f1 .f1-pagination-container { position: absolute; bottom: 0; }
 #qzad .frame.f1 .f1-pagination-container a { display: inline-block; width: 40px; height: 8px; border: 1px solid white; }
 #qzad .frame.f1 .f1-pagination-container a.selected { background-color: white; }
-#qzad .frame.f2 .copy { width: 42.93667%; }
+@media all and (max-width: 1000px) { #qzad .frame.f1 .cta { top: 131px; } }
+#qzad .frame.f2 .copy { width: 42.9366736256%; }
+@media all and (max-width: 1000px) { #qzad .frame.f2 .copy { left: 6.11979166667%; width: 80.9895833333%; } }
 #qzad .frame.f2 .chart { left: 50.3827418232%; width: 47.04245%; }
+@media all and (max-width: 1000px) { #qzad .frame.f2 .chart { top: 65px; left: 6.11979166667%; width: 80.9895833333%; } }
+@media all and (max-width: 1000px) { #qzad .frame.f2 .cta { top: 310px; left: 6.11979166667%; width: 45.1822916667%; } }
 #qzad .frame.active { display: block; }
 #qzad .frame.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
 #qzad .frame.left { display: block; left: -100%; }
 #qzad .frame.right { display: block; left: 100%; }
 #qzad .cta { top: 293px; display: block; width: 25.0521920668%; border: 2px solid white; }
+@media all and (max-width: 1000px) { #qzad .cta { top: 114px; left: 423px; } }
 #qzad .cta img { display: block; width: 88.6111111111%; margin-top: 15px; margin-bottom: 15px; margin-left: 6.11111111111%; margin-right: 6.11111111111%; }
+@media all and (max-width: 1000px) { #qzad .cta img.desktop { display: none; } }
+#qzad .cta img.tablet { display: none; }
+@media all and (max-width: 1000px) { #qzad .cta img.tablet { display: block; } }
 #qzad .nav { position: absolute; top: 251px; width: 29px; height: 61px; display: block; }
 #qzad .nav.hidden { display: none; }
 #qzad .nav.next { right: 2.75%; background: url(../images/arrow_next.png) 0 0 no-repeat; background-size: 100%; }
 #qzad .nav.prev { left: 2.75%; background: url(../images/arrow_prev.png) 0 0 no-repeat; background-size: 100%; }
 #qzad .f-pagination-container { top: 483px; left: 43px; border-top: 1.5px solid white; width: 88.9375%; height: 38px; }
+@media all and (max-width: 1000px) { #qzad .f-pagination-container { width: 80%; } }
 #qzad .f-pagination-container a { position: relative; top: 13px; display: inline-block; width: 78px; height: 9px; border: 1px solid white; }
 #qzad .f-pagination-container a.selected { background-color: white; }
-#qzad .logo { display: block; width: 3.2%; height: 9.8%; max-width: 52px; bottom: 13px; right: 2.75%; }
+#qzad .logo { display: block; width: 3.2%; height: 9.8%; min-width: 52px; bottom: 13px; right: 2.75%; }
 #qzad .logo img { display: block; width: 100%; }
