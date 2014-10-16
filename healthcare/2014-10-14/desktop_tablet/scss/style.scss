@@ -121,7 +121,9 @@ body {
 			.f1-pagination-container{
 				position:absolute;
 				bottom:0;
-			
+				@media all and (max-width: 1000px) { 
+					bottom:-10px;
+				}
 				a{
 					display: inline-block;
 					width: 40px;
@@ -192,7 +194,7 @@ body {
 		border: 2px solid white;
 		@media all and (max-width: 1000px) { 
 			top:114px;
-			left: 423px;
+			left: 64.0718562874%;//423px;
 			
 		}
 		img{
