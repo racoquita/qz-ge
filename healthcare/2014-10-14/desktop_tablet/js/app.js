@@ -17,7 +17,7 @@ var App = function() {
 						<a href="#" data-num="1" class="f1-pag"></a> \
 					</div> \
 			</div> \
-			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" > \
+			<a href="#" class="cta ixtrack" target="_blank"  data-ix-category="external" data-ix-label="Read Bulletin" > \
 				<img class="desktop" src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "> \
 				<img class="tablet" src="images/f1_cta_text_768.png" alt="Read Bulletin on QZ.com "> \
 			</a> \
@@ -26,7 +26,7 @@ var App = function() {
 			<div class="copy desktop"><img src="images/f2_copy.png" alt=""></div> \
 			<div class="copy tablet"><img src="images/f2_copy_768.png" alt=""></div> \
 			<div class="chart"><img src="images/f2-chart.png" alt=""></div> \
-			<a href="#" class="cta ixtrack" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
+			<a href="#" class="cta ixtrack" target="_blank" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
 		</div>'];
 	this.on = function() {
 		//that.setEvents();
@@ -102,25 +102,8 @@ var App = function() {
 				if(direction == 'down' || direction == 'up') return false;
 			}
 		});
-		// $('.next').swipe({
-
-		// 	tap: function(e, target) {
-		// 		console.log('next')
-		// 		if(!isAnimating) {
-		// 			isAnimating = true;
-		// 			that.change(1);
-		// 		}
-		// 	}
-		// });
-
-		// $('.prev').swipe({
-		// 	tap: function(e, target) {
-		// 		if(!isAnimating) {
-		// 			isAnimating = true;
-		// 			that.change(0);
-		// 		}
-		// 	}
-		// });
+		that.setEvents();
+		
 	}
 	this.swipeLeft = function() {
 		if(currentSlide == 0) that.change(1);

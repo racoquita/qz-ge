@@ -3,8 +3,10 @@ body { margin: 0; }
 #qzad { position: absolute; width: 100%; height: 520px; min-width: 769px; max-width: 1600px; overflow: hidden; background-color: #6b84a0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 #qzad .hidden { display: none; }
 #qzad .logo, #qzad .cta, #qzad .slides, #qzad .f-pagination-container, #qzad .copy, #qzad .chart { position: absolute; }
-#qzad .title { position: relative; top: 30px; margin: 0 auto; width: 94.4%; padding-top: 6px; padding-bottom: 6px; margin-left: 1.52015862525%; border-top: 1.5px solid white; border-bottom: 1.5px solid white; }
+#qzad .title { position: relative; top: 30px; margin: 0 auto; width: 94.4%; padding-top: 6px; padding-bottom: 6px; padding-left: 1.52015862525%; border-top: 1.5px solid white; border-bottom: 1.5px solid white; }
+@media all and (max-width: 1000px) { #qzad .title { top: 30px; padding-top: 12px; padding-bottom: 12px; width: 88.5416666667%; } }
 #qzad .title img { display: inline-block; vertical-align: middle; width: 25.7%; max-width: 413px; }
+@media all and (max-width: 1000px) { #qzad .title img { width: 62.7245508982%; } }
 #qzad .slides { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; }
 #qzad .frame { position: absolute; width: 89.8125%; height: 355px; top: 96px; left: 67px; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
 #qzad .frame img { display: block; width: 100%; }

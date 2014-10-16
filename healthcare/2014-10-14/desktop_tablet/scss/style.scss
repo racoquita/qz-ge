@@ -25,16 +25,26 @@ body {
 		width: 94.4%;
 		padding-top: 6px;
 		padding-bottom:6px;
-		margin-left: 1.52015862525%;//23px;
+		padding-left: 1.52015862525%;//23px;
 		border-top: 1.5px solid white;
 		border-bottom: 1.5px solid white;
+
+		@media all and (max-width: 1000px) { 
+			top:30px;
+			padding-top: 12px;
+			padding-bottom:12px;
+			width: 88.5416666667%; //680px;
+		}
 		img{
 
 			display: inline-block;
 			vertical-align: middle;
 			width: 25.7%;
-
+			
 			max-width: 413px;
+			@media all and (max-width: 1000px) {
+				width:62.7245508982%;
+			}
 		}
 	}
 	.slides{
@@ -43,7 +53,7 @@ body {
 		bottom:0;
 		left:0;
 		width: 100%;
-		
+
 	}
 	.frame{
 		position:absolute;
