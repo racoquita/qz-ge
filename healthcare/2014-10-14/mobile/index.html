@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Plus Ad Template</title>
-
+	<title>GE | Healthcare | Mobile</title>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div id="qzad"></div>
+	<div id="qzad">
+		<div class="title"><img src="images/title.png" alt="Healthcare in India"></div>
+		
+		<div id="slides" class="slides">
+			<div class="f1 frame active">
+				<div class="copy big"><img src="images/f1-copy.png" alt=""></div>
+				<div class="copy small"><img src="images/f1_copy_320.png" alt=""></div>
+				<div class="chart">
+					<img class="f1-chart-a" src="images/f1-a_chart.png" alt="">
+					<img class="f1-chart-b" src="images/f1-b_chart.png" alt="">
+					<div class="f1-pagination-container">
+						<a href="#" data-num="0" class="f1-pag selected"></a>
+						<a href="#" data-num="1" class="f1-pag"></a>
+					</div>
+				</div>
+				<a href="#" class="cta ixtrack" data-ix-category="external" target="_blank" data-ix-label="Read Bulletin" >
+					<img  src="images/cta_text.png" alt="Read Bulletin on QZ.com ">
+					
+				</a>
+			</div>
+		</div>
+		<a href="#" class="prev nav hidden ixtrack" data-ix-category="internal"></a><a href="#" class="next nav ixtrack" data-ix-category="internal"></a>
+		<div class="f-pagination-container">
+			<a href="#"  data-num="0" class="f-pag selected"></a>
+			<a href="#"  data-num="1" class="f-pag"></a>
+		</div>
+		<a href="#" class="logo"><img src="images/logo.png" alt="GE logo"></a>
+	</div>
 
 	<script src="http://app.qz.com/js/vendor/jQuery-min.js" type="text/javascript"></script>
+	<script src="http://app.qz.com/js/frameMessager/QZIX.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.velocity.min.js"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

@@ -1,1 +1,54 @@
-/*style.css*/
+body { margin: 0; }
+
+#qzad { position: absolute; width: 100%; height: 430px; min-width: 320px; max-width: 600px; overflow: hidden; background-color: white; background-color: #6b84a0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#qzad .hidden { display: none; }
+#qzad .logo, #qzad .cta, #qzad .slides, #qzad .f-pagination-container, #qzad .copy, #qzad .chart { position: absolute; }
+#qzad .title { position: relative; top: 15px; margin: 0 auto; width: 95.1666666667%; min-width: 207px; padding-top: 9px; padding-bottom: 9px; padding-left: 1.52015862525%; border-top: 1.5px solid white; border-bottom: 1.5px solid white; }
+@media all and (max-width: 400px) { #qzad .title { top: 15px; padding-top: 12px; padding-bottom: 12px; width: 88.5416666667%; } }
+#qzad .title img { display: block; width: 36.2521891419%; }
+#qzad .slides { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; height: 100%; }
+#qzad .frame { position: absolute; width: 90.641026%; height: 328px; top: 64px; left: 1.92307692308%; right: 8.58974358974%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
+#qzad .frame img { display: block; width: 100%; }
+@media all and (max-width: 400px) { #qzad .frame { left: 4.923077%; } }
+@media all and (max-width: 400px) { #qzad .frame .copy.big { display: none; left: 4.923077%; } }
+#qzad .frame .copy.small { display: none; }
+@media all and (max-width: 400px) { #qzad .frame .copy.small { display: block; } }
+#qzad .frame .cta { top: 284px; left: 24.500907441%; display: block; width: 25.0521920668%; border: 2px solid white; overflow: hidden; }
+@media all and (max-width: 400px) { #qzad .frame .cta { left: 18.500907%; width: 277px; } }
+#qzad .frame .cta img { display: block; width: 88.6111111111%; margin-top: 10px; margin-bottom: 10px; margin-left: 6.11111111111%; margin-right: 6.11111111111%; }
+@media all and (max-width: 400px) { #qzad .frame .cta img.big { display: none; } }
+#qzad .frame .cta img.small { display: none; }
+@media all and (max-width: 400px) { #qzad .frame .cta img.small { display: block; } }
+#qzad .frame.f1 .copy { left: 15.0635208711%; width: 71.2784588441%; }
+#qzad .frame.f1 .copy.small { left: 0; }
+#qzad .frame.f1 .chart { position: absolute; margin: 0 auto; width: 55.5166374781%; overflow: hidden; top: 30px; left: 115px; bottom: 60px; }
+@media all and (max-width: 400px) { #qzad .frame.f1 .chart { top: 60px; left: 0; width: 82.0895522388%; } }
+#qzad .frame.f1 .chart .f1-chart-b, #qzad .frame.f1 .chart .f1-chart-a { position: relative; top: 20px; margin: 0 auto; display: block; }
+#qzad .frame.f1 .chart .f1-chart-b { display: none; }
+#qzad .frame.f1 .f1-pagination-container { position: absolute; bottom: 0; width: 30.29653%; left: 40.3785488959%; }
+#qzad .frame.f1 .f1-pagination-container a { display: inline-block; width: 25px; height: 5px; border: 1px solid white; }
+#qzad .frame.f1 .f1-pagination-container a.selected { background-color: white; }
+#qzad .frame.f1 .cta { width: 48.6865148862%; }
+@media all and (max-width: 400px) { #qzad .frame.f1 .cta { top: 281px; width: 57.686515%; } }
+#qzad .frame.f2 .copy { left: 73px; width: 78.9473684211%; }
+@media all and (max-width: 400px) { #qzad .frame.f2 .copy { max-width: 240px; left: 10.3125%; } }
+#qzad .frame.f2 .chart { top: 50px; left: 18.8747731397%; width: 317px; }
+#qzad .frame.f2 .chart img { position: relative; margin: 0 auto; }
+@media all and (max-width: 400px) { #qzad .frame.f2 .chart { top: 81px; width: 82.0895522388%; left: 8.874773%; }
+  #qzad .frame.f2 .chart img { margin: 0 auto; } }
+#qzad .frame.f2 .cta { width: 41.7422867514%; top: 271px; }
+@media all and (max-width: 400px) { #qzad .frame.f2 .cta { top: 281px; width: 57.686515%; } }
+#qzad .frame.active { display: block; }
+#qzad .frame.inactive { display: none; -webkit-transition: all 0s ease; -o-transition: all 0s ease; transition: all 0s ease; }
+#qzad .frame.left { display: block; left: -100%; }
+#qzad .frame.right { display: block; left: 100%; }
+#qzad .nav { position: absolute; top: 196px; width: 20px; height: 47px; display: block; }
+#qzad .nav.hidden { display: none; }
+#qzad .nav.next { right: 2.75%; background: url(../images/arrow_next.png) 0 0 no-repeat; background-size: 100%; }
+#qzad .nav.prev { left: 2.75%; background: url(../images/arrow_prev.png) 0 0 no-repeat; background-size: 100%; }
+#qzad .f-pagination-container { top: 398px; left: 2.5%; border-top: 1.5px solid white; width: 88.9375%; height: 38px; }
+@media all and (max-width: 400px) { #qzad .f-pagination-container { width: 75%; } }
+#qzad .f-pagination-container a { position: relative; top: 5px; display: inline-block; width: 46px; height: 8px; border: 1px solid white; }
+#qzad .f-pagination-container a.selected { background-color: white; }
+#qzad .logo { display: block; width: 8.83333333333%; min-width: 37px; bottom: 13px; right: 15px; }
+#qzad .logo img { display: block; width: 100%; }
