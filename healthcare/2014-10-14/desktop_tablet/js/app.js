@@ -87,7 +87,7 @@ var App = function() {
 					});
 				}
 			});
-		}, 2000);
+		}, 3000);
 		
 	}
 	this.setTouchEvents = function () {

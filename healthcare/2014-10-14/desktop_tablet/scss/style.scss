@@ -5,7 +5,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 520px;
-	min-width: 769px;
+	min-width: 768px;
 	max-width: 1600px;
 	overflow: hidden;
 	background-color: #6b84a0;
@@ -19,31 +19,31 @@ body {
 		position:absolute;
 	}
 	.title{
-		position:relative;
-		top: 30px;
+		position:absolute;
+		top: 34px;
 		margin:0 auto;
-		width: 94.4%;
-		padding-top: 6px;
-		padding-bottom:6px;
+		// width: 94.4%;
+		left:  45px;//2.75%;
+		right: 45px;//2.75%;
+		padding-top: 14px;
+		padding-bottom:14px;
 		padding-left: 1.52015862525%;//23px;
-		border-top: 1.5px solid white;
-		border-bottom: 1.5px solid white;
+		border-top: 2px solid white;
+		border-bottom: 2px solid white;
 
 		@media all and (max-width: 1000px) { 
-			top:30px;
+			top:28px;
 			padding-top: 12px;
 			padding-bottom:12px;
-			width: 88.5416666667%; //680px;
+			
 		}
 		img{
 
 			display: inline-block;
 			vertical-align: middle;
-			width: 25.7%;
-			
-			max-width: 413px;
+			width: 414px;
 			@media all and (max-width: 1000px) {
-				width:62.7245508982%;
+				//width:62.7245508982%;
 			}
 		}
 	}
@@ -58,9 +58,11 @@ body {
 	.frame{
 		position:absolute;
 		width: 89.8125%;//1437px;
-		height: 355px;
-		top: 96px;
-		left: 67px;
+		//width:94.375%; //1510px
+		height: 387px;
+		top: 94px;
+		left: 4.1875%;//67px;
+		//background: red url() 0 0 no-repeat;
 	    -webkit-transition: all .5s ease;
 	    -moz-transition: all .5s ease;
         -o-transition: all .5s ease;
@@ -83,35 +85,37 @@ body {
 				}
 			}
 		}
-		// .copy{
-		// 	float: left;
-		// }
-		// .chart{
-		// 	float: left;
-		// }
+		
 		&.f1{
-			//border: 1px solid #000;
+		
+			.copy, .chart,.cta{
+				left: 4.1875%;
+			}
 			.copy{
+				top:56px;
+
 				width: 50.1043841336%;	
 				&.tablet{
+					top:18px;
 					width: 558px;
 				}
 			}
 			.chart{
-				left: 56.2282%;// 808px;
-				width: 34.6555323591%;
+				left: 56.2282%;// 792px;
+				width: 41.127348643%; //591
 				overflow: hidden;
-				top:0;
+				top:25px;
 				bottom:0;
 				@media all and (max-width: 1000px) { 
 					top:100px;
-					left: 0;
+					left: 4.1875%;
 					width: 44.4010416667%;//341px;
 				}
 
 				.f1-chart-b, .f1-chart-a{
 					position:absolute;
 					top:0;
+					max-width: 501px;
 				}
 				.f1-chart-b{
 					display: none;
@@ -120,14 +124,17 @@ body {
 			}
 			.f1-pagination-container{
 				position:absolute;
-				bottom:0;
+				left: 27.103960396%;//219px;
+				bottom:5px;
+				width: 11.1386138614%;//90px;
+				min-width: 90px;
 				@media all and (max-width: 1000px) { 
 					
 				}
 				a{
 					display: inline-block;
 					width: 40px;
-					height: 8px;
+					height: 6px;
 					border: 1px solid white;
 					&.selected{
 						background-color: white;
@@ -135,28 +142,44 @@ body {
 				}
 			}
 			.cta{
+
+				width: 359px;
 				@media all and (max-width: 1000px) { 
+					max-width: 161px;
 					top:131px;
+					left: 64.0718562874%;//423px;
+					width: 160px;
+
 				}
 
 			}
 		}
 		&.f2{
+			left: 4.1875%;
 			.copy{
+				top: 57px;
+				left: 3.27070285317%;//27px
+
 				width: 42.9366736256%; //617;
 				@media all and (max-width: 1000px) { 
-					left: 6.11979166667%;//47px;
+					
+					top:25px;
+					//left: 6.11979166667%;//47px;
+					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
+					max-width: 523px;
 
 				}
 			}
 			.chart{
+				top:51px;
 				left: 50.3827418232%;// 724px;
 				width: 47.0424495477% ;//676;
 
 				@media all and (max-width: 1000px) { 
-					top:65px;
-					left: 6.11979166667%;//47px;
+					
+					top:80px;
+					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
 					max-width: 570px;
 					img{
@@ -165,12 +188,18 @@ body {
 				}
 			}
 			.cta{
+				left: 3.27070285317%;//27px
+				width: 359px;
 				@media all and (max-width: 1000px) { 
-					top:310px;
-					left: 6.11979166667%;//47px;
-					width: 45.1822916667%;
-					
+					top:319px;
+					left: 15.7552083333%;//121px;
+					width: 342px;
+					img{
+						width: 300px;
+						
+					}
 				}
+				
 			}
 		}
 		&.active {
@@ -195,33 +224,29 @@ body {
 	.cta{
 		top:293px;
 		display: block;
-		width: 25.0521920668%; //360px;
 		border: 2px solid white;
 		@media all and (max-width: 1000px) { 
 			top:114px;
-			left: 64.0718562874%;//423px;
-			
 		}
 		img{
 			display: block;
 			width: 88.6111111111%;//319px;
+
 			margin-top:15px;
 			margin-bottom:15px;
 			margin-left:6.11111111111%; //22px;
 			margin-right:6.11111111111%;//22px;
 			&.desktop{
-					@media all and (max-width: 1000px) { 
-						display: none;
-					}
+				@media all and (max-width: 1000px) { 
+					display: none;
+				}
 			}
 			&.tablet{
 				display: none;
 				@media all and (max-width: 1000px) { 
 					display: block;
-
 				}
 			}
-		
 		}
 	}
 	.nav{
@@ -234,13 +259,13 @@ body {
 			display: none;
 		}
 		&.next{
-			right: 2.75%;//44px;
+			right:45px;
 			background: url(../images/arrow_next.png) 0 0 no-repeat;
 			background-size: 100%;
 
 		}
 		&.prev{
-			left: 2.75%;//44px;
+			left:45px;
 			background: url(../images/arrow_prev.png) 0 0 no-repeat;
 			background-size: 100%;
 		}
@@ -248,21 +273,18 @@ body {
 	
 	.f-pagination-container{
 		top:483px;
-		left:43px;
-		border-top:1.5px solid white;
-		width: 88.9375%;
-		height: 38px;
-		@media all and (max-width: 1000px) { 
-			
-			width: 80%;
-			
-		}
+		left:45px;
+		right: 139px;
+		border-top: 2px solid white;
+		height: 36px;
+		
 		a{
 			position:relative;
-			top:13px;
+			top:8px;
 			display: inline-block;
+			margin-left: 15px;
 			width: 78px;
-			height: 9px;
+			height: 7px;
 			border: 1px solid white;
 			&.selected{
 				background-color: white;
@@ -271,11 +293,10 @@ body {
 	}
 	.logo{
 		display: block;
-		width: 3.2%;
-		height: 9.8%;
-		min-width: 52px;
+		width: 52px;
 		bottom: 13px;
-		right: 2.75%;//44px;
+		right: 45px;
+		background-color: #6b84a0;
 		img{
 			display: block;
 			width: 100%;
