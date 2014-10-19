@@ -32,7 +32,7 @@ body {
 		border-bottom: 2px solid white;
 
 		@media all and (max-width: 1000px) { 
-			top:28px;
+			top:25px;
 			padding-top: 12px;
 			padding-bottom:12px;
 			
@@ -93,15 +93,14 @@ body {
 			}
 			.copy{
 				top:56px;
-
 				width: 50.1043841336%;	
 				&.tablet{
-					top:18px;
+					top:10px;
 					width: 558px;
 				}
 			}
 			.chart{
-				left: 56.2282%;// 792px;
+				left: 59.2282%;// 792px;
 				width: 41.127348643%; //591
 				overflow: hidden;
 				top:25px;
@@ -109,7 +108,8 @@ body {
 				@media all and (max-width: 1000px) { 
 					top:100px;
 					left: 4.1875%;
-					width: 44.4010416667%;//341px;
+					min-width: 403px;
+					width: 45.4010416667%;//341px;
 				}
 
 				.f1-chart-b, .f1-chart-a{
@@ -119,17 +119,18 @@ body {
 				}
 				.f1-chart-b{
 					display: none;
+					max-width: 403px;
 				}
 				
 			}
 			.f1-pagination-container{
-				position:absolute;
-				left: 27.103960396%;//219px;
-				bottom:5px;
+				position:relative;
+				top:324px;
+				margin: 0 auto;
 				width: 11.1386138614%;//90px;
 				min-width: 90px;
 				@media all and (max-width: 1000px) { 
-					
+					top:264px;
 				}
 				a{
 					display: inline-block;
@@ -147,7 +148,7 @@ body {
 				@media all and (max-width: 1000px) { 
 					max-width: 161px;
 					top:131px;
-					left: 64.0718562874%;//423px;
+					left: 67.071856%;//423px;
 					width: 160px;
 
 				}
@@ -158,13 +159,12 @@ body {
 			left: 4.1875%;
 			.copy{
 				top: 57px;
-				left: 3.27070285317%;//27px
-
+				//left: 3.27070285317%;//27px
+				left: 70px;
 				width: 42.9366736256%; //617;
 				@media all and (max-width: 1000px) { 
 					
-					top:25px;
-					//left: 6.11979166667%;//47px;
+					top:20px;
 					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
 					max-width: 523px;
@@ -173,14 +173,15 @@ body {
 			}
 			.chart{
 				top:51px;
-				left: 50.3827418232%;// 724px;
+				left: calc(50.3827418232% + 50px);// 724px;
 				width: 47.0424495477% ;//676;
 
 				@media all and (max-width: 1000px) { 
 					
-					top:80px;
+					top:70px;
 					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
+
 					max-width: 570px;
 					img{
 						margin: 0 auto;
@@ -188,7 +189,8 @@ body {
 				}
 			}
 			.cta{
-				left: 3.27070285317%;//27px
+				left: 3.27070285317%;//27px;
+				left: 70px;
 				width: 359px;
 				@media all and (max-width: 1000px) { 
 					top:319px;

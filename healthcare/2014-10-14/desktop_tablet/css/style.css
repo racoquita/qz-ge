@@ -4,7 +4,7 @@ body { margin: 0; }
 #qzad .hidden { display: none; }
 #qzad .logo, #qzad .cta, #qzad .slides, #qzad .f-pagination-container, #qzad .copy, #qzad .chart { position: absolute; }
 #qzad .title { position: absolute; top: 34px; margin: 0 auto; left: 45px; right: 45px; padding-top: 14px; padding-bottom: 14px; padding-left: 1.52015862525%; border-top: 2px solid white; border-bottom: 2px solid white; }
-@media all and (max-width: 1000px) { #qzad .title { top: 28px; padding-top: 12px; padding-bottom: 12px; } }
+@media all and (max-width: 1000px) { #qzad .title { top: 25px; padding-top: 12px; padding-bottom: 12px; } }
 #qzad .title img { display: inline-block; vertical-align: middle; width: 414px; }
 #qzad .slides { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; }
 #qzad .frame { position: absolute; width: 89.8125%; height: 387px; top: 94px; left: 4.1875%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
@@ -14,23 +14,24 @@ body { margin: 0; }
 @media all and (max-width: 1000px) { #qzad .frame .copy.tablet { display: block; } }
 #qzad .frame.f1 .copy, #qzad .frame.f1 .chart, #qzad .frame.f1 .cta { left: 4.1875%; }
 #qzad .frame.f1 .copy { top: 56px; width: 50.1043841336%; }
-#qzad .frame.f1 .copy.tablet { top: 18px; width: 558px; }
-#qzad .frame.f1 .chart { left: 56.2282%; width: 41.127348643%; overflow: hidden; top: 25px; bottom: 0; }
-@media all and (max-width: 1000px) { #qzad .frame.f1 .chart { top: 100px; left: 4.1875%; width: 44.4010416667%; } }
+#qzad .frame.f1 .copy.tablet { top: 10px; width: 558px; }
+#qzad .frame.f1 .chart { left: 59.2282%; width: 41.127348643%; overflow: hidden; top: 25px; bottom: 0; }
+@media all and (max-width: 1000px) { #qzad .frame.f1 .chart { top: 100px; left: 4.1875%; min-width: 403px; width: 45.4010416667%; } }
 #qzad .frame.f1 .chart .f1-chart-b, #qzad .frame.f1 .chart .f1-chart-a { position: absolute; top: 0; max-width: 501px; }
-#qzad .frame.f1 .chart .f1-chart-b { display: none; }
-#qzad .frame.f1 .f1-pagination-container { position: absolute; left: 27.103960396%; bottom: 5px; width: 11.1386138614%; min-width: 90px; }
+#qzad .frame.f1 .chart .f1-chart-b { display: none; max-width: 403px; }
+#qzad .frame.f1 .f1-pagination-container { position: relative; top: 324px; margin: 0 auto; width: 11.1386138614%; min-width: 90px; }
+@media all and (max-width: 1000px) { #qzad .frame.f1 .f1-pagination-container { top: 264px; } }
 #qzad .frame.f1 .f1-pagination-container a { display: inline-block; width: 40px; height: 6px; border: 1px solid white; }
 #qzad .frame.f1 .f1-pagination-container a.selected { background-color: white; }
 #qzad .frame.f1 .cta { width: 359px; }
-@media all and (max-width: 1000px) { #qzad .frame.f1 .cta { max-width: 161px; top: 131px; left: 64.0718562874%; width: 160px; } }
+@media all and (max-width: 1000px) { #qzad .frame.f1 .cta { max-width: 161px; top: 131px; left: 67.071856%; width: 160px; } }
 #qzad .frame.f2 { left: 4.1875%; }
-#qzad .frame.f2 .copy { top: 57px; left: 3.27070285317%; width: 42.9366736256%; }
-@media all and (max-width: 1000px) { #qzad .frame.f2 .copy { top: 25px; left: 15.7552083333%; width: 80.9895833333%; max-width: 523px; } }
-#qzad .frame.f2 .chart { top: 51px; left: 50.3827418232%; width: 47.04245%; }
-@media all and (max-width: 1000px) { #qzad .frame.f2 .chart { top: 80px; left: 15.7552083333%; width: 80.9895833333%; max-width: 570px; }
+#qzad .frame.f2 .copy { top: 57px; left: 70px; width: 42.9366736256%; }
+@media all and (max-width: 1000px) { #qzad .frame.f2 .copy { top: 20px; left: 15.7552083333%; width: 80.9895833333%; max-width: 523px; } }
+#qzad .frame.f2 .chart { top: 51px; left: calc(50.3827418232% + 50px); width: 47.04245%; }
+@media all and (max-width: 1000px) { #qzad .frame.f2 .chart { top: 70px; left: 15.7552083333%; width: 80.9895833333%; max-width: 570px; }
   #qzad .frame.f2 .chart img { margin: 0 auto; } }
-#qzad .frame.f2 .cta { left: 3.27070285317%; width: 359px; }
+#qzad .frame.f2 .cta { left: 3.27070285317%; left: 70px; width: 359px; }
 @media all and (max-width: 1000px) { #qzad .frame.f2 .cta { top: 319px; left: 15.7552083333%; width: 342px; }
   #qzad .frame.f2 .cta img { width: 300px; } }
 #qzad .frame.active { display: block; }

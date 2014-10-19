@@ -25,7 +25,7 @@ var App = function() {
 		'<div class="f2 frame inactive"> \
 			<div class="copy desktop"><img src="images/f2_copy.png" alt=""></div> \
 			<div class="copy tablet"><img src="images/f2_copy_768.png" alt=""></div> \
-			<div class="chart"><img src="images/f2-chart.png" alt=""></div> \
+			<div class="chart"><img src="images/f2_chart.png" alt=""></div> \
 			<a href="#" class="cta ixtrack" target="_blank" data-ix-category="external" data-ix-label="Read Bulletin" ><img src="images/f1-cta_text.png" alt="Read Bulletin on QZ.com "></a> \
 		</div>'];
 	this.on = function() {
