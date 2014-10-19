@@ -35,7 +35,6 @@ body {
 			top:25px;
 			padding-top: 12px;
 			padding-bottom:12px;
-			
 		}
 		img{
 
@@ -53,7 +52,6 @@ body {
 		bottom:0;
 		left:0;
 		width: 100%;
-
 	}
 	.frame{
 		position:absolute;
@@ -62,7 +60,6 @@ body {
 		height: 387px;
 		top: 94px;
 		left: 4.1875%;//67px;
-		//background: red url() 0 0 no-repeat;
 	    -webkit-transition: all .5s ease;
 	    -moz-transition: all .5s ease;
         -o-transition: all .5s ease;
@@ -73,21 +70,18 @@ body {
 		}
 		.copy{
 			&.desktop{
-					@media all and (max-width: 1000px) { 
-						display: none;
-					}
+				@media all and (max-width: 1000px) { 
+					display: none;
+				}
 			}
 			&.tablet{
 				display: none;
 				@media all and (max-width: 1000px) { 
 					display: block;
-
 				}
 			}
 		}
-		
 		&.f1{
-		
 			.copy, .chart,.cta{
 				left: 4.1875%;
 			}
@@ -111,7 +105,6 @@ body {
 					min-width: 403px;
 					width: 45.4010416667%;//341px;
 				}
-
 				.f1-chart-b, .f1-chart-a{
 					position:absolute;
 					top:0;
@@ -121,7 +114,6 @@ body {
 					display: none;
 					max-width: 403px;
 				}
-				
 			}
 			.f1-pagination-container{
 				position:relative;
@@ -143,16 +135,13 @@ body {
 				}
 			}
 			.cta{
-
 				width: 359px;
 				@media all and (max-width: 1000px) { 
 					max-width: 161px;
 					top:131px;
 					left: 67.071856%;//423px;
 					width: 160px;
-
 				}
-
 			}
 		}
 		&.f2{
@@ -168,7 +157,6 @@ body {
 					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
 					max-width: 523px;
-
 				}
 			}
 			.chart{
@@ -181,7 +169,6 @@ body {
 					top:70px;
 					left: 15.7552083333%;//121px;
 					width: 80.9895833333%;
-
 					max-width: 570px;
 					img{
 						margin: 0 auto;
@@ -201,7 +188,6 @@ body {
 						
 					}
 				}
-				
 			}
 		}
 		&.active {
@@ -212,7 +198,6 @@ body {
             -webkit-transition: all 0s ease;
             -o-transition: all 0s ease;
             transition: all 0s ease;
-           
         }
         &.left {
             display: block;
